@@ -94,3 +94,12 @@ powershell + scoop + oh-my-posh 最新版本
 powershell实现类比于linux的alias效果不是很好用function
 
 0.0.7
+
+-------------------------------------------
+nvim在windows下用户的appdate/local/nvim配置文件入口
+
+添加c++调试dap用Vimspector实现安装lldb或gdb
+
+用lldb调试，体验不好
+
+0.0.8
