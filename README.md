@@ -83,12 +83,14 @@ version0.0.3
 0.0.6
 
 -------------------------------------------------
-在powershell中直接打开
+在powershell中直接打开vim
 
 节省vmmen占用资源内存百兆左右，打开速度在1m可以接受
 
 powershell + scoop + oh-my-posh 最新版本
 
 仅用于打开neovim，wsl虚拟机占用资源大除第一次启动较慢体验感更好
+
+powershell实现类比于linux的alias效果不是很好用function
 
 0.0.7
