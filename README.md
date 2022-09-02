@@ -103,3 +103,14 @@ nvim在windows下用户的appdate/local/nvim配置文件入口
 用lldb调试，体验不好
 
 0.0.8
+
+----------------------------------------
+powershell 的软连接function不是很好用
+
+在插件toggleterm中加入`shell = 'pwsh.exe'`
+
+在neovim中使用powershell作为终端
+
+或`:terminal pwsh`
+
+0.0.9
