@@ -120,3 +120,8 @@ powershell 的软连接function不是很好用
 在nvim中用`echo stdpath ("data")`查看插件安装目录
 
 0.1.0
+
+---
+在gruvbox中bg3是v模式的背景bg4是当前行高亮的背景
+
+0.1.1
