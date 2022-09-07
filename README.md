@@ -114,3 +114,9 @@ powershell 的软连接function不是很好用
 或`:terminal pwsh`
 
 0.0.9
+
+-----
+
+在nvim中用`echo stdpath ("data")`查看插件安装目录
+
+0.1.0
