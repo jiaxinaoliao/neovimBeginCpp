@@ -51,14 +51,6 @@ version0.0.3
 
 可以用`lt`查看替代`ls`
 
-
-
-
-
-![image-20220805122105804](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220805122105804.png)
-
-
-
 ​                           0.0.4
 
 
@@ -156,3 +148,12 @@ nvim是windows下的文件在用户一般/Appdata/local中
 也可以在vim中调用`help config`来查看
 
 0.1.3
+
+------
+
+![效果图](E:\github\neovimBeginCpp\效果图.png)
+
+效果图
+
+0.1.4
+
