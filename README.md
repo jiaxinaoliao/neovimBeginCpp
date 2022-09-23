@@ -125,3 +125,22 @@ powershell 的软连接function不是很好用
 在gruvbox中bg3是v模式的背景bg4是当前行高亮的背景
 
 0.1.1
+
+-----------
+
+tokyonight主题透明化
+
+windows terminal 背景透明调节即可
+
+tokyonight的插件的lua目录下的config.lua文件中
+
+在styles{}加入背景模式即可一共有三种模式，
+
+也可参照官网调整
+
+-- Background styles. Can be "dark", "transparent" or "normal"
+    background ="transparent",
+    sidebars = "transparent", -- style for sidebars, see below
+    floats = "transparent", -- style for floating windows
+
+0.1.2
