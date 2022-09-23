@@ -157,3 +157,8 @@ nvim是windows下的文件在用户一般/Appdata/local中
 
 0.1.4
 
+----------
+
+添加windows terminal的配置文件
+
+0.1.5
