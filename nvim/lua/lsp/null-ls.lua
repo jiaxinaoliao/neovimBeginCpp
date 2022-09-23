@@ -16,9 +16,13 @@ null_ls.setup({
     formatting.shfmt,
     -- StyLua
     formatting.stylua,
+    --c/c++
+    formatting.clang_format,
     -- frontend
     formatting.prettier.with({ -- 比默认少了 markdown
       filetypes = {
+        "c",
+        "cpp",
         "javascript",
         "javascriptreact",
         "typescript",
@@ -31,14 +35,35 @@ null_ls.setup({
         "json",
         "yaml",
         "graphql",
+        "markdown",
       },
-      extra_filetypes = { "njk" },
       prefer_local = "node_modules/.bin",
     }),
+    -- rustfmt
+    -- rustup component add rustfmt
+    formatting.rustfmt,
+    -- Python
+    -- pip install black
+    -- asdf reshim python
+    formatting.black.with({ extra_args = { "--fast" } }),
+    -----------------------------------------------------
+    -- Ruby
+    -- gem install rubocop
+    formatting.rubocop,
+    -----------------------------------------------------
+    -- formatting.fixjson,
     -- Diagnostics  ---------------------
     diagnostics.eslint.with({
       prefer_local = "node_modules/.bin",
     }),
+    -- diagnostics.markdownlint,
+    -- markdownlint-cli2
+    -- diagnostics.markdownlint.with({
+    --   prefer_local = "node_modules/.bin",
+    --   command = "markdownlint-cli2",
+    --   args = { "$FILENAME", "#node_modules" },
+    -- }),
+    --
     -- code actions ---------------------
     code_actions.gitsigns,
     code_actions.eslint.with({
@@ -48,10 +73,11 @@ null_ls.setup({
   -- #{m}: message
   -- #{s}: source name (defaults to null-ls if not specified)
   -- #{c}: code (if available)
-  -- 提示格式： [eslint] xxx
   diagnostics_format = "[#{s}] #{m}",
-  on_attach = function(client)
-    -- 自定义 :Format 命令
-    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()']])
+  on_attach = function(_)
+    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting_sync']])
+    -- if client.resolved_capabilities.document_formatting then
+    --   vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+    -- end
   end,
 })

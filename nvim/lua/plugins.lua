@@ -83,10 +83,7 @@ packer.startup({
         use('ahmedkhalf/project.nvim')
 
         --------语法高亮 treesitter
-        use({
-            'nvim-treesitter/nvim-treesitter',
-            run = ':TSUpdate',
-        })
+        use('nvim-treesitter/nvim-treesitter')
         use('p00f/nvim-ts-rainbow')
         -- indent-blankline
         use('lukas-reineke/indent-blankline.nvim')
@@ -102,7 +99,7 @@ packer.startup({
         ----------------------补全引擎
         use('hrsh7th/nvim-cmp')
         -- Snippet 引擎
-        use('hrsh7th/vim-vsnip')
+        --use('hrsh7th/vim-vsnip')
         -- 补全源
         use('hrsh7th/cmp-vsnip')
         use('hrsh7th/cmp-nvim-lsp') -- { name = nvim_lsp }
@@ -197,7 +194,7 @@ packer.startup({
         ----------------测试代码片段
         use('vim-test/vim-test')
         use('nvim-neotest/neotest')
-        use('michaelb/sniprun')
+        --use('michaelb/sniprun')
         --------------自动保存
         --use("Pocco81/AutoSave.nvim")
         use('djoshea/vim-autoread')

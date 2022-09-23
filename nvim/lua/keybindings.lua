@@ -75,8 +75,8 @@ map('i', 'jj', '<ESC>', opt)
 ------------------------------------------------------------------
 -- 取消 s 默认功能
 map('n', 's', '', opt)
-map('n', 'stv', ':vsp<CR>', opt)
-map('n', 'sth', ':sp<CR>', opt)
+map('n', 'sv', ':vsp<CR>', opt)
+map('n', 'sh', ':sp<CR>', opt)
 -- 关闭当前
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
@@ -105,9 +105,9 @@ map('n', '<C-Up>', ':resize -2<CR>', opt)
 map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
-map('n', 'sh', ':sp | terminal<CR>', opt)
-map('n', 'sv', ':vsp | terminal<CR>', opt)
-map('n', 'ss', ':terminal<CR>', opt)
+map('n', 'sth', ':sp | terminal pwsh<CR>', opt)
+map('n', 'stv', ':vsp | terminal pwsh<CR>', opt)
+map('n', 'ss', ':terminal pwsh<CR>', opt)
 -- Esc 回 Normal 模式
 map('t', 'jj', '<C-\\><C-n>', opt)
 map('t', '<C-h>', [[ <C-\><C-N><C-w>h ]], opt)
@@ -169,7 +169,7 @@ map('n', 'xx', ':Bdelete!<CR>', opt)
 map('n', '<leader>xh', ':BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>xl', ':BufferLineCloseRight<CR>', opt)
 -- 关闭其他标签页
-map('n', 'xo', ':BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>', opt)
+map('n', '<leader>xo', ':BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>', opt)
 -- 关闭选中标签页
 map('n', '<leader>xp', ':BufferLinePickClose<CR>', opt)
 
@@ -230,7 +230,7 @@ pluginKeys.mapLSP = function(mapbuf)
   Lspsaga 替换 ca
   mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
   --]]
-  mapbuf('n', 'ca', '<cmd>Lspsaga code_action<CR>', opt)
+  mapbuf('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opt)
   -- go xx
   --[[
     mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
@@ -257,7 +257,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', opt)
   mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opt)
   --mapbuf("n", '<C-n>', '<cmd>Lspsaga vim.lsp.buf.format<CR>', opt)
-  mapbuf("n", "<C-n>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
+  --mapbuf("n", "<C-n>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
   -- 未用
   -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
   -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
@@ -307,7 +307,7 @@ end
 
 -- vimspector
 pluginKeys.mapVimspector = function()
- 
+  -- 开始
   map('n', '<leader>dd', ':call vimspector#Launch()<CR>', opt)
   -- 结束
   map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opt)

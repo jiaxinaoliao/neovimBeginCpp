@@ -138,9 +138,21 @@ tokyonight的插件的lua目录下的config.lua文件中
 
 也可参照官网调整
 
+```lua
 -- Background styles. Can be "dark", "transparent" or "normal"
     background ="transparent",
     sidebars = "transparent", -- style for sidebars, see below
     floats = "transparent", -- style for floating windows
+```
 
 0.1.2
+
+-----------------
+
+.config是linux下的配置文件
+
+nvim是windows下的文件在用户一般/Appdata/local中
+
+也可以在vim中调用`help config`来查看
+
+0.1.3
