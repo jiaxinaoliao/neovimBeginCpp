@@ -18,9 +18,7 @@ github上的经典主题
 
 gruvbox.nvim 改动none全透明
 
-效果图
 
-![image-20220804233055680](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220804233055680.png)
 
 
 替换插件内的文件-- ~/.local/share/nvim/site/pack/packer/
@@ -162,3 +160,20 @@ nvim是windows下的文件在用户一般/Appdata/local中
 添加windows terminal的配置文件
 
 0.1.5
+
+----------
+
+在windows terminal中使用oh my push
+
+`$profile`在wt中用命令查看配置文件位置文件
+
+如果没有自己创建命名为
+
+Microsoft.PowerShell_profile.ps1
+
+可以上下键进行历史命令选择，右键进行历史命令补全
+
+tab进行菜单补全、
+
+0.1.6
+
