@@ -114,6 +114,8 @@ powershell 的软连接function不是很好用
 ---
 在gruvbox中bg3是v模式的背景bg4是当前行高亮的背景
 
+dark4最浅dark0最深
+
 0.1.1
 
 -----------
