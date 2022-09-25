@@ -205,6 +205,9 @@ packer.startup({
         ------------导航栏
         use('aserowy/tmux.nvim')
 
+        ------一键运行插件-------
+        use ('Pu-gayhub/CodeRunner.nvim')
+
         ----------------------
 
         if paccker_bootstrap then

@@ -7,8 +7,8 @@
 --   command_mode = "c",
 
 -- leader key 为空
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 local opt = {
   noremap = true,
@@ -390,6 +390,10 @@ pluginKeys.cmp = function(cmp)
     -- end of super Tab
   }
 end
+
+------一键运行
+map('n', '<F5>', ':!clang++ %<CR>', opt)
+map('n', '<F4>', ':!clang++ -g %<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
 -- <leader>ta 浮动
