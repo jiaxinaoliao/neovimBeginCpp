@@ -7,5 +7,7 @@ Set-PSReadLineOption -PredictionSource History
 # alt在windows中有特殊用途，这里使用ctrl键代替
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 
-function lt {tree}
+function cl {cls}
 function vim {nvim}
+function et {exit}
+function lt {tree}
