@@ -8,13 +8,19 @@ clang++ 和clang 编译
 
 `clang++ filename.cpp -o neme`
 
-默认为a.exe
+clang（如果是c++就用clang++） + 文件名称 + -o（重命名） 名字
 
-和gcc，g++类似C语言用clang
+如果直接用clang++ + 文件名
+
+默认输出的为a.exe
+
+和gcc，g++类似
 
 相对于gdb来说lldb是下一代跟好用
 
 lldb主要用于调试c，cpp和objective-c
+
+
 
 
 
@@ -31,6 +37,8 @@ windows中用的`llvm-mingw`在github中下载解压之后将bin目录添加到�
 编译用`clang++ test.cpp`编译程序
 
 调试时需要使用-g参数`clang++ -g test.cpp`
+
+调试的时候要先-g编译才可以
 
 之后运行 `lldb .\a.exe`
 
