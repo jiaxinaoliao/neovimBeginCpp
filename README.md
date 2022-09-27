@@ -347,6 +347,36 @@ llvm-mingw里面还包含了gcc，g++和clang一样
 
 
 
+补充：
+
+[Releases · llvm/llvm-project (github.com)](https://github.com/llvm/llvm-project/releases)
+
+llvm的github上有了windows班去github上下载llvm-win32或64位的安装程序
+
+选择添加环境变量安装即可
+
+优点：llvm-win用的是vs库文件需要安转vs或者安装vs的库
+
+llvm-mingw用的是gnu的库可以用`clang -v`来查看
+
+![屏幕截图 2022-09-27 095804](E:\github\neovimBeginCpp\屏幕截图 2022-09-27 095804.png)
+
+msvc就是vs的链接库llvm-win默认用的就是vs的
+
+gnu就是mingw的库llvm-mingw默认用的就是gnu的
+
+msvc的好处是，在终端支持中文显示，但是在neovim内会utf-8乱码（个人觉得不影响-在终端使用方便）
+
+llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱码
+
+用llvm-wim的msvc不管是.c还是.cpp文件都可以用clang编译
+
+但是gnu的.cpp必须用clang++编译
+
+win和mingw二选一即可（推荐llvm-win（msvc））
+
+
+
 到这里基本所有需要的程序就都已经安装完毕了
 
 
