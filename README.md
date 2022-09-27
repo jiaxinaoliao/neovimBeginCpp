@@ -1,6 +1,6 @@
 # 纯windows下的neovim快速配置过程
 
-https://github.com/shuangshuangbb/neovimBeginCpp
+https://github.com/shuangshuangbb/neovimBeginCpp/releases
 
 虽然不是开箱即用但是也省略了大部分配置时间
 
@@ -64,13 +64,15 @@ windows下lldb用的是MinGW64的llvm-mingw
 
 win10和win11差不多都可以兼容
 
+
+
 ### 2.1 下载配置文件
 
-首先下载仓库(https://github.com/shuangshuangbb/neovimBeginCpp)打开网址
+首先下载仓库(https://github.com/shuangshuangbb/neovimBeginCpp/releases)打开网址
 
 打不开github的话可以考虑用fastgithub进行加速百度下载就行
 
-windows直接下载压缩包之后解压放在一边（方便的位置如桌面配置之后可以删除）![克隆](E:\github\neovimBeginCpp\克隆.png)
+windows直接下载压缩包之后解压放在一边（方便的位置如桌面配置之后可以删除）![克隆](E:\github\neovimBeginCpp\截图\克隆.png)
 
 
 
@@ -78,21 +80,21 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 微软商店下载最新版本**Windows Terminal**和**Powershell**
 
-打开下载的配置文件夹里面有一个Inconsolata LGC Bold Nerd Font Complete Mono Windows Compatible.ttf字体双击打开安装即可或者自行去(https://www.nerdfonts.com/)官网下载nerd fonts的自己喜欢的字体
+打开下载的配置文件夹里面有一个字体的文件夹里面有Inconsolata LGC Bold Nerd Font Complete Mono Windows Compatible.ttf字体双击打开安装即可，或者自行去(https://www.nerdfonts.com/)官网下载nerd fonts的自己喜欢的字体
 
 之后打开windows terminal以下简称wt
 
 打开wt的设置，在设置中打开配置JSON文件如图
 
-![wt配置](E:\github\neovimBeginCpp\wt配置.png)
+![wt配置](E:\github\neovimBeginCpp\截图\wt配置.png)
 
-打开配置文件夹打开**windowsterminal 配置.txt**文件将其中的内容复制**替换**原本的JSON配置文件
+打开配置文件夹打开wt+pwsh配置文件的文件夹里面有一个**windowsterminal 配置.txt**文件将其中的内容复制**替换**原本的JSON配置文件
 
 之后保存关闭即可，再次打开wt如果改变说明设置成功，标签栏默认隐藏（alt+z可以打开打开标签栏）如果不习惯也可以在设置->启动->启动模式中的启动模式改为别的即可
 
 也可以在wt的设置中打开默认值->外观
 
-![wt设置](E:\github\neovimBeginCpp\wt设置.png)
+![wt设置](E:\github\neovimBeginCpp\截图\wt设置.png)
 
 之后根据自己的喜好设置透明度或者背景等，也可以更改其他nerd fonts字体
 
@@ -315,21 +317,21 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 
 
-![变量](E:\github\neovimBeginCpp\变量.png)
+![变量](E:\github\neovimBeginCpp\截图\变量.png)
 
 搜索打开环境变量
 
-![编辑变量](E:\github\neovimBeginCpp\编辑变量.png)
+![编辑变量](E:\github\neovimBeginCpp\截图\编辑变量.png)
 
-![1](E:\github\neovimBeginCpp\1.png)
+![1](E:\github\neovimBeginCpp\截图\1.png)
 
 点击path->编辑
 
-![2](E:\github\neovimBeginCpp\2.png)
+![2](E:\github\neovimBeginCpp\截图\2.png)
 
 之后先点新建然后点浏览
 
-![3](E:\github\neovimBeginCpp\3.png)
+![3](E:\github\neovimBeginCpp\截图\3.png)
 
 在浏览文件夹中找到刚才解压的llvm-mingw文件夹点击bin目录
 
@@ -359,7 +361,7 @@ llvm的github上有了windows班去github上下载llvm-win32或64位的安装程
 
 llvm-mingw用的是gnu的库可以用`clang -v`来查看
 
-![屏幕截图 2022-09-27 095804](E:\github\neovimBeginCpp\屏幕截图 2022-09-27 095804.png)
+![屏幕截图 2022-09-27 095804](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 095804.png)
 
 msvc就是vs的链接库llvm-win默认用的就是vs的
 
@@ -383,7 +385,7 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 
 
-![image-20220927102649681](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927102649681.png)
+![屏幕截图 2022-09-27 095804](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 095804.png)
 
 ！！！改用gnu
 
@@ -391,13 +393,13 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 ！！！改用gnu
 
-改用llvm-mingw用Target：gnu的库用msvc的在使用lldb调试的时候打断点会报错
+改用llvm-mingw用Target：gnu的库，在用msvc的在使用lldb调试的时候打断点会报错
 
 用mingw的的话编译c++需要用clang++
 
 在nvim文件夹内的lua文件夹下keybindings.lua的最后
 
-![image-20220927103047402](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927103047402.png)
+![屏幕截图 2022-09-27 103040](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 103040.png)
 
 大概四百多行的位置将clang改为clang++即可如果是.c文件用clang即可
 
@@ -479,7 +481,7 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 在oh-my-push中`Get-PoshThemes`可以查看所有主题
 
-选一款自己喜欢的记住名字![oh](E:\github\neovimBeginCpp\oh.png)
+选一款自己喜欢的记住名字![oh](E:\github\neovimBeginCpp\截图\oh.png)
 
 之后用`notepad $PORFILE`打开配置文件将圈出来的地方改为自己喜欢的主题的名字即可
 
@@ -493,11 +495,11 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 在nvim->lua->plugin-config->**dashboard.lua**可以更改自己喜欢的开机界面
 
-![image-20220927112239906](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927112239906.png)
+![屏幕截图 2022-09-27 112230](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 112230.png)
 
-![屏幕截图 2022-09-27 11](E:\github\neovimBeginCpp\屏幕截图 2022-09-27 11.png)
+![屏幕截图 2022-09-27 11](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 11.png)
 
-![屏幕截图 2022-09-27 112158](E:\github\neovimBeginCpp\屏幕截图 2022-09-27 112158.png)
+![屏幕截图 2022-09-27 112158](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 112158.png)
 
 都可以更改，样式会显示最后一个把最后一个删了或更改即可
 
