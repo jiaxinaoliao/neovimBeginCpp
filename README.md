@@ -381,6 +381,36 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 <F4>一键编译调试文件
 
+![image-20220927102649681](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927102649681.png)
+
+！！！改用llvm-mingw用Target：gnu的库用msvc的在使用lldb调试的时候打断点会报错
+
+用mingw的的话编译c++需要用clang++
+
+在nvim文件夹内的lua文件夹下keybindings.lua的最后
+
+![image-20220927103047402](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927103047402.png)
+
+大概三百多行的位置将clang改为clang++即可如果是.c文件用clang即可
+
+或者java改成javac等等都可以自行安排
+
+默认是clang++用来编译cpp文件
+
+
+
+<F5>一键编译之后用快捷键tt（中）或tb（右）或tc（下）打开一个终端窗口（位置不同）
+
+用编译好的.exe的名称回车即可运行
+
+powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TAB>自动补全也可以
+
+或者用-o改名如`clang++ hello.cpp -o test.exe`即可编译生成hello.exe文件
+
+之后`hello`按<TAB>自动补全`.\hello.exe`回车运行输出结果
+
+默认<F5><F4>的名称为a.exe
+
 
 
 到这里基本所有需要的程序就都已经安装完毕了

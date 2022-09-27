@@ -38,7 +38,21 @@ windows中用的`llvm-mingw`在github中下载解压之后将bin目录添加到�
 
 调试时需要使用-g参数`clang++ -g test.cpp`
 
-调试的时候要先-g编译才可以
+仓库中的快捷键<F5>一键编译相当于`clang++ test.cpp`
+
+<F4>一键调试编译相当于`clang++ -g test.cpp`
+
+也可以自行更改
+
+！！！
+
+！！！
+
+！！！调试的时候要先-g编译才可以
+
+调试的时候一定要用-g参数`clang++ -g test.cpp`或者<F4>一键调试编译
+
+之后调试的时候才能打断点
 
 之后运行 `lldb .\a.exe`
 
