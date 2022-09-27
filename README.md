@@ -381,9 +381,17 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 <F4>一键编译调试文件
 
+
+
 ![image-20220927102649681](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927102649681.png)
 
-！！！改用llvm-mingw用Target：gnu的库用msvc的在使用lldb调试的时候打断点会报错
+！！！改用gnu
+
+！！！改用gnu
+
+！！！改用gnu
+
+改用llvm-mingw用Target：gnu的库用msvc的在使用lldb调试的时候打断点会报错
 
 用mingw的的话编译c++需要用clang++
 
@@ -391,7 +399,9 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 ![image-20220927103047402](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927103047402.png)
 
-大概三百多行的位置将clang改为clang++即可如果是.c文件用clang即可
+大概四百多行的位置将clang改为clang++即可如果是.c文件用clang即可
+
+可以用`:400`命令或者快捷键`400gg`快速跳转到四百行就可以看见了
 
 或者java改成javac等等都可以自行安排
 
