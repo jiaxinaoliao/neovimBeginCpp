@@ -7,7 +7,7 @@ end
 db.custom_footer = {
   "",
   "",
-  "https://github.com/shuangshuangbb/neovimBeginCpp",
+  "https://github.com/shuangshuangbb",
 }
 
 db.custom_center = {

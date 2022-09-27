@@ -347,6 +347,26 @@ llvm-mingw里面还包含了gcc，g++和clang一样
 
 
 
+
+
+补充：llvm在github上有windows版本
+
+[LLVM Download Page](https://releases.llvm.org/download.html)
+
+llvm-win的32位或者64位安装程序下载之后双击运行即可需要添加环境变量（自动）
+
+优点：相比于llvm-mingw的这个用的是vs的库文件可以`clang-v`查看
+
+如果Target：是msvc就是vs的库在终端里面支持中文但是需要安装vs或者下载单独组件
+
+并且c，c++都可以用clang编译
+
+miungw的llvm用的是gnu的链接库c++必须用clang++
+
+推荐用msvc的vim里面会有乱码但是终端中支持中文
+
+
+
 到这里基本所有需要的程序就都已经安装完毕了
 
 
