@@ -483,6 +483,18 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 在nvim->lua->plugin-config->**dashboard.lua**可以更改自己喜欢的开机界面
 
+![image-20220927112239906](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220927112239906.png)
+
+![屏幕截图 2022-09-27 11](E:\github\neovimBeginCpp\屏幕截图 2022-09-27 11.png)
+
+![屏幕截图 2022-09-27 112158](E:\github\neovimBeginCpp\屏幕截图 2022-09-27 112158.png)
+
+都可以更改，样式会显示最后一个把最后一个删了或更改即可
+
+
+
+
+
 至此全部配置完成可以将下载的配置文件夹删除了
 
 可以实现代码补全，跳转，提示以及编译
@@ -494,4 +506,6 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 
 由于水平有限只能手动安装程序，有实力的选手可以自己写一个安装脚本一键安装
+
+
 
