@@ -118,11 +118,16 @@ windows中用的`llvm-mingw`在github中下载解压之后将bin目录添加到�
 
     如
     (lldb) p a
-    $0 = 10
-    可以用 $0 = 20
+    输出$0 = 10
+    可以用 expr $0 = 20
     改变数值
-(lldb) po varname
-    只查看对象的值
+    如
+    $0 = 10
+    (lldb) expr $0 = 20
+    会输出 $1 = 20
+    
+    (lldb) po varname
+    只查看对象的值(只显示数值)
 
     
 列出当前栈帧变量
