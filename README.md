@@ -519,6 +519,15 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 
 
-注：[精通 VIM ，此文就够了 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/68111471)
+
+
+
+
+注：由于github连接问题可能加载不了图片所以所有的截图都放在了单独的文件夹中下载之后就能看了
+
+
+
+[精通 VIM ，此文就够了 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/68111471)
 
 可以看看快速了解一下vim以及tmux
+
