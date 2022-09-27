@@ -533,3 +533,24 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 可以看看快速了解一下vim以及tmux
 
+
+
+
+
+
+
+新增主题catppuccin/nvim还可以晚上看不错
+
+![屏幕截图(3)](E:\github\neovimBeginCpp\截图\屏幕截图(3).png)
+
+想改的话可以在主题设置中将第一行取消注释`require('colorschme')`
+
+将第二行注释掉就可以更改了改为gruvbox
+
+![屏幕截图 2022-09-27 214756](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 214756.png)
+
+或者在colorscheme.lua文件中更改自己喜欢的主题
+
+tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官方文档
+
+![屏幕截图(4)](E:\github\neovimBeginCpp\截图\屏幕截图(4).png)

@@ -142,6 +142,8 @@ packer.startup({
         --   "glepnir/zephyr-nvim",
         --    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
         -- })
+        --
+        use { "catppuccin/nvim", as = "catppuccin" }
         -------------------------------------------------------
         --不同位置的终端tt
         use('akinsho/toggleterm.nvim')

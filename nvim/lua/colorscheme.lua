@@ -3,7 +3,7 @@
 -- 半透明
 --vim.g.gruvbox_transparent = true
 --vim.g.gruvbox_transparent_sidebar = true
-local colorscheme = "gruvbox"
+local colorscheme = "tokyonight"
 -- tokyonight
 -- OceanicNext
 -- gruvbox
