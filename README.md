@@ -493,6 +493,14 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 
 
+文件中如果安装`scoop install busybox`的话可以将`Remove-Item alias:\ls`之后的删除
+
+建议安装busybox提供了很多linux的指令
+
+
+
+
+
 在nvim->lua->plugin-config->**dashboard.lua**可以更改自己喜欢的开机界面
 
 ![屏幕截图 2022-09-27 112230](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 112230.png)
