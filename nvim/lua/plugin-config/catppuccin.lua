@@ -2,6 +2,7 @@ vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup({
 	transparent_background = true,
+ -- transparency = true,
 	term_colors = false,
 	compile = {
 		enabled = false,
@@ -28,6 +29,7 @@ require("catppuccin").setup({
 	},
 	integrations = {
 		-- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+    markdown = true,
 	},
 	color_overrides = {},
 	highlight_overrides = {},

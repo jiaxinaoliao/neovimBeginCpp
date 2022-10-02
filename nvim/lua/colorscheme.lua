@@ -3,7 +3,7 @@
 -- 半透明
 --vim.g.gruvbox_transparent = true
 --vim.g.gruvbox_transparent_sidebar = true
-local colorscheme = "tokyonight"
+local colorscheme = "gruvbox"
 -- tokyonight
 -- OceanicNext
 -- gruvbox
@@ -12,6 +12,7 @@ local colorscheme = "tokyonight"
 -- onedark
 -- nightfox
 -- default
+-- dark_catppuccino
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
