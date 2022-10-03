@@ -45,9 +45,7 @@ formatter.setup({
             function()
                 return {
                     exe = 'clang-format -style=Microsoft',
-                    args = {
-                      '-',
-                    },
+                    args = {},
                     stdin = true,
                     try_node_modules = true,
                 }
@@ -58,11 +56,11 @@ formatter.setup({
 
 -- format on save
 vim.api.nvim_exec(
-  [[
+    [[
 augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost *.c,*.cpp,*.lua FormatWrite
 augroup END
 ]],
-  true
+    true
 )
