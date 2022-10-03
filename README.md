@@ -72,7 +72,17 @@ win10和win11差不多都可以兼容
 
 打不开github的话可以考虑用fastgithub进行加速百度下载就行
 
-windows直接下载压缩包之后解压放在一边（方便的位置如桌面配置之后可以删除）![克隆](E:\github\neovimBeginCpp\截图\克隆.png)
+windows直接下载压缩包之后解压放在一边（方便的位置如桌面配置之后可以删除）
+
+下载最新版的zip
+
+![压缩包](E:\github\neovimBeginCpp\截图\压缩包.png)
+
+
+
+在主页也可以下载
+
+![克隆](E:\github\neovimBeginCpp\截图\克隆.png)
 
 
 
