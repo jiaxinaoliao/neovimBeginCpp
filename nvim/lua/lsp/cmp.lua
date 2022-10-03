@@ -1,8 +1,3 @@
--- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
--- https://github.com/hrsh7th/nvim-cmp
--- https://github.com/onsails/lspkind-nvim
-
---local lspkind = require("lspkind")
 local cmp = require("cmp")
 
 cmp.setup({

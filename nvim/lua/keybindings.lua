@@ -28,8 +28,6 @@ map('n', 'g_', '$', opt)
 map('c', '<C-j>', '<C-n>', { noremap = false })
 map('c', '<C-k>', '<C-p>', { noremap = false })
 
---map("n", "<leader>w", ":w<CR>", opt)
---map("n", "<leader>wq", ":wqa!<CR>", opt)
 
 -- fix :set wrap
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

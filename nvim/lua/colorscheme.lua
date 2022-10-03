@@ -1,8 +1,3 @@
---vim.o.background = "dark"
---vim.g.tokyonight_style = "stom" -- day / night
--- 半透明
---vim.g.gruvbox_transparent = true
---vim.g.gruvbox_transparent_sidebar = true
 local colorscheme = "gruvbox"
 -- tokyonight
 -- OceanicNext

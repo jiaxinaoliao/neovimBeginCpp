@@ -16,7 +16,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
         install_path,
     })
 
-    -- https://github.com/wbthomason/packer.nvim/issues/750
     local rtp_addition = vim.fn.stdpath('data') .. '/site/pack/*/start/*'
     if not string.find(vim.o.runtimepath, rtp_addition) then
         vim.o.runtimepath = rtp_addition .. ',' .. vim.o.runtimepath
@@ -99,7 +98,6 @@ packer.startup({
         ----------------------补全引擎
         use('hrsh7th/nvim-cmp')
         -- Snippet 引擎
-        --use('hrsh7th/vim-vsnip')
         -- 补全源
         use('hrsh7th/cmp-vsnip')
         use('hrsh7th/cmp-nvim-lsp') -- { name = nvim_lsp }

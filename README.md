@@ -248,6 +248,7 @@ scoop config aria2-enabled true
    scoop install unzip
    scoop install gzip
    scoop install ripgrep
+   scoop install stylua
    ```
 
    
@@ -572,3 +573,12 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官方文档
 
 ![屏幕截图(4)](E:\github\neovimBeginCpp\截图\屏幕截图(4).png)
+
+
+
+
+
+## 6. 快捷键设置
+
+快捷键的话在~nvim\lua下面的keybindings.lua文件中
+

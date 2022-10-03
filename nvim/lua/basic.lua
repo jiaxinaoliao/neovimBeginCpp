@@ -55,7 +55,7 @@ vim.o.swapfile = false
 -- smaller updatetime
 vim.o.updatetime = 300
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
--- 遇到问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
+-- 问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
 vim.o.timeoutlen = 300
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
@@ -82,4 +82,3 @@ vim.o.showmode = false
 -- 配置剪切板
 vim.opt.clipboard = "unnamedplus"
 
---vim.o.background = "NONE"

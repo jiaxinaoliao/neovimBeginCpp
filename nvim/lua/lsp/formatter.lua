@@ -44,11 +44,12 @@ formatter.setup({
             -- prettier
             function()
                 return {
-                    exe = 'clang-format',
+                    exe = 'clang-format -style=Microsoft',
                     args = {
-
+                      '-',
                     },
                     stdin = true,
+                    try_node_modules = true,
                 }
             end,
         },
@@ -56,12 +57,12 @@ formatter.setup({
 })
 
 -- format on save
--- vim.api.nvim_exec(
---   [[
--- augroup FormatAutogroup
---   autocmd!
---   autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
--- augroup END
--- ]],
---   true
--- )
+vim.api.nvim_exec(
+  [[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.c,*.cpp,*.lua FormatWrite
+augroup END
+]],
+  true
+)
