@@ -24,6 +24,7 @@ local servers = {
   clangd = require("lsp.config.c"),
   clangd = require("lsp.config.cpp"),
   jdtls = require("lsp.config.java"),
+  cmake = require("lsp.config.cmake"),
 }
 
 for name, config in pairs(servers) do

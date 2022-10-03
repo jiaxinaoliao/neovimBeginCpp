@@ -152,11 +152,11 @@ pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = 'Y', action = 'copy_path' },
   { key = 'gy', action = 'copy_absolute_path' },
   { key = 'I', action = 'toggle_file_info' },
-  { key = 'n', action = 'tabnew' },
+  -- { key = 'n', action = 'tabnew' },
   -- 进入下一级
-  { key = { 'h' }, action = 'cd' },
+  { key = { 'n' }, action = 'cd' },
   -- 进入上一级
-  { key = { 'H' }, action = 'dir_up' },
+  { key = { 'N' }, action = 'dir_up' },
 }
 -- bufferline
 -- 左右Tab切换
