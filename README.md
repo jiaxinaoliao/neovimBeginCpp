@@ -28,6 +28,8 @@ python应该也可以（没有试过）
 
 **系统：**利用的win11的环境**windows11专业版21H2版本**
 
+（22.10.3更新到22H2版本）
+
 **终端：**最新版的**Windows Terminal**＋**powershell**
 
 * 注意 ：Microsoft powershell和powershell不一样
@@ -308,10 +310,20 @@ scoop config aria2-enabled true
 
    [Downloads - MinGW-w64](https://www.mingw-w64.org/downloads/)
 
+   
+
+   ***不用下载别的了***
+
+   在下载的配置文件夹中有llvm-mingw（用这个）找个地方复制粘贴放好就行一会直接添加环境变量
+   
+   ***不用下载别的了***
+   
+   
+   
    直接到github上下载llvm-mingw（推荐）
-
+   
    [Releases · mstorsjo/llvm-mingw (github.com)](https://github.com/mstorsjo/llvm-mingw/releases)
-
+   
    ![image-20220926132215566](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220926132215566.png)
 
 ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu的版本
@@ -319,6 +331,10 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 这里用的windows直接下载最后
 
 ![image-20220926132407028](C:\Users\29033\AppData\Roaming\Typora\typora-user-images\image-20220926132407028.png)这个就可以了
+
+
+
+**用配置文件夹里面的llvm-mingw就行了**不用下载了
 
 
 
@@ -350,7 +366,7 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 
 
-llvm-mingw里面还包含了gcc，g++和clang一样
+llvm-mingw里面还包含了gcc，g++但是使用起来和clang一样
 
 这里推荐用clang++编译
 
