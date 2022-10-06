@@ -136,7 +136,7 @@ windows中用的`llvm-mingw`在github中下载解压之后将bin目录添加到�
     
 切换栈帧（用bt查看序号#）
 (lldb) fr select #
-(lldb) fr s
+(lldb) fr s #
     
 调用栈
 （调用的会在最上面）

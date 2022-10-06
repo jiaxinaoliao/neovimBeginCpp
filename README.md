@@ -136,22 +136,22 @@ scoop是windows下的一个强大的包管理器可以方便快速的安装软�
 
 回车即可
 
-之后依次输入下面的**两条指令**'D:\Applications\Scoop'单引号内部的地址可以更改其他的不要动
+之后依次输入下面的**两条指令**'D:\ScoopApp\Scoop'单引号内部的地址可以更改其他的不要动
 
 ```powershell
-$env:SCOOP='D:\Applications\Scoop'
+$env:SCOOP='D:\ScoopApp\Scoop'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
 ```
 
 第一条指令没有问题第二条指令也一样单引号内的地址可以更改可能需要管理员身份右键wt以管理身份运行即可
 
 ```powershell
-$env:SCOOP_GLOBAL='D:\Applications\GlobalScoopApps' [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL,'Machine')
+$env:SCOOP_GLOBAL='D:\ScoopApp\GlobalScoopApps' [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL,'Machine')
 ```
 
 输入上两条指令之后再输入`iwr -useb get.scoop.sh | iex`即可开始安装scoop了
 
-安装完成之后在'D:\Applications\Scoop'的地方会有一个scoop的文件夹里面会有
+安装完成之后在'D:\ScoopApp\Scoop'的地方会有一个scoop的文件夹里面会有
 
 - apps——所有通过scoop安装的软件都在里面。
 - buckets——管理软件的仓库，用于记录哪些软件可以安装、更新等信息，默认添加`main`仓库，主要包含无需GUI的软件，可手动添加其他仓库或自建仓库，具体在[推荐软件仓库](https://zhuanlan.zhihu.com/write#推荐软件仓库)中介绍。
@@ -177,7 +177,7 @@ scoop + 命令 + 软件名称
 
 安装之后用`scoop update`进行更新
 
-之后用`scoop bucket 仓库名 `添加仓库
+之后用`scoop bucket add 仓库名 `添加仓库
 
 常用的有以下几个
 
@@ -198,11 +198,11 @@ jetbrains
 咱们需要用的默认的main和extras可以根据自己需要添加，如：
 
 ```powershell
-scoop bucket main
+scoop bucket add main
 
-scoop bucket extras
+scoop bucket add extras
 
-scoop bucket java
+scoop bucket add java
 ```
 
 main是默认的extras里面有大量的常用的软件java的就是提供java的一些工具
@@ -312,8 +312,16 @@ scoop config aria2-enabled true
 
    
 
-   ***不用下载别的了***
+   **将整个scoop文件夹放在环境变量中**
 
+   **将整个scoop文件夹放在环境变量中**
+   
+   **将整个scoop文件夹放在环境变量中**
+   
+   
+   
+   ***不用下载别的了***
+   
    在下载的配置文件夹中有llvm-mingw（用这个）找个地方复制粘贴放好就行一会直接添加环境变量
    
    ***不用下载别的了***
