@@ -132,7 +132,7 @@ pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = { '<CR>', 'o', '<2-LeftMouse>' }, action = 'edit' },
   -- v分屏打开文件
   { key = 'v', action = 'vsplit' },
-  -- h分屏打开文件
+  -- b分屏打开文件
   { key = 'b', action = 'split' },
   -- Ignore (node_modules)
   { key = 'i', action = 'toggle_ignored' },
@@ -158,7 +158,7 @@ pluginKeys.nvimTreeList = { -- 打开文件或文件夹
 }
 -- bufferline
 -- 左右Tab切换
-map('n', '<A-j>', ':BufferLineCyclePrev<CR>', opt)
+map('n', '<A-h>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<A-l>', ':BufferLineCycleNext<CR>', opt)
 -- "moll/vim-bbye" 关闭当前 buffer
 --map("n", "<leader>bc", ":Bdelete!<CR>", opt)
