@@ -69,6 +69,16 @@ function Get-All-List {
     Color-List "$args"
 }
 
+function Github-Add {
+    git add .
+}
+
+function Github-push {
+    git push
+}
+
 # >>> 重新定义别名 >>>
+Set-Alias gitp Github-push
+Set-Alias gita Github-add
 Set-Alias ls Get-List
 Set-Alias la Get-All-List
