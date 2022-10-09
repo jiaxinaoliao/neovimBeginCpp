@@ -602,6 +602,22 @@ tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官�
 
 
 
+
+
+### 5.1 starship+terminal+busybox
+
+由于oh-my-posh启动速度太慢所以改为starship也可以起到美化作用并有参数提示提升速度，当然喜欢oh-my-posh主题的话也可以不换只是启动慢一点，不介意的话没有任何问题，可以去官网参考一下配置
+
+[配置 | Starship](https://starship.rs/zh-cn/config/)
+
+可以在windows Terminal中用`notepad $PORFILE`打开配置文件
+
+`#Invoke-Expression (&starship init powershell)`将第二行的#去注释把第一行注释掉就行，starship的配置文件放在C:\Users\用户名\ .config文件夹下创建一个名为starship.toml的文件或者直接复制粘贴配置文件夹中的文件
+
+可以参考官网更更改
+
+
+
 ## 6. 快捷键设置
 
 快捷键的话在~nvim\lua下面的keybindings.lua文件中

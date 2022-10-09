@@ -1,4 +1,14 @@
-& ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
+# & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
+
+# starship用下面这6行oh-my-posh用上面的第行把下面六行删除
+ Invoke-Expression (&starship init powershell)
+# edit $PROFILE
+function Invoke-Starship-PreCommand {
+ #  $host.ui.Write("`e]0; PS> $env:USERNAME@$env:COMPUTERNAME`: $pwd `a")
+     $host.ui.Write("🚀 Hello Jia")
+}
+
+
 
 # powershell初始化加载 PSReadLine 模块
 Import-Module PSReadLine
