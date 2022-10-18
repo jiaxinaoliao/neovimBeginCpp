@@ -38,8 +38,8 @@ db.custom_center = {
     -- },
     {
         icon = '      ',
-        desc = 'Edit .bashrc                        ',
-        action = 'edit ~/.bashrc',
+        desc = 'Edit PowerShell                     ',
+        action = 'edit D:/29033/Documents/PowerShell/Microsoft.PowerShell_profile.ps1',
     },
     {
         icon = '      ',

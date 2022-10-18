@@ -8,7 +8,8 @@ function Invoke-Starship-PreCommand {
      $host.ui.Write("🚀 Hello Jia")
 }
 
-
+# 默认启动位置在F盘可以更改
+Set-Location F:\
 
 # powershell初始化加载 PSReadLine 模块
 Import-Module PSReadLine

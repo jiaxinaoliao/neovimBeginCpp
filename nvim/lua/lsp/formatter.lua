@@ -55,12 +55,12 @@ formatter.setup({
 })
 
 -- format on save
-vim.api.nvim_exec(
-    [[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.c,*.cpp,*.lua FormatWrite
-augroup END
-]],
-    true
-)
+-- vim.api.nvim_exec(
+--     [[
+-- augroup FormatAutogroup
+--   autocmd!
+--   autocmd BufWritePost *.c,*.cpp,*.lua FormatWrite
+-- augroup END
+-- ]],
+--     true
+-- )
