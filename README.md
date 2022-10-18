@@ -1,6 +1,10 @@
 # 纯windows下的neovim快速配置过程
 
+由于github的问题可能图片加载不是很好可以直接下方连接下载最新版解压即可
+
 https://github.com/shuangshuangbb/neovimBeginCpp/releases
+
+解压之后的REDME.md文件（推荐用typora打开或者notepads（alt+p开启markdown预览）也可以）即可查看
 
 虽然不是开箱即用但是也省略了大部分配置时间
 
