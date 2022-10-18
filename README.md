@@ -468,6 +468,30 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 
 
+8. 之后加的[gokcehan](https://github.com/gokcehan)/**[lf](https://github.com/gokcehan/lf)**
+
+   类似于linux下的lf终端下的资源管理器
+
+   直接到girhub上下载windows的版本`lf-windows-adm64`直接下载之后解压
+
+   或者直接用这个配置文件夹中的
+
+   文件夹中的是64位的windows的如果需要可以自行下载
+   
+   放在c盘以外的地方之后添加到环境变量中（需要重启一下）
+   
+   在终端中用lf即可打开
+
+![屏幕截图(12)](E:\github\neovimBeginCpp\截图\屏幕截图(12).png)
+
+和vim操作差不多jk上下移动选择hl左右文件夹e用记事本打开，l打开q退出
+
+windows的兼容性不是很好只是用来浏览用的
+
+
+
+
+
 ## 4. 运行neovim
 
 将配置文件夹中的nvim文件夹复制粘贴到C盘C:\用户\用户名称\AppData\Local
