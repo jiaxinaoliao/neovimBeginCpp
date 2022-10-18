@@ -4,7 +4,7 @@ $OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Obj
 # edit $PROFILE
 #function Invoke-Starship-PreCommand {
  #  $host.ui.Write("`e]0; PS> $env:USERNAME@$env:COMPUTERNAME`: $pwd `a")
-  #   $host.ui.Write("🚀 Hello Jia")
+#      $host.ui.Write("🚀 Hello Jia")
 #}
 
 # Invoke-Expression (&starship init powershell)
@@ -78,8 +78,13 @@ function Github-push {
     git push
 }
 
+function tree-f {
+    tree /f /a
+}
+
 # >>> 重新定义别名 >>>
-Set-Alias gitp Github-push
-Set-Alias gita Github-add
+Set-Alias gpp Github-push
+Set-Alias gaa Github-add
+Set-Alias lt Tree-f
 Set-Alias ls Get-List
 Set-Alias la Get-All-List
