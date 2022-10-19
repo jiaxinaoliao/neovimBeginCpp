@@ -332,6 +332,8 @@ scoop config aria2-enabled true
    
    
    
+   这步可以省略了
+   
    直接到github上下载llvm-mingw（推荐）
    
    [Releases · mstorsjo/llvm-mingw (github.com)](https://github.com/mstorsjo/llvm-mingw/releases)
