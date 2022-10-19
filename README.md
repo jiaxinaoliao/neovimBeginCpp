@@ -82,13 +82,13 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 下载最新版的zip
 
-![压缩包](E:\github\neovimBeginCpp\截图\压缩包.png)
+![压缩包](./assets/压缩包.png)
 
 
 
 在主页也可以下载
 
-![克隆](E:\github\neovimBeginCpp\截图\克隆.png)
+![克隆](./assets/克隆.png)
 
 
 
@@ -102,7 +102,7 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 打开wt的设置，在设置中打开配置JSON文件如图
 
-![wt配置](E:\github\neovimBeginCpp\截图\wt配置.png)
+![wt配置](./assets/wt配置.png)
 
 打开配置文件夹打开wt+pwsh配置文件的文件夹里面有一个**windowsterminal 配置.txt**文件将其中的内容复制**替换**原本的JSON配置文件
 
@@ -110,7 +110,7 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 也可以在wt的设置中打开默认值->外观
 
-![wt设置](E:\github\neovimBeginCpp\截图\wt设置.png)
+![wt设置](./assets/wt设置.png)
 
 之后根据自己的喜好设置透明度或者背景等，也可以更改其他nerd fonts字体
 
@@ -356,21 +356,21 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 
 
-![变量](E:\github\neovimBeginCpp\截图\变量.png)
+![变量](./assets/变量.png)
 
 搜索打开环境变量
 
-![编辑变量](E:\github\neovimBeginCpp\截图\编辑变量.png)
+![编辑变量](./assets/编辑变量.png)
 
-![1](E:\github\neovimBeginCpp\截图\1.png)
+![1](./assets/1.png)
 
 点击path->编辑
 
-![2](E:\github\neovimBeginCpp\截图\2.png)
+![2](./assets/2.png)
 
 之后先点新建然后点浏览
 
-![3](E:\github\neovimBeginCpp\截图\3.png)
+![3](./assets/3.png)
 
 在浏览文件夹中找到刚才解压的llvm-mingw文件夹点击bin目录
 
@@ -400,7 +400,7 @@ llvm的github上有了windows班去github上下载llvm-win32或64位的安装程
 
 llvm-mingw用的是gnu的库可以用`clang -v`来查看
 
-![屏幕截图 2022-09-27 095804](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 095804.png)
+![屏幕截图 2022-09-27 095804](./assets/屏幕截图 2022-09-27 095804.png)
 
 msvc就是vs的链接库llvm-win默认用的就是vs的
 
@@ -424,7 +424,7 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 
 
-![屏幕截图 2022-09-27 095804](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 095804.png)
+![屏幕截图 2022-09-27 095804](./assets/屏幕截图 2022-09-27 095804.png)
 
 ！！！改用gnu
 
@@ -438,7 +438,7 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 在nvim文件夹内的lua文件夹下keybindings.lua的最后
 
-![屏幕截图 2022-09-27 103040](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 103040.png)
+![屏幕截图 2022-09-27 103040](./assets/屏幕截图 2022-09-27 103040.png)
 
 大概四百多行的位置将clang改为clang++即可如果是.c文件用clang即可
 
@@ -482,7 +482,7 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
    
    在终端中用lf即可打开
 
-![屏幕截图(12)](E:\github\neovimBeginCpp\截图\屏幕截图(12).png)
+![屏幕截图(12)](./assets/屏幕截图(12).png)
 
 和vim操作差不多jk上下移动选择hl左右文件夹e用记事本打开，l打开q退出
 
@@ -544,7 +544,7 @@ windows的兼容性不是很好只是用来浏览用的
 
 在oh-my-push中`Get-PoshThemes`可以查看所有主题
 
-选一款自己喜欢的记住名字![oh](E:\github\neovimBeginCpp\截图\oh.png)
+选一款自己喜欢的记住名字![oh](./assets/oh.png)
 
 之后用`notepad $PORFILE`打开配置文件将圈出来的地方改为自己喜欢的主题的名字即可
 
@@ -566,11 +566,11 @@ windows的兼容性不是很好只是用来浏览用的
 
 在nvim->lua->plugin-config->**dashboard.lua**可以更改自己喜欢的开机界面
 
-![屏幕截图 2022-09-27 112230](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 112230.png)
+![屏幕截图 2022-09-27 112230](./assets/屏幕截图 2022-09-27 112230.png)
 
-![屏幕截图 2022-09-27 11](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 11.png)
+![屏幕截图 2022-09-27 11](./assets/屏幕截图 2022-09-27 11.png)
 
-![屏幕截图 2022-09-27 112158](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 112158.png)
+![屏幕截图 2022-09-27 112158](./assets/屏幕截图 2022-09-27 112158.png)
 
 都可以更改，样式会显示最后一个把最后一个删了或更改即可
 
@@ -612,19 +612,19 @@ windows的兼容性不是很好只是用来浏览用的
 
 新增主题catppuccin/nvim还可以晚上看不错
 
-![屏幕截图(3)](E:\github\neovimBeginCpp\截图\屏幕截图(3).png)
+![屏幕截图(3)](./assets/屏幕截图(3).png)
 
 想改的话可以在主题设置中将第一行取消注释`require('colorschme')`
 
 将第二行注释掉就可以更改了改为gruvbox
 
-![屏幕截图 2022-09-27 214756](E:\github\neovimBeginCpp\截图\屏幕截图 2022-09-27 214756.png)
+![屏幕截图 2022-09-27 214756](./assets/屏幕截图 2022-09-27 214756.png)
 
 或者在colorscheme.lua文件中更改自己喜欢的主题
 
 tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官方文档
 
-![屏幕截图(4)](E:\github\neovimBeginCpp\截图\屏幕截图(4).png)
+![屏幕截图(4)](./assets/屏幕截图(4).png)
 
 
 
