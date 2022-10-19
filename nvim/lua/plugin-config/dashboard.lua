@@ -7,7 +7,7 @@ end
 db.custom_footer = {
     '',
     '',
-    'https://github.com/shuangshuangbb',
+    'https://github.com/jiaxinaoliao',
 }
 
 db.custom_center = {
