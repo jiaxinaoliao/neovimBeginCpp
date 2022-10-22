@@ -16,7 +16,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
         install_path,
     })
 
-    -- https://github.com/wbthomason/packer.nvim/issues/750
     local rtp_addition = vim.fn.stdpath('data') .. '/site/pack/*/start/*'
     if not string.find(vim.o.runtimepath, rtp_addition) then
         vim.o.runtimepath = rtp_addition .. ',' .. vim.o.runtimepath
@@ -83,16 +82,14 @@ packer.startup({
         use('ahmedkhalf/project.nvim')
 
         --------语法高亮 treesitter
-        use({
-            'nvim-treesitter/nvim-treesitter',
-            run = ':TSUpdate',
-        })
+        use('nvim-treesitter/nvim-treesitter')
         use('p00f/nvim-ts-rainbow')
         -- indent-blankline
         use('lukas-reineke/indent-blankline.nvim')
         --------------------- LSP --------------------
         -- use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
-        use('williamboman/nvim-lsp-installer')
+        use({ "williamboman/mason.nvim" })
+        use({ "williamboman/mason-lspconfig.nvim" })
         -- Lspconfig
         use('neovim/nvim-lspconfig')
         use('ray-x/lsp_signature.nvim')
@@ -102,7 +99,6 @@ packer.startup({
         ----------------------补全引擎
         use('hrsh7th/nvim-cmp')
         -- Snippet 引擎
-        use('hrsh7th/vim-vsnip')
         -- 补全源
         use('hrsh7th/cmp-vsnip')
         use('hrsh7th/cmp-nvim-lsp') -- { name = nvim_lsp }
@@ -121,7 +117,7 @@ packer.startup({
         -- TypeScript 增强
         use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'nvim-lua/plenary.nvim' })
         -- Lua 增强
-        use('folke/lua-dev.nvim')
+        use('folke/neodev.nvim')
         -- JSON 增强
         use('b0o/schemastore.nvim')
         -- Rust 增强
@@ -145,6 +141,9 @@ packer.startup({
         --   "glepnir/zephyr-nvim",
         --    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
         -- })
+        --
+        use { "catppuccin/nvim", as = "catppuccin" }
+        use ("xiyaowong/nvim-transparent")
         -------------------------------------------------------
         --不同位置的终端tt
         use('akinsho/toggleterm.nvim')
@@ -197,7 +196,7 @@ packer.startup({
         ----------------测试代码片段
         use('vim-test/vim-test')
         use('nvim-neotest/neotest')
-        use('michaelb/sniprun')
+        --use('michaelb/sniprun')
         --------------自动保存
         --use("Pocco81/AutoSave.nvim")
         use('djoshea/vim-autoread')
@@ -207,6 +206,9 @@ packer.startup({
 
         ------------导航栏
         use('aserowy/tmux.nvim')
+
+        ------一键运行插件-------
+        use ('Pu-gayhub/CodeRunner.nvim')
 
         ----------------------
 

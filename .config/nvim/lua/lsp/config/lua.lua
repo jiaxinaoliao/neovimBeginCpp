@@ -1,9 +1,18 @@
+
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+local common = require("lsp.common-config")
+
 local opts = {
+  capabilities = common.capabilities,
+  flags = common.flags,
+  on_attach = function(client, bufnr)
+    common.disableFormat(client)
+    common.keyAttach(bufnr)
+  end,
   settings = {
     Lua = {
       runtime = {
@@ -27,33 +36,21 @@ local opts = {
       },
     },
   },
-  flags = {
-    debounce_text_changes = 150,
-  },
-  on_attach = function(client, bufnr)
-    -- 禁用格式化功能，交给专门插件插件处理
-    client.server_capabilities.document_formatting = false
-    client.server_capabilities.document_range_formatting = false
 
-    local function buf_set_keymap(...)
-      vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-    -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    -- 绑定快捷键
-    require("keybindings").mapLSP(buf_set_keymap)
-  end,
+  -- custom handler
+  -- handlers = {
+  --   ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  --     virtual_text = false,
+  --     signs = true,
+  --     underline = true,
+  --     update_in_insert = false,
+  --   }),
+  -- },
 }
-
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
--- opts.capabilities = capabilities
-
--- 查看目录等信息
--- print(vim.inspect(server))
 
 return {
   on_setup = function(server)
-    opts = require("lua-dev").setup({ lspconfig = opts })
+    require("neodev").setup()
     server.setup(opts)
   end,
 }

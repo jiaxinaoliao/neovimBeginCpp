@@ -7,8 +7,8 @@
 --   command_mode = "c",
 
 -- leader key 为空
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 local opt = {
   noremap = true,
@@ -28,8 +28,6 @@ map('n', 'g_', '$', opt)
 map('c', '<C-j>', '<C-n>', { noremap = false })
 map('c', '<C-k>', '<C-p>', { noremap = false })
 
---map("n", "<leader>w", ":w<CR>", opt)
---map("n", "<leader>wq", ":wqa!<CR>", opt)
 
 -- fix :set wrap
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -75,8 +73,8 @@ map('i', 'jj', '<ESC>', opt)
 ------------------------------------------------------------------
 -- 取消 s 默认功能
 map('n', 's', '', opt)
-map('n', 'stv', ':vsp<CR>', opt)
-map('n', 'sth', ':sp<CR>', opt)
+map('n', 'sv', ':vsp<CR>', opt)
+map('n', 'sh', ':sp<CR>', opt)
 -- 关闭当前
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
@@ -105,9 +103,9 @@ map('n', '<C-Up>', ':resize -2<CR>', opt)
 map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
-map('n', 'sh', ':sp | terminal<CR>', opt)
-map('n', 'sv', ':vsp | terminal<CR>', opt)
-map('n', 'ss', ':terminal<CR>', opt)
+map('n', 'sth', ':sp | terminal <CR>', opt)
+map('n', 'stv', ':vsp | terminal <CR>', opt)
+map('n', 'ss', ':terminal <CR>', opt)
 -- Esc 回 Normal 模式
 map('t', 'jj', '<C-\\><C-n>', opt)
 map('t', '<C-h>', [[ <C-\><C-N><C-w>h ]], opt)
@@ -134,7 +132,7 @@ pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = { '<CR>', 'o', '<2-LeftMouse>' }, action = 'edit' },
   -- v分屏打开文件
   { key = 'v', action = 'vsplit' },
-  -- h分屏打开文件
+  -- b分屏打开文件
   { key = 'b', action = 'split' },
   -- Ignore (node_modules)
   { key = 'i', action = 'toggle_ignored' },
@@ -152,11 +150,11 @@ pluginKeys.nvimTreeList = { -- 打开文件或文件夹
   { key = 'Y', action = 'copy_path' },
   { key = 'gy', action = 'copy_absolute_path' },
   { key = 'I', action = 'toggle_file_info' },
-  { key = 'n', action = 'tabnew' },
+  -- { key = 'n', action = 'tabnew' },
   -- 进入下一级
-  { key = { 'h' }, action = 'cd' },
+  { key = { 'n' }, action = 'cd' },
   -- 进入上一级
-  { key = { 'H' }, action = 'dir_up' },
+  { key = { 'N' }, action = 'dir_up' },
 }
 -- bufferline
 -- 左右Tab切换
@@ -257,7 +255,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', opt)
   mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opt)
   --mapbuf("n", '<C-n>', '<cmd>Lspsaga vim.lsp.buf.format<CR>', opt)
-  mapbuf("n", "<C-n>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
+  --mapbuf("n", "<C-n>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
   -- 未用
   -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
   -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
@@ -390,6 +388,10 @@ pluginKeys.cmp = function(cmp)
     -- end of super Tab
   }
 end
+
+------一键运行
+map('n', '<F5>', ':!clang++ *.cpp<CR>', opt)
+map('n', '<F4>', ':!clang++ -g *.cpp<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
 -- <leader>ta 浮动

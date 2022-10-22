@@ -1,0 +1,15 @@
+{
+  "configurations": {
+    "Launch": {
+      "adapter": "CodeLLDB",
+      "configuration": {
+        "request": "launch",
+        "cwd": "${workspace}",
+        "program": "${workspace}/a.exe",
+        "MIMode": "lldb",
+        "externalConsole": true,
+        "stopAtEntry": true
+      }
+    }
+  }
+}

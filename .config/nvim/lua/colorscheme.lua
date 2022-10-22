@@ -1,9 +1,4 @@
---vim.o.background = "dark"
---vim.g.tokyonight_style = "stom" -- day / night
--- 半透明
---vim.g.gruvbox_transparent = true
---vim.g.gruvbox_transparent_sidebar = true
-local colorscheme = "gruvbox"
+local colorscheme = "tokyonight"
 -- tokyonight
 -- OceanicNext
 -- gruvbox
@@ -12,6 +7,7 @@ local colorscheme = "gruvbox"
 -- onedark
 -- nightfox
 -- default
+-- dark_catppuccino
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

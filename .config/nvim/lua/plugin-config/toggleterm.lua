@@ -13,6 +13,12 @@ toggleterm.setup({
       return vim.o.columns * 0.3
     end
   end,
+  layout_config = {
+    width = 0.98,
+    preview_cutoff = 1
+  },
+
+  shell = "pwsh",
   start_in_insert = true,
 })
 

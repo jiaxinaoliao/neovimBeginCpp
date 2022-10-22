@@ -10,7 +10,6 @@ if not status then
   return
 end
 
-vim.g.nvim_tree_respect_buf_cwd = 1
 project.setup({
   detection_methods = { "pattern" },
   patterns = {
@@ -24,9 +23,6 @@ project.setup({
     ".bzr",
     ".svn",
     "Makefile",
-    ".lua",
-    ".c",
-    ".cpp",
   },
 })
 
