@@ -82,9 +82,33 @@ function tree-f {
     tree /f /a
 }
 
-# >>> 重新定义别名 >>>
+function Cd-j {
+    cd ..
+}
+
+function Hexo-deploy {
+    hexo clean && hexo generate && hexo deploy
+}
+
+function Hexo-server {
+    hexo s
+}
+
+function Hexo-server-deploy {
+    hexo clean && hexo generate && hexo deploy && hexo s
+}
+
+# >>> git >>>
 Set-Alias gpp Github-push
 Set-Alias gaa Github-add
+
+# >>> hexo >>>
+Set-Alias hpp Hexo-deploy
+Set-Alias hss Hexo-server
+Set-Alias hps Hexo-server-deploy
+
+# >>> 重新定义别名 >>>
+Set-Alias cj Cd-j
 Set-Alias lt Tree-f
 Set-Alias ls Get-List
 Set-Alias la Get-All-List

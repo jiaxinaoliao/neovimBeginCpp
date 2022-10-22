@@ -88,7 +88,8 @@ packer.startup({
         use('lukas-reineke/indent-blankline.nvim')
         --------------------- LSP --------------------
         -- use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
-        use('williamboman/nvim-lsp-installer')
+        use({ "williamboman/mason.nvim" })
+        use({ "williamboman/mason-lspconfig.nvim" })
         -- Lspconfig
         use('neovim/nvim-lspconfig')
         use('ray-x/lsp_signature.nvim')
@@ -116,7 +117,7 @@ packer.startup({
         -- TypeScript 增强
         use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'nvim-lua/plenary.nvim' })
         -- Lua 增强
-        use('folke/lua-dev.nvim')
+        use('folke/neodev.nvim')
         -- JSON 增强
         use('b0o/schemastore.nvim')
         -- Rust 增强
@@ -142,6 +143,7 @@ packer.startup({
         -- })
         --
         use { "catppuccin/nvim", as = "catppuccin" }
+        use ("xiyaowong/nvim-transparent")
         -------------------------------------------------------
         --不同位置的终端tt
         use('akinsho/toggleterm.nvim')
