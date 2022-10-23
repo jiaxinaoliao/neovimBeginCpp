@@ -1,6 +1,6 @@
 -- 自动安装 Packer.nvim
 -- 插件安装目录
--- ~/.local/share/nvim/site/pack/packer/
+-- ~/user/.Appdate/local/nvim-data/share/nvim/site/pack/packer/
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 local paccker_bootstrap
@@ -12,7 +12,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
         '--depth',
         '1',
         'https://github.com/wbthomason/packer.nvim',
-        -- "https://gitcode.net/mirrors/wbthomason/packer.nvim",
         install_path,
     })
 
@@ -36,22 +35,21 @@ packer.startup({
         use('wbthomason/packer.nvim')
         -- 加速lua
         use('lewis6991/impatient.nvim')
-        ------------- 插件plugins -------------------------------------------
-        ------------- 基础--------------------
-        ------- 基本api ------------
+        ------------------ 基础插件------------------
+        ------------------ 基本api ------------------
         use('nvim-lua/plenary.nvim')
-        -------- 弹窗窗口 ------------
+        ------------------ 弹窗窗口 -----------------
         use('nvim-lua/popup.nvim')
         use('rcarriga/nvim-notify')
-        ---------- 图标插件 ----------
+        ------------------ 图标插件 -----------------
         use('kyazdani42/nvim-web-devicons')
-        -------------- 文件树 -----------
+        ------------------ 文件树   -----------------
         -- nvim-tree
         use({
             'kyazdani42/nvim-tree.lua',
             requires = 'kyazdani42/nvim-web-devicons',
         })
-        ---------------------- 上下状态栏 ------------
+        ------------------上下状态栏 ----------------
         -- bufferline
         use({
             'akinsho/bufferline.nvim',
@@ -63,7 +61,7 @@ packer.startup({
             requires = { 'kyazdani42/nvim-web-devicons' },
         })
         use('arkav/lualine-lsp-progress')
-        ---------------搜索弹窗
+        ------------------ 搜索弹窗 ----------------
         -- telescope
         use('nvim-telescope/telescope.nvim')
         use('nvim-telescope/telescope-live-grep-args.nvim')
@@ -94,9 +92,9 @@ packer.startup({
         use('neovim/nvim-lspconfig')
         use('ray-x/lsp_signature.nvim')
 
-        ---------------------------cmake
+        -- cmake
         use('Shatur/neovim-cmake')
-        ----------------------补全引擎
+        -- 补全引擎
         use('hrsh7th/nvim-cmp')
         -- Snippet 引擎
         -- 补全源
@@ -143,7 +141,11 @@ packer.startup({
         -- })
         --
         use { "catppuccin/nvim", as = "catppuccin" }
-        use ("xiyaowong/nvim-transparent")
+        --------------------主题透明---------------------------
+        use ('xiyaowong/nvim-transparent')
+        -------------------------------------------------------
+        ----------------------纯净模式-------------------------
+        use ('Pocco81/true-zen.nvim')
         -------------------------------------------------------
         --不同位置的终端tt
         use('akinsho/toggleterm.nvim')

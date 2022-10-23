@@ -14,7 +14,7 @@ db.custom_center = {
     {
         icon = '      ',
         desc = 'Find file                           ',
-        action = 'Telescope live_grep',
+        action = 'Telescope find_files',
     },
     -- {
     --   icon = "  ",

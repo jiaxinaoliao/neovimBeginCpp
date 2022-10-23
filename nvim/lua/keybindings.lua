@@ -172,8 +172,8 @@ map('n', '<leader>xo', ':BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>xp', ':BufferLinePickClose<CR>', opt)
 
 -- Telescope
-map('n', '<C-f>', ':Telescope find_files<CR>', opt)
-map('n', '<C-p>', ':Telescope live_grep<CR>', opt)
+map('n', '<C-p>', ':Telescope find_files<CR>', opt)
+map('n', '<C-f>', ':Telescope live_grep<CR>', opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {
@@ -212,8 +212,13 @@ pluginKeys.comment = {
 map('n', '<C-_>', 'gcc', { noremap = false })
 map('v', '<C-_>', 'gcc', { noremap = false })
 
+-- ctrl + s 格式化
+map('n', '<C-s>', ':Format<CR>', opt)
 
-map('n', '<C-n>', ':Format<CR>', opt)
+-- ctrl + g 纯净模式
+-- leader + gg 选中纯净模式
+map('n', '<leader>m', ':TZMinimalist<CR>', opt)
+map('v', '<C-g>', ':TZNarrow<CR>', opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
