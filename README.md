@@ -540,6 +540,10 @@ windows的兼容性不是很好只是用来浏览用的
 
 将配置文件夹中的**Microsoft.PowerShell_profile.ps1**打开全部复制粘贴到里面
 
+有一个带注释的.ps1的配置文件用具体说明
+
+使用的时候用不带注释的会快
+
 然后保存关闭在powershell中运行`.$PROFILE`加载一下即可
 
 
