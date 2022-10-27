@@ -45,10 +45,11 @@ packer.startup({
         use('kyazdani42/nvim-web-devicons')
         ------------------ 文件树   -----------------
         -- nvim-tree
-        use({
-            'kyazdani42/nvim-tree.lua',
-            requires = 'kyazdani42/nvim-web-devicons',
+        use ({
+            'nvim-tree/nvim-tree.lua',
+            requires = { 'nvim-tree/nvim-web-devicons' }
         })
+
         ------------------上下状态栏 ----------------
         -- bufferline
         use({
@@ -58,7 +59,7 @@ packer.startup({
         -- lualine
         use({
             'nvim-lualine/lualine.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons' },
+            requires = { 'kyazdani42/nvim-web-devicons' }
         })
         use('arkav/lualine-lsp-progress')
         ------------------ 搜索弹窗 ----------------
