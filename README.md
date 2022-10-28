@@ -656,3 +656,30 @@ tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官�
 
 快捷键的话在~nvim\lua下面的keybindings.lua文件中
 
+
+
+## 7. 补充
+
+### 1. 不用go语言的话
+
+添加了go语言的gopls但是安装需要设置一下
+
+或者不用go语言的话在配置文件夹nvim/lua/lsp/setup.lua将
+
+![image-20221028223753827](assets/image-20221028223753827.png)
+
+最后的gopls用`-- gopls`注释掉就可以了
+
+### 用go语言的话
+
+需要修改系统环境变量
+
+新建一个环境变量如下
+
+![image-20221028224300412](assets/image-20221028224300412.png)
+
+之后确定，windows尽量重启一下
+
+之后就可以自动安装了
+
+要不然安装gopls的时候会报错
