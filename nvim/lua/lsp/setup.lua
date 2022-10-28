@@ -44,7 +44,7 @@ require("mason-lspconfig").setup({
     "rust_analyzer",
     -- "taplo",
     "yamlls",
-    -- "gopls",
+    "gopls",
   },
 })
 

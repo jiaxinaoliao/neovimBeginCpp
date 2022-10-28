@@ -218,7 +218,7 @@ map('n', '<C-s>', ':Format<CR>', opt)
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
 map('n', '<leader>m', ':TZMinimalist<CR>', opt)
-map('v', '<C-g>', ':TZNarrow<CR>', opt)
+map('v', '<leader>g', ':TZNarrow<CR>', opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
