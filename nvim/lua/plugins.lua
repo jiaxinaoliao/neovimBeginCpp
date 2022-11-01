@@ -31,6 +31,9 @@ end
 
 packer.startup({
     function(use)
+        -- use({
+        --     opt = true,
+        -- })
         -- Packer 可以升级自己
         use('wbthomason/packer.nvim')
         -- 加速lua
@@ -45,9 +48,9 @@ packer.startup({
         use('kyazdani42/nvim-web-devicons')
         ------------------ 文件树   -----------------
         -- nvim-tree
-        use ({
+        use({
             'nvim-tree/nvim-tree.lua',
-            requires = { 'nvim-tree/nvim-web-devicons' }
+            requires = { 'nvim-tree/nvim-web-devicons' },
         })
 
         ------------------上下状态栏 ----------------
@@ -59,14 +62,14 @@ packer.startup({
         -- lualine
         use({
             'nvim-lualine/lualine.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons' }
+            requires = { 'kyazdani42/nvim-web-devicons' },
         })
         use('arkav/lualine-lsp-progress')
         ------------------ 搜索弹窗 ----------------
         -- telescope
         use('nvim-telescope/telescope.nvim')
         use('nvim-telescope/telescope-live-grep-args.nvim')
-        use("nvim-telescope/telescope-live-grep-raw.nvim")
+        use('nvim-telescope/telescope-live-grep-raw.nvim')
         use('LinArcX/telescope-env.nvim')
         use('nvim-telescope/telescope-ui-select.nvim')
         use('nvim-telescope/telescope-rg.nvim')
@@ -75,6 +78,7 @@ packer.startup({
         --'nvim-telescope/telescope-fzf-native.nvim',
         --run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
         --}
+        ------------------- lf资源管理器 -------------
         -- dashboard-nvim
         use('glepnir/dashboard-nvim')
         -- project
@@ -87,8 +91,8 @@ packer.startup({
         use('lukas-reineke/indent-blankline.nvim')
         --------------------- LSP --------------------
         -- use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
-        use({ "williamboman/mason.nvim" })
-        use({ "williamboman/mason-lspconfig.nvim" })
+        use({ 'williamboman/mason.nvim' })
+        use({ 'williamboman/mason-lspconfig.nvim' })
         -- Lspconfig
         use('neovim/nvim-lspconfig')
         use('ray-x/lsp_signature.nvim')
@@ -141,12 +145,12 @@ packer.startup({
         --    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
         -- })
         --
-        use { "catppuccin/nvim", as = "catppuccin" }
+        use({ 'catppuccin/nvim', as = 'catppuccin' })
         --------------------主题透明---------------------------
-        use ('xiyaowong/nvim-transparent')
+        use('xiyaowong/nvim-transparent')
         -------------------------------------------------------
         ----------------------纯净模式-------------------------
-        use ('Pocco81/true-zen.nvim')
+        use('Pocco81/true-zen.nvim')
         -------------------------------------------------------
         --不同位置的终端tt
         use('akinsho/toggleterm.nvim')
@@ -211,7 +215,7 @@ packer.startup({
         use('aserowy/tmux.nvim')
 
         ------一键运行插件-------
-        use ('Pu-gayhub/CodeRunner.nvim')
+        use('Pu-gayhub/CodeRunner.nvim')
 
         ----------------------
 

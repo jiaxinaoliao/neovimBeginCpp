@@ -395,8 +395,8 @@ pluginKeys.cmp = function(cmp)
 end
 
 ------一键运行
-map('n', '<F5>', ':!clang++ *.cpp<CR>', opt)
-map('n', '<F4>', ':!clang++ -g *.cpp<CR>', opt)
+map('n', '<F5>', ':!g++ *.cpp<CR>', opt)
+map('n', '<F4>', ':!g++ -g *.cpp<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
 -- <leader>ta 浮动

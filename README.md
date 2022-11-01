@@ -76,7 +76,7 @@ win10和win11差不多都可以兼容
 
 首先下载仓库(https://github.com/shuangshuangbb/neovimBeginCpp/releases)打开网址
 
-打不开github的话可以考虑用fastgithub进行加速百度下载就行
+打不开github的话可以考虑用fastgithub进行加速，之后下载就行
 
 windows直接下载压缩包之后解压放在一边（方便的位置如桌面配置之后可以删除）
 
@@ -241,7 +241,7 @@ scoop config aria2-enabled true
 
 ## 3. 程序安装
 
-1. zip
+### 1. zip
 
    首先安转一些小工具
 
@@ -259,7 +259,7 @@ scoop config aria2-enabled true
 
    
 
-2. nodejs
+### 2. nodejs
 
    需要nodejs的环境
 
@@ -277,7 +277,9 @@ scoop config aria2-enabled true
 
    以后wsl的话用的到
 
-3. fd-find
+
+
+### 3. fd-find
 
    fd-find（`npm install -g fd-find`）
 
@@ -286,11 +288,15 @@ scoop config aria2-enabled true
 
    windows的话用`scoop install fd`即可
 
-4. lazygit
+
+
+### 4. lazygit
 
    git管理器`scoop install lazygit`
 
-5. 安装python
+
+
+### 5. 安装python
 
    windows的话直接去官网下载安装程序运行安装程序即可
 
@@ -302,42 +308,48 @@ scoop config aria2-enabled true
 
    
 
-6. python的环境
+### 6. python的环境
 
    需要在安装完Python之后
 
    `sudo pip3 install --upgrade pynvim`
 
-7. llvm-mingw下载
 
-   可以到官网直接下载gcc的话用gdb调试体验不是很好所以这里用lldb
+
+### 7. mingw64下载（这里用gcc（编译）+lldb（调试））
+
+#### 7.1 mingw64编译
+
+   可以到官网直接下载
 
    [Downloads - MinGW-w64](https://www.mingw-w64.org/downloads/)
 
-   
+也可以不用下载
 
-   **将整个scoop文件夹放在环境变量中**
+这个配置文件夹里面也有直接复制出来之后添加环境变量即可
 
-   **将整个scoop文件夹放在环境变量中**
-   
-   **将整个scoop文件夹放在环境变量中**
-   
-   
-   
-   ***不用下载别的了***
-   
-   在下载的配置文件夹中有llvm-mingw（用这个）找个地方复制粘贴放好就行一会直接添加环境变量
-   
-   ***不用下载别的了***
-   
-   
-   
-   这步可以省略了
-   
-   直接到github上下载llvm-mingw（推荐）
-   
+怎么添加环境变量后文有说，可以先复制出来一会一起添加，添加完要重启才能生效
+
+
+
+#### 7.2 lldb调试
+
+gcc的话用gdb调试体验不是很好所以这里用lldb进行调试
+
+
+
+配置文件夹内有一份llvm-mingw快速使用.md有一些基本的lldb的使用方法可以参考一下，也可以直接去官网查看文档
+
+
+
+lldb是llvm的windows的话可以借用库一个是gnu的一个是msvc的就是微软的
+
+这个是gnu的
+
+配置文件夹中也有可以直接复制出来使用就行
+
    [Releases · mstorsjo/llvm-mingw (github.com)](https://github.com/mstorsjo/llvm-mingw/releases)
-   
+
    ![屏幕截图 2022-09-27 095804](./assets/nvim-peizhi-5.png)
 
 ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu的版本
@@ -348,11 +360,9 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 
 
-**用配置文件夹里面的llvm-mingw就行了**不用下载了
-
-
-
 下载之后解压放在D盘或者其他盘里面记住路径
+
+可以用文件夹里面的跳过这步
 
 之后添加系统环境变量，直接win+i打开设置然后搜索环境变量
 
@@ -360,7 +370,7 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 ![变量](./assets/nvim-peizhi-7.png)
 
-搜索打开环境变量
+搜索打开系统环境变量
 
 ![编辑变量](./assets/nvim-peizhi-8.png)
 
@@ -370,27 +380,19 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 ![2](./assets/nvim-peizhi-10.png)
 
-之后先点新建然后点浏览
+之后先点**新建**然后点**浏览**
 
 ![3](./assets/nvim-peizhi-11.png)
 
-在浏览文件夹中找到刚才解压的llvm-mingw文件夹点击bin目录
+在浏览文件夹中找到llvm-mingw文件夹点击bin目录
 
 之后一路确定即可
 
-
-
-llvm-mingw里面还包含了gcc，g++但是使用起来和clang一样
-
-这里推荐用clang++编译
-
-配置文件夹内有以一个**llvm-mingw快速使用.md**可以简单学习一下基础用法
-
-也可以上官网看文档
+顺便把mingw的也添加进来但是要在llvm-mingw的上面（顺序一定不能弄错）
 
 
 
-补充：
+补充：这个是msvc的(可以跳过)
 
 [Releases · llvm/llvm-project (github.com)](https://github.com/llvm/llvm-project/releases)
 
@@ -416,23 +418,13 @@ llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱�
 
 但是gnu的.cpp必须用clang++编译
 
-win和mingw二选一即可（推荐llvm-win（msvc））
-
-这里的配置用的也是llvm-win的
-
-可以用<F5>一键编译.c/.cpp文件
-
-<F4>一键编译调试文件
+**gnu和msvc二选一即可**
 
 
 
 ![屏幕截图 2022-09-27 095804](./assets/nvim-peizhi-13.png)
 
-！！！改用gnu
-
-！！！改用gnu
-
-！！！改用gnu
+**window的话建议用gnu**
 
 改用llvm-mingw用Target：gnu的库，在用msvc的在使用lldb调试的时候打断点会报错
 
@@ -444,11 +436,11 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 大概四百多行的位置将clang改为clang++即可如果是.c文件用clang即可
 
+或者使用gcc改成gcc即可
+
 可以用`:400`命令或者快捷键`400gg`快速跳转到四百行就可以看见了
 
 或者java改成javac等等都可以自行安排
-
-默认是clang++用来编译cpp文件
 
 
 
@@ -458,7 +450,7 @@ win和mingw二选一即可（推荐llvm-win（msvc））
 
 powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TAB>自动补全也可以
 
-或者用-o改名如`clang++ hello.cpp -o test.exe`即可编译生成hello.exe文件
+或者用-o改名如`g++ hello.cpp -o test.exe`即可编译生成hello.exe文件
 
 之后`hello`按<TAB>自动补全`.\hello.exe`回车运行输出结果
 
@@ -466,11 +458,41 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 
 
+#### 7.3 结合
+
+这里使用的是clang的编译器，gcc也可以，gcc的话兼容性更好一些编译之后体积更小
+
+但是clang的提示会更好mac的话默认用的clang的
+
+但是要注意环境变量的顺序mingw的要在llvm-mingw的上面
+
+
+
 到这里基本所有需要的程序就都已经安装完毕了
 
 
 
-8. 之后加的[gokcehan](https://github.com/gokcehan)/**[lf](https://github.com/gokcehan/lf)**
+#### 7.4 UTF-8（windows改为utf-8）
+
+在设置中找到区域设置
+
+![image-20221101172547458](assets/nvim-peizhi-7-1.png)
+
+![image-20221101172656211](assets/nvim-peizhi-7-2.png)
+
+找到语言管理设置
+
+![image-20221101172739147](assets/nvim-peizhi-7-3.png)
+
+选择更改系统区域设置
+
+![image-20221101172817560](assets/nvim-peizhi-7-4.png)
+
+选用utf-8之后确定即可，需要重启电脑
+
+
+
+### 8. 之后加的[gokcehan](https://github.com/gokcehan)/**[lf](https://github.com/gokcehan/lf)**
 
    类似于linux下的lf终端下的资源管理器
 
@@ -479,9 +501,9 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
    或者直接用这个配置文件夹中的
 
    文件夹中的是64位的windows的如果需要可以自行下载
-   
+
    放在c盘以外的地方之后添加到环境变量中（需要重启一下）
-   
+
    在终端中用lf即可打开
 
 ![屏幕截图(12)](./assets/nvim-peizhi-15.png)
