@@ -436,7 +436,7 @@ llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱�
 
 大概四百多行的位置将clang改为clang++即可如果是.c文件用clang即可
 
-或者使用gcc改成gcc即可
+或者使用gcc改成gcc即可，cpp文件就改成g++
 
 可以用`:400`命令或者快捷键`400gg`快速跳转到四百行就可以看见了
 
@@ -460,9 +460,11 @@ powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TA
 
 #### 7.3 结合
 
-这里使用的是clang的编译器，gcc也可以，gcc的话兼容性更好一些编译之后体积更小
+这里使用的是gcc的编译器，clang也可以，看个人选择
 
-但是clang的提示会更好mac的话默认用的clang的
+clang的提示会更好mac的话默认用的clang的
+
+windows的话gcc的兼容性会更好
 
 但是要注意环境变量的顺序mingw的要在llvm-mingw的上面
 
