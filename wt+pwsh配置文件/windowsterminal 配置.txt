@@ -1,9 +1,16 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "initialPosition": "138,100",
     "actions": 
     [
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
         {
             "command": 
             {
@@ -13,8 +20,8 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "closePane",
+            "keys": "ctrl+shift+w"
         },
         {
             "command": "unbound",
@@ -23,14 +30,6 @@
         {
             "command": "unbound",
             "keys": ""
-        },
-        {
-            "command": "closePane",
-            "keys": "ctrl+shift+w"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -54,6 +53,7 @@
     "disableAnimations": false,
     "firstWindowPreference": "defaultProfile",
     "initialCols": 88,
+    "initialPosition": "138,100",
     "initialRows": 26,
     "launchMode": "focus",
     "profiles": 
@@ -64,7 +64,7 @@
             "cursorShape": "filledBox",
             "font": 
             {
-                "face": "InconsolataLGC NF",
+                "face": "CodeNewRoman NF",
                 "size": 21,
                 "weight": "normal"
             },
@@ -85,46 +85,44 @@
                 "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
             },
             {
-                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-                "hidden": false,
-                "name": "Ubuntu-22.04",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{8d51eed9-27e2-5afb-83f6-c5dedf4bd812}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{788462cd-123a-5b41-9d5e-004751c1965e}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
-                "hidden": true,
-                "name": "Visual Studio Debug Console",
-                "source": "VSDebugConsole"
-            },
-            {
+                "commandline": "\"C:\\Users\\29033\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe\" -nologo",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "guid": "{f9ceaf27-504c-58d7-927c-d1d6a7ac7d3c}",
+                "guid": "{480356c9-d6e2-57b4-9403-094f87819eec}",
                 "hidden": false,
-                "name": "Ubuntu 22.04.1 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{914e8fd4-3f56-56cd-bbc6-fa893334cb3e}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Campbell",
+                "commandline": "D:\\ScoopApp\\Scoop\\apps\\git\\current\\git-bash.exe",
+                "guid": "{c97b9ec4-b44f-4fee-8fdb-fbc45b2fc230}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/pwsh.png",
+                "name": "git bush",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "hidden": true,
+                "name": "Visual Studio Debug Console",
+                "source": "VSDebugConsole"
             }
         ]
     },

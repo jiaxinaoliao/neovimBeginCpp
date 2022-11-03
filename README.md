@@ -246,6 +246,9 @@ scoop config aria2-enabled true
    首先安转一些小工具
 
    ```powershell
+   先把neovim安装上
+   scoop install neovim
+   
    scoop install git
    scoop install 7zip
    scoop install aria2
