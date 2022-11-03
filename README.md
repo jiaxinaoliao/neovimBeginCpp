@@ -98,6 +98,8 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 打开下载的配置文件夹里面有一个字体的文件夹里面有Inconsolata LGC Bold Nerd Font Complete Mono Windows Compatible.ttf字体双击打开安装即可，或者自行去(https://www.nerdfonts.com/)官网下载nerd fonts的自己喜欢的字体
 
+22.10.3换字体了Code New Roman Bold Nerd Font Complete Windows Compatible.otf也在文件夹里面打开安装就行
+
 之后打开windows terminal以下简称wt
 
 打开wt的设置，在设置中打开配置JSON文件如图
