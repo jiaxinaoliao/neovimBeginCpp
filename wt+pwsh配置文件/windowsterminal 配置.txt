@@ -53,8 +53,8 @@
     "disableAnimations": false,
     "firstWindowPreference": "defaultProfile",
     "initialCols": 88,
-    "initialPosition": "138,100",
-    "initialRows": 26,
+    "initialPosition": "222,100",
+    "initialRows": 28,
     "launchMode": "focus",
     "profiles": 
     {
