@@ -105,7 +105,7 @@ map('n', 's=', '<C-w>=', opt)
 -- Terminal相关
 map('n', 'sth', ':sp | terminal pwsh<CR>', opt)
 map('n', 'stv', ':vsp | terminal pwsh<CR>', opt)
-map('n', 'ss', ':terminal pwsh<CR>', opt)
+map('n', 'ss', ':terminal pwsh -nologo<CR>', opt)
 -- Esc 回 Normal 模式
 map('t', 'jj', '<C-\\><C-n>', opt)
 map('t', '<C-h>', [[ <C-\><C-N><C-w>h ]], opt)
@@ -281,8 +281,6 @@ end
 
 -- nvim-dap
 pluginKeys.mapDAP = function()
-  -- 开始
-  map('n', '<leader>dd', ':RustDebuggables<CR>', opt)
   -- 结束
   map(
     'n',
@@ -295,8 +293,8 @@ pluginKeys.mapDAP = function()
     .. '<C-w>o<CR>',
     opt
   )
-  -- 继续
-  map('n', '<leader>dc', ":lua require'dap'.continue()<CR>", opt)
+  -- 开始/继续
+  map('n', '<leader>dd', ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
   map('n', '<leader>dt', ":lua require('dap').toggle_breakpoint()<CR>", opt)
   map('n', '<leader>dT', ":lua require('dap').clear_breakpoints()<CR>", opt)

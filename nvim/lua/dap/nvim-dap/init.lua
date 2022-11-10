@@ -76,6 +76,8 @@ dapui.setup({
 	},
 }) -- use default
 
+
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end
@@ -85,6 +87,8 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
 	dapui.close()
 end
+
+require("dap.nvim-dap.cpp")
 
 require("dap.nvim-dap.lua").setup()
 require("keybindings").mapDAP()
