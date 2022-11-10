@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["DAPInstall.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\DAPInstall.nvim",
-    url = "https://github.com/ravenxrz/DAPInstall.nvim"
-  },
   ["accelerated-jk"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\accelerated-jk",

@@ -171,7 +171,6 @@ packer.startup({
         -- vimspector
         use('puremourning/vimspector')
         ---------------------------dap调试--------------
-        use('ravenxrz/DAPInstall.nvim')
         use('mfussenegger/nvim-dap')
         use('theHamsta/nvim-dap-virtual-text')
         use({

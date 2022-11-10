@@ -712,3 +712,31 @@ tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官�
 之后就可以自动安装了
 
 要不然安装gopls的时候会报错
+
+
+
+## 8. gdb调试
+
+说明在这儿
+
+[C C Rust (gdb via vscode cpptools) · mfussenegger/nvim-dap Wiki (github.com)](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools))
+
+vscode-cpptools的下载在这
+
+[Releases · microsoft/vscode-cpptools (github.com)](https://github.com/microsoft/vscode-cpptools/releases)
+
+下载vscode-cpptools之后
+
+![image-20221110155807366](assets/image-20221110155807366.png)
+
+
+
+将command改为自己刚刚下载的路径即可
+
+```cpp
+,dt 打断点
+,dd 开始调试
+,de 停止调试
+```
+
+windows下默认用的gdb不是很好用（没有配置好）还不如直接用上面的lldb

@@ -48,18 +48,18 @@ dapui.setup({
 			-- Provide as ID strings or tables with "id" and "size" keys
 			{
 				id = "scopes",
-				size = 0.25, -- Can be float or integer > 1
+				size = 0.35, -- Can be float or integer > 1
 			},
-			{ id = "breakpoints", size = 0.25 },
-			{ id = "stacks", size = 0.25 },
-			{ id = "watches", size = 00.25 },
+			{ id = "breakpoints", size = 0.35 },
+			{ id = "stacks", size = 0.15 },
+			{ id = "watches", size = 00.15 },
 		},
 		size = 40,
 		position = "left", -- Can be "left", "right", "top", "bottom"
 	},
 	{
 		elements = { "repl" },
-		size = 10,
+		size = 5,
 		position = "bottom", -- Can be "left", "right", "top", "bottom"
 	},
 	floating = {
