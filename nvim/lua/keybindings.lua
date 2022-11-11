@@ -126,6 +126,10 @@ map('n', 'Z', ':foldopen<CR>', opt)
 --tagvar
 map('n', '<F8>', ':Tagbar<CR>', opt)
 
+--markdown
+map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
+map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
+
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 --map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
@@ -219,8 +223,8 @@ map('n', '<C-s>', ':Format<CR>', opt)
 
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
-map('n', '<leader>m', ':TZMinimalist<CR>', opt)
-map('v', '<leader>g', ':TZNarrow<CR>', opt)
+map('n', '<leader>g', ':TZMinimalist<CR>', opt)
+map('v', '<leader>h', ':TZNarrow<CR>', opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
