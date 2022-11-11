@@ -53,6 +53,9 @@ packer.startup({
             requires = { 'nvim-tree/nvim-web-devicons' },
         })
 
+        ------------------ 文件树   -----------------
+        use('majutsushi/tagbar')
+
         ------------------上下状态栏 ----------------
         -- bufferline
         use({
@@ -78,6 +81,8 @@ packer.startup({
         --'nvim-telescope/telescope-fzf-native.nvim',
         --run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
         --}
+        --  ------------------- markdown预览 -------------
+        use('iamcco/markdown-preview.nvim')
         ------------------- lf资源管理器 -------------
         -- dashboard-nvim
         use('glepnir/dashboard-nvim')
