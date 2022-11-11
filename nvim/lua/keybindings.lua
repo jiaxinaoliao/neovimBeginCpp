@@ -57,11 +57,10 @@ map('v', 'K', ":move '<-2<CR>gv-gv", opt)
 map('v', 'p', '"_dP', opt)
 
 -- 退出
-map('n', 'q', ':q<CR>', opt)
+--map('n', 'q', ':q<CR>', opt)
 map('n', 'w', ':w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
-map('n', 'qq', ':qa!<CR>', opt)
---map("n", "<leader>q", ":qa!<CR>", opt)
+map("n", "<leader>q", ":qa!<CR>", opt)
 
 map('i', 'jj', '<ESC>', opt)
 -- insert 模式下，跳到行首行尾
@@ -123,6 +122,9 @@ local pluginKeys = {}
 -- treesitter 折叠
 map('n', 'zz', ':foldclose<CR>', opt)
 map('n', 'Z', ':foldopen<CR>', opt)
+
+--tagvar
+map('n', '<F8>', ':tagbar<CR>', opt)
 
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
