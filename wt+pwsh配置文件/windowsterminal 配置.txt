@@ -61,10 +61,11 @@
         "defaults": 
         {
             "backgroundImage": null,
+            "colorScheme": "Campbell",
             "cursorShape": "filledBox",
             "font": 
             {
-                "face": "CodeNewRoman NF",
+                "face": "CodeNewRoman NFM",
                 "size": 21,
                 "weight": "normal"
             },
