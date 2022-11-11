@@ -1,9 +1,8 @@
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
-$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
-Remove-Item alias:\ls
+Remove-Item Alias:\ls
 function Color-List($str) {
     $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase-bor [System.Text.RegularExpressions.RegexOptions]::Compiled)
     $fore = $Host.UI.RawUI.ForegroundColor
@@ -28,11 +27,12 @@ function Color-List($str) {
 function ls {Color-List "-Exclude .*"}
 function la {Color-List "$args"}
 function cj {cd ..}
-function cl {clear}
 function et {exit}
 function lt {tree /f /a}
 function vim {nvim}
 function hpp {hexo clean && hexo generate && hexo deploy}
-function hss {hexo s}
+function hps {hexo clean && hexo generate && hexo deploy && hexo server}
+function hss {hexo server}
 function gaa {git add .}
 function gpp {git push}
+function top {btop}

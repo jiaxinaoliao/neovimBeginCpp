@@ -76,3 +76,5 @@ function hpp {hexo clean && hexo generate && hexo deploy}
 function hss {hexo s}
 function gaa {git add .}
 function gpp {git push}
+# btop连接top先用scoop安装
+function top {btop}
