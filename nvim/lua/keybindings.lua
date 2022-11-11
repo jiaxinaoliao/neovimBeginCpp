@@ -124,7 +124,7 @@ map('n', 'zz', ':foldclose<CR>', opt)
 map('n', 'Z', ':foldopen<CR>', opt)
 
 --tagvar
-map('n', '<F8>', ':tagbar<CR>', opt)
+map('n', '<F8>', ':Tagbar<CR>', opt)
 
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
