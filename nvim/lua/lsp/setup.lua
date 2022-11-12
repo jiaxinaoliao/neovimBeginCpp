@@ -53,7 +53,7 @@ require("mason-lspconfig").setup({
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   bashls = require("lsp.config.bash"),
-  pyright = require("lsp.config.pyright"),
+  pylsp = require("lsp.config.pylsp"),
   html = require("lsp.config.html"),
   cssls = require("lsp.config.css"),
   emmet_ls = require("lsp.config.emmet"),

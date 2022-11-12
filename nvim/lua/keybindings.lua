@@ -233,6 +233,7 @@ pluginKeys.mapLSP = function(mapbuf)
   Lspsaga 替换 rn
   mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
   --]]
+  mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opt)
   mapbuf('n', 'cm', '<cmd>Lspsaga rename<CR>', opt)
   -- code action
   --[[

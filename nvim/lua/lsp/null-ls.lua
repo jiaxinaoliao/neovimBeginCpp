@@ -23,6 +23,7 @@ null_ls.setup({
       filetypes = {
         "c",
         "cpp",
+        "python",
         "javascript",
         "javascriptreact",
         "typescript",
