@@ -41,6 +41,7 @@ require("mason-lspconfig").setup({
     "html",
     "jsonls",
     "pyright",
+    "pylsp",
     "rust_analyzer",
     -- "taplo",
     "yamlls",
@@ -54,6 +55,7 @@ local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   bashls = require("lsp.config.bash"),
   pylsp = require("lsp.config.pylsp"),
+  -- pyright = require("lsp.config.pyright"),
   html = require("lsp.config.html"),
   cssls = require("lsp.config.css"),
   emmet_ls = require("lsp.config.emmet"),
