@@ -89,10 +89,10 @@ map('n', '<leader>j', '<C-w>j', opt)
 map('n', '<leader>k', '<C-w>k', opt)
 map('n', '<leader>l', '<C-w>l', opt)
 -- 左右比例控制
-map('n', '<C-Left>', ':vertical resize -2<CR>', opt)
-map('n', '<C-Right>', ':vertical resize +2<CR>', opt)
-map('n', 's,', ':vertical resize -10<CR>', opt)
-map('n', 's.', ':vertical resize +10<CR>', opt)
+map('n', '<C-Right>', ':vertical resize -1<CR>', opt)
+map('n', '<C-Left>', ':vertical resize +1<CR>', opt)
+map('n', 's,', ':vertical resize -5<CR>', opt)
+map('n', 's.', ':vertical resize +5<CR>', opt)
 -- 上下比例
 map('n', 'sj', ':resize +10<CR>', opt)
 map('n', 'sk', ':resize -10<CR>', opt)
@@ -102,8 +102,8 @@ map('n', '<C-Up>', ':resize -2<CR>', opt)
 map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
-map('n', 'sth', ':sp | terminal pwsh<CR>', opt)
-map('n', 'stv', ':vsp | terminal pwsh<CR>', opt)
+map('n', 'sth', ':sp | terminal pwsh -nologo<CR>', opt)
+map('n', 'stv', ':vsp | terminal pwsh -nologo<CR>', opt)
 map('n', 'ss', ':terminal pwsh -nologo<CR>', opt)
 -- Esc 回 Normal 模式
 map('t', 'jj', '<C-\\><C-n>', opt)
@@ -363,39 +363,27 @@ pluginKeys.cmp = function(cmp)
     -- 如果窗口内容太多，可以滚动
     ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    -- snippets 跳转
-    ['<C-l>'] = cmp.mapping(function(_)
-      if vim.fn['vsnip#available'](1) == 1 then
-        feedkey('<Plug>(vsnip-expand-or-jump)', '')
-      end
-    end, { 'i', 's' }),
-    ['<C-h>'] = cmp.mapping(function()
-      if vim.fn['vsnip#jumpable'](-1) == 1 then
-        feedkey('<Plug>(vsnip-jump-prev)', '')
-      end
-    end, { 'i', 's' }),
-
-    -- super Tab
-    ['<Tab>'] = cmp.mapping(function(fallback)
+        -- Super Tab
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn['vsnip#available'](1) == 1 then
-        feedkey('<Plug>(vsnip-expand-or-jump)', '')
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
       elseif has_words_before() then
         cmp.complete()
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, { 'i', 's' }),
+    end, {"i", "s"}),
 
-    ['<S-Tab>'] = cmp.mapping(function()
+    ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-        feedkey('<Plug>(vsnip-jump-prev)', '')
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
       end
-    end, { 'i', 's' }),
-    -- end of super Tab
+    end, {"i", "s"})
+    -- end of super Tab  
   }
 end
 

@@ -111,6 +111,7 @@ packer.startup({
         use('hrsh7th/nvim-cmp')
         -- Snippet 引擎
         -- 补全源
+        use('hrsh7th/vim-vsnip')
         use('hrsh7th/cmp-vsnip')
         use('hrsh7th/cmp-nvim-lsp') -- { name = nvim_lsp }
         use('hrsh7th/cmp-buffer') -- { name = 'buffer' },
