@@ -35,7 +35,7 @@ function Color-List($str) {
     $compressed = New-Object System.Text.RegularExpressions.Regex('\.(zip|tar|gz|rar|jar|war|7z)$', $regex_opts)
     $executable = New-Object System.Text.RegularExpressions.Regex('\.(exe|bat|cmd|py|ps1|psm1|vbs|rb|reg|sh|zsh)$', $regex_opts)
     $code_files = New-Object System.Text.RegularExpressions.Regex('\.(ini|csv|log|xml|yml|json|java|c|cpp|css|sass|js|ts|jsx|tsx|vue)$', $regex_opts)
-
+    $head_files = New-Object System.Text.RegularExpressions.Regex('\.(h)$', $regex_opts)
     $itemList = @()
     Invoke-Expression ("Get-ChildItem" + " " + $str) | ForEach-Object {
         $item = New-Object object
@@ -54,6 +54,10 @@ function Color-List($str) {
         elseif ($code_files.IsMatch($_.Name))
         {
             $item | Add-Member NoteProperty name ("`e[33m" + $_.name) # 代码文件黄色
+        }
+        elseif ($head_files.IsMatch($_.Name))
+        {
+            $item | Add-Member NoteProperty name ("`e[32m" + $_.name) # 头文件绿色
         }
         else
         {
