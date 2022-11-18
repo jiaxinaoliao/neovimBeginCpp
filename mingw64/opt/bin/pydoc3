@@ -1,5 +1,0 @@
-#!C:\buildroot\x86_64-1220-win32-sjlj-rt_v10-rev0\mingw64\opt/bin/python3.9.exe
-
-import pydoc
-if __name__ == '__main__':
-    pydoc.cli()
