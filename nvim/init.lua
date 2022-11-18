@@ -32,6 +32,7 @@ require('plugin-config.nvim-cmake')
 require('plugin-config.hop')
 require('plugin-config.which-key')
 require('plugin-config.transparent')
+require('plugin-config.leap')
 -- 内置LSP
 require('lsp.setup')
 require('lsp.cmp')

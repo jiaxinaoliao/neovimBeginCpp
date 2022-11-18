@@ -6,7 +6,7 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
--- leader key 为空
+-- leader key 为,
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
@@ -63,6 +63,9 @@ map('n', 'wq', ':wq<CR>', opt)
 map("n", "<leader>q", ":qa!<CR>", opt)
 
 map('i', 'jj', '<ESC>', opt)
+-- 翻译
+map('v', 'fj', ':TranslateW<CR>', opt)
+
 -- insert 模式下，跳到行首行尾
 -- map("i", "<C-h>", "<ESC>I", opt)
 -- map("i", "<C-l>", "<ESC>A", opt)

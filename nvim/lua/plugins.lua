@@ -83,7 +83,8 @@ packer.startup({
         --}
         --  ------------------- markdown预览 -------------
         use('iamcco/markdown-preview.nvim')
-        ------------------- lf资源管理器 -------------
+        ------------------- 跳转插件-------------
+        use('ggandor/leap.nvim')
         -- dashboard-nvim
         use('glepnir/dashboard-nvim')
         -- project

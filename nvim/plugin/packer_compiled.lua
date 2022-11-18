@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp_signature.nvim",
@@ -443,6 +448,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-translator",
     url = "https://github.com/voldikss/vim-translator"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   vimspector = {
     loaded = true,
