@@ -43,10 +43,10 @@ telescope.setup({
     
     find_files = {
       --theme = "dropdown", -- 可选参数： dropdown, cursor, ivy
-      theme = "ivy",
       preview = true,
     },
     live_grep = {
+      theme = "ivy",
       preview = true,
     }
   },

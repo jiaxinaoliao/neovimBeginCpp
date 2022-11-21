@@ -133,6 +133,8 @@ map('n', '<F8>', ':Tagbar<CR>', opt)
 map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
 map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
 
+map('n', '<leader>w', ':HopWord<CR>', opt)
+
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 --map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)

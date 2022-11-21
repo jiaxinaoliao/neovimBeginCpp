@@ -31,9 +31,6 @@ end
 
 packer.startup({
     function(use)
-        -- use({
-        --     opt = true,
-        -- })
         -- Packer 可以升级自己
         use('wbthomason/packer.nvim')
         -- 加速lua
@@ -52,10 +49,7 @@ packer.startup({
             'nvim-tree/nvim-tree.lua',
             requires = { 'nvim-tree/nvim-web-devicons' },
         })
-
-        ------------------ 文件树   -----------------
         use('majutsushi/tagbar')
-
         ------------------上下状态栏 ----------------
         -- bufferline
         use({
@@ -77,40 +71,32 @@ packer.startup({
         use('nvim-telescope/telescope-ui-select.nvim')
         use('nvim-telescope/telescope-rg.nvim')
         use('nvim-telescope/telescope-dap.nvim')
-        --use {
-        --'nvim-telescope/telescope-fzf-native.nvim',
-        --run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-        --}
-        --  ------------------- markdown预览 -------------
+        ---------------- markdown预览 -------------
         use('iamcco/markdown-preview.nvim')
         ------------------- 跳转插件-------------
+        use('ggandor/flit.nvim')
+        use('ggandor/leap-ast.nvim')
+        use('ggandor/leap-spooky.nvim')
         use('ggandor/leap.nvim')
         -- dashboard-nvim
         use('glepnir/dashboard-nvim')
         -- project
         use('ahmedkhalf/project.nvim')
-
         --------语法高亮 treesitter
         use('nvim-treesitter/nvim-treesitter')
         use('p00f/nvim-ts-rainbow')
         -- indent-blankline
         use('lukas-reineke/indent-blankline.nvim')
-
-        --------------- cs" '
-        use('tpope/vim-surround')
         --------------------- LSP --------------------
-        -- use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
         use('williamboman/mason.nvim')
         use('williamboman/mason-lspconfig.nvim')
         -- Lspconfig
         use('neovim/nvim-lspconfig')
         use('ray-x/lsp_signature.nvim')
-
         -- cmake
         use('Shatur/neovim-cmake')
         -- 补全引擎
         use('hrsh7th/nvim-cmp')
-        -- Snippet 引擎
         -- 补全源
         use('hrsh7th/vim-vsnip')
         use('hrsh7th/cmp-vsnip')
@@ -143,32 +129,26 @@ packer.startup({
         -- gruvbox
         use('ellisonleao/gruvbox.nvim')
         -- zephyr
-        -- use("glepnir/zephyr-nvim")
+        use("glepnir/zephyr-nvim")
         -- nord
         use('shaunsingh/nord.nvim')
         -- onedark
         use('ful1e5/onedark.nvim')
         -- nightfox
         use('EdenEast/nightfox.nvim')
-        --use({
-        --   "glepnir/zephyr-nvim",
-        --    requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
-        -- })
-        --
+        -- catppuccin
         use({ 'catppuccin/nvim', as = 'catppuccin' })
         --------------------主题透明---------------------------
         use('xiyaowong/nvim-transparent')
-        -------------------------------------------------------
         ----------------------纯净模式-------------------------
         use('Pocco81/true-zen.nvim')
-        -------------------------------------------------------
         --不同位置的终端tt
         use('akinsho/toggleterm.nvim')
         ------关键字调用hop跳转
         use('folke/which-key.nvim')
         use({
             'phaazon/hop.nvim', -- like easymotion, but more powerful
-            branch = 'v1', -- optional but strongly recommended
+            branch = 'v2', -- optional but strongly recommended
         })
         -- surround
         use('ur4ltz/surround.nvim')
@@ -187,23 +167,9 @@ packer.startup({
             'rcarriga/nvim-dap-ui',
             requires = { 'mfussenegger/nvim-dap' },
         })
-        -- use("Pocco81/DAPInstall.nvim")
-        -- use("jbyuki/one-small-step-for-vimkind")
-        --颜色显示
-        --use（"norcalli/nvim-colorizer.lua"）
-        --大纲预览
-        --use（"simrat39/symbols-outline.nvim"）
-        ---------------
-        ---- litee family
-        --use {
-        --  "ldelossa/litee.nvim",
-        --  commit = "47235cb807a83af866e06ce654b28efcfe347c60"
-        --}
-        --use {
-        --  "ldelossa/litee-calltree.nvim",
-        --  commit = "3f3c25e584558949b1eda38ded76eade28fa5fd6"
-        --}
-        ------翻译插件
+        -------------lf插件----------
+        use('lmburns/lf.nvim')
+        -----翻译插件
         use('voldikss/vim-translator')
         --------高亮
         use('mtdl9/vim-log-highlighting')
@@ -212,21 +178,14 @@ packer.startup({
         ----------------测试代码片段
         use('vim-test/vim-test')
         use('nvim-neotest/neotest')
-        --use('michaelb/sniprun')
         --------------自动保存
         --use("Pocco81/AutoSave.nvim")
         use('djoshea/vim-autoread')
-
         -----------j，k加速
         use('rhysd/accelerated-jk')
-
         ------------导航栏
         use('aserowy/tmux.nvim')
-
-        ------一键运行插件-------
-        use('Pu-gayhub/CodeRunner.nvim')
-
-        ----------------------
+        
 
         if paccker_bootstrap then
             packer.sync()
@@ -247,17 +206,16 @@ packer.startup({
             -- default_url_format = "https://gitcode.net/mirrors/%s",
             -- default_url_format = "https://gitclone.com/github.com/%s",
         },
-        -- display = {
+        display = {
         -- 使用浮动窗口显示
-        --   open_fn = function()
-        --     return require("packer.util").float({ border = "single" })
-        --   end,
-        -- },
+          open_fn = function()
+            return require("packer.util").float({ border = "single" })
+          end,
+        },
     },
 })
 
 -- 每次保存 plugins.lua 自动安装插件
--- move to autocmds.lua
 -- pcall(
 --   vim.cmd,
 --   [[
