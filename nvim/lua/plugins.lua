@@ -168,7 +168,10 @@ packer.startup({
             requires = { 'mfussenegger/nvim-dap' },
         })
         -------------lf插件----------
-        use('lmburns/lf.nvim')
+        use({
+            'ptzz/lf.vim',
+            requires = { 'voldikss/vim-floaterm' },
+        })
         -----翻译插件
         use('voldikss/vim-translator')
         --------高亮
@@ -191,7 +194,7 @@ packer.startup({
         end
     end,
     config = {
-        -- compile_on_sync = true,
+        compile_on_sync = true,
         -- profile = {
         --   enable = false,
         --   threshold = 1
