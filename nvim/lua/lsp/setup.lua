@@ -66,10 +66,10 @@ local servers = {
   rust_analyzer = require("lsp.config.rust"),
   yamlls = require("lsp.config.yamlls"),
   marksman = require("lsp.config.markdown"),
-  clangd = require("lsp.config.c"),
-  clangd = require("lsp.config.cpp"),
-  jdtls = require("lsp.config.java"),
+  clangd = require("lsp.config.clangd"),
+  jdtls = require("lsp.config.jdtls"),
   cmake = require("lsp.config.cmake"),
+  gopls = require("lsp.config.gopls"),
 }
 
 for name, config in pairs(servers) do

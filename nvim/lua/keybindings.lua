@@ -306,7 +306,7 @@ pluginKeys.mapDAP = function()
     opt
   )
   -- 开始/继续
-  map('n', '<leader>dd', ":lua require'dap'.continue()<CR>", opt)
+  map('n', '<leader>dc', ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
   map('n', '<leader>dt', ":lua require('dap').toggle_breakpoint()<CR>", opt)
   map('n', '<leader>dT', ":lua require('dap').clear_breakpoints()<CR>", opt)
@@ -317,23 +317,23 @@ pluginKeys.mapDAP = function()
   -- 弹窗
   map('n', '<leader>dh', ":lua require'dapui'.eval()<CR>", opt)
 end
-
--- vimspector
-pluginKeys.mapVimspector = function()
-  -- 开始
-  map('n', '<leader>dd', ':call vimspector#Launch()<CR>', opt)
-  -- 结束
-  map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opt)
-  -- 继续
-  map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opt)
-  -- 设置断点
-  map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opt)
-  map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opt)
-  --  stepOver, stepOut, stepInto
-  map('n', '<leader>dj', '<Plug>VimspectorStepOver', opt)
-  map('n', '<leader>dk', '<Plug>VimspectorStepOut', opt)
-  map('n', '<leader>dl', '<Plug>VimspectorStepInto', opt)
-end
+--
+-- -- vimspector
+-- pluginKeys.mapVimspector = function()
+--   -- 开始
+--   map('n', '<leader>dd', ':call vimspector#Launch()<CR>', opt)
+--   -- 结束
+--   map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opt)
+--   -- 继续
+--   map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opt)
+--   -- 设置断点
+--   map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opt)
+--   map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opt)
+--   --  stepOver, stepOut, stepInto
+--   map('n', '<leader>dj', '<Plug>VimspectorStepOver', opt)
+--   map('n', '<leader>dk', '<Plug>VimspectorStepOut', opt)
+--   map('n', '<leader>dl', '<Plug>VimspectorStepInto', opt)
+-- end
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)

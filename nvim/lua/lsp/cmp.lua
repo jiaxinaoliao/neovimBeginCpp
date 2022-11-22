@@ -4,6 +4,7 @@ cmp.setup({
   -- 指定 snippet 引擎
   snippet = {
     expand = function(args)
+      -- luasnip.lsp_expand(args.body)
       -- For `vsnip` users.
       vim.fn["vsnip#anonymous"](args.body)
 
@@ -32,7 +33,11 @@ cmp.setup({
     -- -- For snippy users.
     -- { name = 'snippy' },
   }, { { name = "buffer" }, { name = "path" } }),
-
+  
+  -- 补全边框
+  -- window = {
+  --   completion = cmp.config.window.bordered(),
+  -- },
   -- 快捷键设置
   mapping = require("keybindings").cmp(cmp),
 })

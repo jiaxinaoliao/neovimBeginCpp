@@ -129,7 +129,7 @@ packer.startup({
         -- gruvbox
         use('ellisonleao/gruvbox.nvim')
         -- zephyr
-        use("glepnir/zephyr-nvim")
+        use('glepnir/zephyr-nvim')
         -- nord
         use('shaunsingh/nord.nvim')
         -- onedark
@@ -185,13 +185,17 @@ packer.startup({
         use('rhysd/accelerated-jk')
         ------------导航栏
         use('aserowy/tmux.nvim')
-        
 
         if paccker_bootstrap then
             packer.sync()
         end
     end,
     config = {
+        -- compile_on_sync = true,
+        -- profile = {
+        --   enable = false,
+        --   threshold = 1
+        -- },
         -- 锁定插件版本在snapshots目录
         --snapshot_path = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots"),
         -- 这里锁定插件版本在v1，不会继续更新插件
@@ -207,10 +211,10 @@ packer.startup({
             -- default_url_format = "https://gitclone.com/github.com/%s",
         },
         display = {
-        -- 使用浮动窗口显示
-          open_fn = function()
-            return require("packer.util").float({ border = "single" })
-          end,
+            -- 使用浮动窗口显示
+            open_fn = function()
+                return require('packer.util').float({ border = 'single' })
+            end,
         },
     },
 })
