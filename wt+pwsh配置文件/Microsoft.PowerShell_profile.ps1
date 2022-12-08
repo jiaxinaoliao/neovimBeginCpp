@@ -2,14 +2,14 @@
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
-Remove-Item Alias:\ls
 function Color-List($str) {
     $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase-bor [System.Text.RegularExpressions.RegexOptions]::Compiled)
     $fore = $Host.UI.RawUI.ForegroundColor
     $compressed = New-Object System.Text.RegularExpressions.Regex('\.(zip|tar|gz|rar|jar|war|7z)$', $regex_opts)
     $executable = New-Object System.Text.RegularExpressions.Regex('\.(exe|bat|cmd|py|ps1|psm1|vbs|rb|reg|sh|zsh)$', $regex_opts)
     $code_files = New-Object System.Text.RegularExpressions.Regex('\.(ini|csv|log|xml|yml|json|java|c|cpp|css|sass|js|ts|jsx|tsx|vue)$', $regex_opts)
-    $head_files = New-Object System.Text.RegularExpressions.Regex('\.(h)$', $regex_opts)
+    $head_files = New-Object System.Text.RegularExpressions.Regex('\.(md)$', $regex_opts)
+    $mark_files = New-Object System.Text.RegularExpressions.Regex('\.(h)$', $regex_opts)
     $itemList = @()
     Invoke-Expression ("Get-ChildItem" + " " + $str) | ForEach-Object {
         $item = New-Object object
@@ -23,8 +23,10 @@ function Color-List($str) {
         {$item | Add-Member NoteProperty name ("`e[33m" + $_.name)}
         elseif ($head_files.IsMatch($_.Name))
         {$item | Add-Member NoteProperty name ("`e[32m" + $_.name)}
+        elseif ($mark_files.IsMatch($_.Name))
+        {$item | Add-Member NoteProperty name ("`e[35m" + $_.name)}
         else
-        { $item | Add-Member NoteProperty name ("`e[37m" + $_.name)} 
+        {$item | Add-Member NoteProperty name ("`e[37m" + $_.name)} 
         $itemList += $item}
     echo $itemList | Format-Wide -AutoSize}
 function ls {Color-List "-Exclude .*"}
@@ -40,3 +42,4 @@ function hss {hexo server}
 function gaa {git add .}
 function gpp {git push}
 function top {btop}
+

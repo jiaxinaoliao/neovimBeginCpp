@@ -61,10 +61,9 @@ map('v', 'p', '"_dP', opt)
 map('n', 'w', ':w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
 map("n", "<leader>q", ":qa!<CR>", opt)
-
 map('i', 'jj', '<ESC>', opt)
 -- 翻译
-map('v', 'fj', ':TranslateW<CR>', opt)
+map('v', 'fy', ':TranslateW<CR>', opt)
 
 -- insert 模式下，跳到行首行尾
 -- map("i", "<C-h>", "<ESC>I", opt)
@@ -80,8 +79,8 @@ map('n', 'sh', ':sp<CR>', opt)
 -- 关闭当前
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
-map('n', 'so', '<C-w>o', opt) -- close others
--- alt + hjkl  窗口之间跳转
+map('n', 'so', '<C-w>o', opt)
+-- ctrl + hjkl  窗口之间跳转
 map('n', '<C-h>', '<C-w>h', opt)
 map('n', '<C-j>', '<C-w>j', opt)
 map('n', '<C-k>', '<C-w>k', opt)
@@ -94,13 +93,13 @@ map('n', '<leader>l', '<C-w>l', opt)
 -- 左右比例控制
 map('n', '<C-Right>', ':vertical resize -1<CR>', opt)
 map('n', '<C-Left>', ':vertical resize +1<CR>', opt)
-map('n', 's,', ':vertical resize -5<CR>', opt)
-map('n', 's.', ':vertical resize +5<CR>', opt)
+map('n', 's,', ':vertical resize +5<CR>', opt)
+map('n', 's.', ':vertical resize -5<CR>', opt)
 -- 上下比例
-map('n', 'sj', ':resize +10<CR>', opt)
-map('n', 'sk', ':resize -10<CR>', opt)
-map('n', '<C-Down>', ':resize +2<CR>', opt)
-map('n', '<C-Up>', ':resize -2<CR>', opt)
+map('n', 'sj', ':resize +5<CR>', opt)
+map('n', 'sk', ':resize -5<CR>', opt)
+map('n', '<C-Down>', ':resize -1<CR>', opt)
+map('n', '<C-Up>', ':resize +1<CR>', opt)
 -- 相等比例
 map('n', 's=', '<C-w>=', opt)
 
@@ -121,21 +120,15 @@ map('t', '<leader>l', [[ <C-\><C-N><C-w>l ]], opt)
 --------------------------------------------------------------------
 -- 插件快捷键
 local pluginKeys = {}
-
 -- treesitter 折叠
 map('n', 'zz', ':foldclose<CR>', opt)
 map('n', 'Z', ':foldopen<CR>', opt)
-
---lf
-map('n', '<leader>lf', ':Lf<CR>', opt)
-
---tagvar
+--tagvar大纲
 map('n', '<F8>', ':Tagbar<CR>', opt)
-
 --markdown
 map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
 map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
-
+-- 跳转
 map('n', '<leader>w', ':HopWord<CR>', opt)
 
 -- nvim-tree
@@ -242,7 +235,7 @@ pluginKeys.mapLSP = function(mapbuf)
   Lspsaga 替换 rn
   mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
   --]]
-  mapbuf('n', '<leader>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opt)
+  mapbuf('n', '<leader>s', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opt)
   mapbuf('n', 'cm', '<cmd>Lspsaga rename<CR>', opt)
   -- code action
   --[[
@@ -413,7 +406,7 @@ pluginKeys.mapToggleTerm = function(toggleterm)
   vim.keymap.set({ 'n', 't' }, 'tg', toggleterm.toggleG)
 end
 
--- gitsigns
+-- gitsigns查看更改记录
 pluginKeys.gitsigns_on_attach = function(bufnr)
   local gs = package.loaded.gitsigns
 
