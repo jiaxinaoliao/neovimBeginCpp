@@ -25,6 +25,9 @@ Set-PSReadLineOption -PredictionSource History
 # alt在windows中有特殊用途，这里使用ctrl键代替
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 
+# 删除默认的连接（强制删除）
+Remove-Alias ls -Force
+Remove-Alias sl -Force
 
 # 自定义函数添加ls的颜色
 function Color-List($str) {

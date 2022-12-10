@@ -1,5 +1,7 @@
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
 Import-Module PSReadLine
+Remove-Alias sl -Force
+Remove-Alias ls -Force
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 function Color-List($str) {
@@ -42,4 +44,3 @@ function hss {hexo server}
 function gaa {git add .}
 function gpp {git push}
 function top {btop}
-
