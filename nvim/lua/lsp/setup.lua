@@ -34,6 +34,7 @@ require("mason-lspconfig").setup({
     "sumneko_lua",
     "clangd",
     "cmake",
+    --"asm_lsp",
     "tsserver",
     "tailwindcss",
     "bashls",
@@ -55,9 +56,11 @@ require("mason-lspconfig").setup({
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
   sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
-  bashls = require("lsp.config.bash"),
+  clangd = require("lsp.config.clangd"),
+  --asm_lsp = require("lsp.config.asm"),
   pylsp = require("lsp.config.pylsp"),
-  -- pyright = require("lsp.config.pyright"),
+  bashls = require("lsp.config.bash"),
+  --pyright = require("lsp.config.pyright"),
   html = require("lsp.config.html"),
   cssls = require("lsp.config.css"),
   emmet_ls = require("lsp.config.emmet"),
@@ -66,7 +69,6 @@ local servers = {
   rust_analyzer = require("lsp.config.rust"),
   yamlls = require("lsp.config.yamlls"),
   marksman = require("lsp.config.markdown"),
-  clangd = require("lsp.config.clangd"),
   jdtls = require("lsp.config.jdtls"),
   cmake = require("lsp.config.cmake"),
   gopls = require("lsp.config.gopls"),

@@ -703,7 +703,14 @@ tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官�
 
 需要修改系统环境变量
 
-新建一个环境变量如下
+运行
+
+1. ```go env -w GO111MODULE=on```
+2. ```go env -w GOPROXY=https://goproxy.io,direct```
+
+
+
+或者新建一个环境变量如下
 
 ![image-20221028224300412](assets/image-20221028224300412.png)
 

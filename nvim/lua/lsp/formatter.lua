@@ -49,7 +49,6 @@ formatter.setup({
                     exe = 'black',
                     args = {},
                     stdin = true,
-                    try_node_modules = true,
                 }
             end,
         },

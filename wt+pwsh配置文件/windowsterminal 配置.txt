@@ -69,7 +69,8 @@
                 "size": 21,
                 "weight": "normal"
             },
-            "opacity": 66
+            "opacity": 66,
+            "scrollbarState": "hidden"
         },
         "list": 
         [
@@ -121,7 +122,7 @@
             },
             {
                 "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
-                "hidden": true,
+                "hidden": false,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
             }
