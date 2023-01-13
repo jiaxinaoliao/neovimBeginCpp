@@ -474,6 +474,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vimspector",
     url = "https://github.com/puremourning/vimspector"
   },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\which-key.nvim",

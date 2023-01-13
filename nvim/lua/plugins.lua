@@ -136,6 +136,8 @@ packer.startup({
         use('ful1e5/onedark.nvim')
         -- nightfox
         use('EdenEast/nightfox.nvim')
+        -- vscode
+        use('Mofiqul/vscode.nvim')
         -- catppuccin
         use({ 'catppuccin/nvim', as = 'catppuccin' })
         --------------------主题透明---------------------------

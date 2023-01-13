@@ -1,4 +1,4 @@
-local colorscheme = "gruvbox"
+local colorscheme = "vscode"
 -- tokyonight
 -- OceanicNext
 -- gruvbox
@@ -8,6 +8,7 @@ local colorscheme = "gruvbox"
 -- nightfox
 -- default
 -- catppuccin
+-- vscode
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

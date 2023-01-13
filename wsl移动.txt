@@ -1,0 +1,3 @@
+wsl --export Ubuntu-22.04 E://wslubuntu//ubuntu-22.04.tar
+wsl --unregister Ubuntu-22.04
+wsl --import Ubuntu-22.04 E://wslubuntu E://wslubuntu//ubuntu-22.04.tar

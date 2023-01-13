@@ -1,8 +1,9 @@
+# 使用utf8编码
+$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+
 # 使用oh-my-posh主题
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
 
-# 使用utf8编码
-$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 # 使用starship时自定义的头
 # function Invoke-Starship-PreCommand {

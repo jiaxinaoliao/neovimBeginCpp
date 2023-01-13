@@ -135,7 +135,8 @@ map('n', '<leader>w', ':HopWord<CR>', opt)
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 --map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
-pluginKeys.nvimTreeList = { -- 打开文件或文件夹
+pluginKeys.nvimTreeList = {
+  -- 打开文件或文件夹
   { key = { '<CR>', 'o', '<2-LeftMouse>' }, action = 'edit' },
   -- v分屏打开文件
   { key = 'v', action = 'vsplit' },
