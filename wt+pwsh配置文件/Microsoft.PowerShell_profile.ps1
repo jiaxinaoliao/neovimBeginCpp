@@ -43,4 +43,5 @@ function hps {hexo clean && hexo generate && hexo deploy && hexo server}
 function hss {hexo server}
 function gaa {git add .}
 function gpp {git push}
+function gpg {git push --tag}
 function top {btop}
