@@ -4,14 +4,6 @@
     "actions": 
     [
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
             "command": 
             {
                 "action": "copy",
@@ -20,8 +12,12 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "closePane",
-            "keys": "ctrl+shift+w"
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": "unbound",
@@ -30,6 +26,10 @@
         {
             "command": "unbound",
             "keys": ""
+        },
+        {
+            "command": "closePane",
+            "keys": "ctrl+shift+w"
         },
         {
             "command": 
@@ -69,19 +69,18 @@
                 "size": 21,
                 "weight": "normal"
             },
-            "opacity": 66,
-            "scrollbarState": "hidden"
+            "opacity": 66
         },
         "list": 
         [
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit chcp 65001",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe /K chcp 65001",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
@@ -100,18 +99,6 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "guid": "{480356c9-d6e2-57b4-9403-094f87819eec}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{914e8fd4-3f56-56cd-bbc6-fa893334cb3e}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "colorScheme": "Campbell",
                 "commandline": "D:\\ScoopApp\\Scoop\\apps\\git\\current\\git-bash.exe",
                 "guid": "{c97b9ec4-b44f-4fee-8fdb-fbc45b2fc230}",
@@ -121,8 +108,20 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "guid": "{f9ceaf27-504c-58d7-927c-d1d6a7ac7d3c}",
                 "hidden": false,
+                "name": "Ubuntu 22.04.1 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
             }
