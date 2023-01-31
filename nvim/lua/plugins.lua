@@ -62,6 +62,8 @@ packer.startup({
       requires = { 'kyazdani42/nvim-web-devicons' },
     })
     use('arkav/lualine-lsp-progress')
+    ------------------ 多光标 ----------------
+    use('mg979/vim-visual-multi')
     ------------------ 搜索弹窗 ----------------
     -- telescope
     use('nvim-telescope/telescope.nvim')

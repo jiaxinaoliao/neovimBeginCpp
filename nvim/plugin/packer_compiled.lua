@@ -464,6 +464,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-translator",
     url = "https://github.com/voldikss/vim-translator"
   },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
