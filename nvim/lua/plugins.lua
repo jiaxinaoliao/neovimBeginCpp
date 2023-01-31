@@ -155,7 +155,7 @@ packer.startup({
       branch = 'v2', -- optional but strongly recommended
     })
     -- surround
-    use('ur4ltz/surround.nvim')
+    use('kylechui/nvim-surround')
     -- Comment
     use('numToStr/Comment.nvim')
     -- nvim-autopairs括号补全

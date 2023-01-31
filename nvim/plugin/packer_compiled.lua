@@ -304,6 +304,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-transparent",
@@ -368,11 +373,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\schemastore.nvim",
     url = "https://github.com/b0o/schemastore.nvim"
-  },
-  ["surround.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\surround.nvim",
-    url = "https://github.com/ur4ltz/surround.nvim"
   },
   tagbar = {
     loaded = true,

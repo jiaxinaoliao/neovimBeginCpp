@@ -31,13 +31,13 @@ function Color-List($str) {
         {$item | Add-Member NoteProperty name ("`e[37m" + $_.name)} 
         $itemList += $item}
     echo $itemList | Format-Wide -AutoSize}
+Set-Alias vim nvim
 function ls {Color-List "-Exclude .*"}
 function ll {Color-List "$args"}
 function cl {cls}
 function cj {cd ..}
 function et {exit}
 function lt {tree /f /a}
-function vim {nvim}
 function hpp {hexo clean && hexo generate && hexo deploy}
 function hps {hexo clean && hexo generate && hexo deploy && hexo server}
 function hss {hexo server}
@@ -45,3 +45,4 @@ function gaa {git add .}
 function gpp {git push}
 function gpg {git push --tag}
 function top {btop}
+function dl {dir | lolcat}

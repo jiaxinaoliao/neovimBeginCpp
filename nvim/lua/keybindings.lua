@@ -61,7 +61,7 @@ map('v', 'p', '"_dP', opt)
 map('n', 'w', ':w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
 map('n', "<leader>q", ":q<CR>", opt)
-map('n', "<leader>qq", ":qa!<CR>", opt)
+--map('n', "<leader>qq", ":qa!<CR>", opt)
 map('i', 'jj', '<ESC>', opt)
 map('n', 'nt', ':tabnew<CR>', opt)
 -- 翻译
@@ -77,7 +77,7 @@ map('v', 'fy', ':TranslateW<CR>', opt)
 -- 取消 s 默认功能
 map('n', 's', '', opt)
 map('n', 'sv', ':vsp<CR>', opt)
-map('n', 'sh', ':sp<CR>', opt)
+map('n', 'sb', ':sp<CR>', opt)
 -- 关闭当前
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他

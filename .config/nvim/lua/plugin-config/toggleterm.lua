@@ -18,7 +18,7 @@ toggleterm.setup({
     preview_cutoff = 1
   },
 
-  shell = "pwsh",
+  shell = "zsh",
   start_in_insert = true,
 })
 

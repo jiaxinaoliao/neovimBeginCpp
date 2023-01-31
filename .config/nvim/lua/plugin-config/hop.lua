@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap(
 )
 
 -- place this in one of your configuration file(s)
-vim.api.nvim_set_keymap('n', '<leader><leader>w', '<cmd>HopWord<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader><leader>j', '<cmd>HopLine<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader><leader>k', '<cmd>HopLine<cr>', {})
-vim.api.nvim_set_keymap('n', '<leader><leader>s', '<cmd>HopChar1<cr>', {})
+-- vim.api.nvim_set_keymap('n', '<leader><leader>w', '<cmd>HopWord<cr>', {})
+-- vim.api.nvim_set_keymap('n', '<leader><leader>j', '<cmd>HopLine<cr>', {})
+-- vim.api.nvim_set_keymap('n', '<leader><leader>k', '<cmd>HopLine<cr>', {})
+-- vim.api.nvim_set_keymap('n', '<leader><leader>s', '<cmd>HopChar1<cr>', {})

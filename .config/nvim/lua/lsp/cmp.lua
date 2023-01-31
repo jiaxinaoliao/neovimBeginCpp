@@ -4,6 +4,7 @@ cmp.setup({
   -- 指定 snippet 引擎
   snippet = {
     expand = function(args)
+      -- luasnip.lsp_expand(args.body)
       -- For `vsnip` users.
       vim.fn["vsnip#anonymous"](args.body)
 
@@ -17,35 +18,39 @@ cmp.setup({
       -- require'snippy'.expand_snippet(args.body)
     end,
   },
-  -- 来源
+  -- 补全源
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "nvim_lsp_signature_help" },
     -- For vsnip users.
     { name = "vsnip" },
-    { name = "buffer" },
+
     -- For luasnip users.
     -- { name = 'luasnip' },
+
     --For ultisnips users.
     -- { name = 'ultisnips' },
+
     -- -- For snippy users.
     -- { name = 'snippy' },
-  }, { { name = "path" } }),
-
-  -- 快捷键
+  }, { { name = "buffer" }, { name = "path" } }),
+  
+  -- 补全边框
+  -- window = {
+  --   completion = cmp.config.window.bordered(),
+  -- },
+  -- 快捷键设置
   mapping = require("keybindings").cmp(cmp),
-  -- 使用lspkind-nvim显示类型图标
-  formatting = require("lsp.ui").formatting,
 })
 
--- Use buffer source for `/`.
+-- / 查找模式使用 buffer 源
 cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "buffer" },
   },
 })
 
--- Use cmdline & path source for ':'.
+-- : 命令行模式中使用 path 和 cmdline 源.
 cmp.setup.cmdline(":", {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
@@ -53,4 +58,7 @@ cmp.setup.cmdline(":", {
   }, {
     { name = "cmdline" },
   }),
+  
+  formatting = require('lsp.ui').formatting
 })
+

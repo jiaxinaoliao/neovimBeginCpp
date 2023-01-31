@@ -6,6 +6,17 @@ end
 
 formatter.setup({
     filetype = {
+        cpp = {
+            -- clang-format
+            function()
+                return {
+                    exe = 'clang-format -style=Microsoft',
+                    args = {},
+                    stdin = true,
+                    try_node_modules = true,
+                }
+            end,
+        },
         lua = {
             function()
                 return {
@@ -16,6 +27,27 @@ formatter.setup({
                         --   .. "/stylua/stylua.toml",
                         '-',
                     },
+                    stdin = true,
+                }
+            end,
+        },
+        c = {
+            -- clang-format
+            function()
+                return {
+                    exe = 'clang-format -style=Microsoft',
+                    args = {},
+                    stdin = true,
+                    try_node_modules = true,
+                }
+            end,
+        },
+        python = {
+            -- black
+            function()
+                return {
+                    exe = 'black',
+                    args = {},
                     stdin = true,
                 }
             end,
@@ -37,17 +69,6 @@ formatter.setup({
                     exe = 'prettier',
                     args = { '--stdin-filepath', vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote' },
                     stdin = true,
-                }
-            end,
-        },
-        cpp = {
-            -- prettier
-            function()
-                return {
-                    exe = 'clang-format -style=Microsoft',
-                    args = {},
-                    stdin = true,
-                    try_node_modules = true,
                 }
             end,
         },

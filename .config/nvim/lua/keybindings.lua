@@ -6,7 +6,7 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
--- leader key 为空
+-- leader key 为,
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
@@ -57,13 +57,16 @@ map('v', 'K', ":move '<-2<CR>gv-gv", opt)
 map('v', 'p', '"_dP', opt)
 
 -- 退出
-map('n', 'q', ':q<CR>', opt)
+--map('n', 'q', ':q<CR>', opt)
 map('n', 'w', ':w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
-map('n', 'qq', ':qa!<CR>', opt)
---map("n", "<leader>q", ":qa!<CR>", opt)
-
+map('n', "<leader>q", ":q<CR>", opt)
+--map('n', "<leader>qq", ":qa!<CR>", opt)
 map('i', 'jj', '<ESC>', opt)
+map('n', 'nt', ':tabnew<CR>', opt)
+-- 翻译
+map('v', 'fy', ':TranslateW<CR>', opt)
+
 -- insert 模式下，跳到行首行尾
 -- map("i", "<C-h>", "<ESC>I", opt)
 -- map("i", "<C-l>", "<ESC>A", opt)
@@ -74,12 +77,12 @@ map('i', 'jj', '<ESC>', opt)
 -- 取消 s 默认功能
 map('n', 's', '', opt)
 map('n', 'sv', ':vsp<CR>', opt)
-map('n', 'sh', ':sp<CR>', opt)
+map('n', 'sb', ':sp<CR>', opt)
 -- 关闭当前
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
-map('n', 'so', '<C-w>o', opt) -- close others
--- alt + hjkl  窗口之间跳转
+map('n', 'so', '<C-w>o', opt)
+-- ctrl + hjkl  窗口之间跳转
 map('n', '<C-h>', '<C-w>h', opt)
 map('n', '<C-j>', '<C-w>j', opt)
 map('n', '<C-k>', '<C-w>k', opt)
@@ -90,22 +93,22 @@ map('n', '<leader>j', '<C-w>j', opt)
 map('n', '<leader>k', '<C-w>k', opt)
 map('n', '<leader>l', '<C-w>l', opt)
 -- 左右比例控制
-map('n', '<C-Left>', ':vertical resize -2<CR>', opt)
-map('n', '<C-Right>', ':vertical resize +2<CR>', opt)
-map('n', 's,', ':vertical resize -10<CR>', opt)
-map('n', 's.', ':vertical resize +10<CR>', opt)
+map('n', '<C-Right>', ':vertical resize -1<CR>', opt)
+map('n', '<C-Left>', ':vertical resize +1<CR>', opt)
+map('n', 's,', ':vertical resize +5<CR>', opt)
+map('n', 's.', ':vertical resize -5<CR>', opt)
 -- 上下比例
-map('n', 'sj', ':resize +10<CR>', opt)
-map('n', 'sk', ':resize -10<CR>', opt)
-map('n', '<C-Down>', ':resize +2<CR>', opt)
-map('n', '<C-Up>', ':resize -2<CR>', opt)
+map('n', 'sj', ':resize +5<CR>', opt)
+map('n', 'sk', ':resize -5<CR>', opt)
+map('n', '<C-Down>', ':resize -1<CR>', opt)
+map('n', '<C-Up>', ':resize +1<CR>', opt)
 -- 相等比例
 map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
-map('n', 'sth', ':sp | terminal <CR>', opt)
-map('n', 'stv', ':vsp | terminal <CR>', opt)
-map('n', 'ss', ':terminal <CR>', opt)
+map('n', 'sth', ':sp | terminal pwsh -nologo<CR>', opt)
+map('n', 'stv', ':vsp | terminal pwsh -nologo<CR>', opt)
+map('n', 'ss', ':terminal pwsh -nologo<CR>', opt)
 -- Esc 回 Normal 模式
 map('t', 'jj', '<C-\\><C-n>', opt)
 map('t', '<C-h>', [[ <C-\><C-N><C-w>h ]], opt)
@@ -119,16 +122,23 @@ map('t', '<leader>l', [[ <C-\><C-N><C-w>l ]], opt)
 --------------------------------------------------------------------
 -- 插件快捷键
 local pluginKeys = {}
-
 -- treesitter 折叠
 map('n', 'zz', ':foldclose<CR>', opt)
 map('n', 'Z', ':foldopen<CR>', opt)
+--tagvar大纲
+map('n', '<F8>', ':Tagbar<CR>', opt)
+--markdown
+map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
+map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
+-- 跳转
+map('n', '<leader>w', ':HopWord<CR>', opt)
 
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 --map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
-pluginKeys.nvimTreeList = { -- 打开文件或文件夹
+pluginKeys.nvimTreeList = {
+  -- 打开文件或文件夹
   { key = { '<CR>', 'o', '<2-LeftMouse>' }, action = 'edit' },
   -- v分屏打开文件
   { key = 'v', action = 'vsplit' },
@@ -162,7 +172,8 @@ map('n', '<A-h>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<A-l>', ':BufferLineCycleNext<CR>', opt)
 -- "moll/vim-bbye" 关闭当前 buffer
 --map("n", "<leader>bc", ":Bdelete!<CR>", opt)
-map('n', 'xx', ':Bdelete!<CR>', opt)
+map('n', 'xc', ':Bdelete!<CR>', opt)
+map('n', 'xx', ':Bdelete!<CR><cmd>close<CR>', opt)
 -- 关闭左/右侧标签页
 map('n', '<leader>xh', ':BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>xl', ':BufferLineCloseRight<CR>', opt)
@@ -172,8 +183,8 @@ map('n', '<leader>xo', ':BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>xp', ':BufferLinePickClose<CR>', opt)
 
 -- Telescope
-map('n', '<C-f>', ':Telescope find_files<CR>', opt)
-map('n', '<C-p>', ':Telescope live_grep<CR>', opt)
+map('n', '<C-p>', ':Telescope find_files<CR>', opt)
+map('n', '<C-f>', ':Telescope live_grep<CR>', opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {
@@ -212,8 +223,13 @@ pluginKeys.comment = {
 map('n', '<C-_>', 'gcc', { noremap = false })
 map('v', '<C-_>', 'gcc', { noremap = false })
 
+-- ctrl + s 格式化
+map('n', '<C-s>', ':Format<CR>', opt)
 
-map('n', '<C-n>', ':Format<CR>', opt)
+-- ctrl + g 纯净模式
+-- leader + gg 选中纯净模式
+map('n', '<leader>g', ':TZMinimalist<CR>', opt)
+map('v', '<leader>h', ':TZNarrow<CR>', opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
@@ -222,6 +238,7 @@ pluginKeys.mapLSP = function(mapbuf)
   Lspsaga 替换 rn
   mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
   --]]
+  mapbuf('n', '<leader>s', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opt)
   mapbuf('n', 'cm', '<cmd>Lspsaga rename<CR>', opt)
   -- code action
   --[[
@@ -276,8 +293,6 @@ end
 
 -- nvim-dap
 pluginKeys.mapDAP = function()
-  -- 开始
-  map('n', '<leader>dd', ':RustDebuggables<CR>', opt)
   -- 结束
   map(
     'n',
@@ -290,7 +305,7 @@ pluginKeys.mapDAP = function()
     .. '<C-w>o<CR>',
     opt
   )
-  -- 继续
+  -- 开始/继续
   map('n', '<leader>dc', ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
   map('n', '<leader>dt', ":lua require('dap').toggle_breakpoint()<CR>", opt)
@@ -302,23 +317,23 @@ pluginKeys.mapDAP = function()
   -- 弹窗
   map('n', '<leader>dh', ":lua require'dapui'.eval()<CR>", opt)
 end
-
--- vimspector
-pluginKeys.mapVimspector = function()
-  -- 开始
-  map('n', '<leader>dd', ':call vimspector#Launch()<CR>', opt)
-  -- 结束
-  map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opt)
-  -- 继续
-  map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opt)
-  -- 设置断点
-  map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opt)
-  map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opt)
-  --  stepOver, stepOut, stepInto
-  map('n', '<leader>dj', '<Plug>VimspectorStepOver', opt)
-  map('n', '<leader>dk', '<Plug>VimspectorStepOut', opt)
-  map('n', '<leader>dl', '<Plug>VimspectorStepInto', opt)
-end
+--
+-- -- vimspector
+-- pluginKeys.mapVimspector = function()
+--   -- 开始
+--   map('n', '<leader>dd', ':call vimspector#Launch()<CR>', opt)
+--   -- 结束
+--   map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opt)
+--   -- 继续
+--   map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opt)
+--   -- 设置断点
+--   map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opt)
+--   map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opt)
+--   --  stepOver, stepOut, stepInto
+--   map('n', '<leader>dj', '<Plug>VimspectorStepOver', opt)
+--   map('n', '<leader>dk', '<Plug>VimspectorStepOut', opt)
+--   map('n', '<leader>dl', '<Plug>VimspectorStepInto', opt)
+-- end
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
@@ -353,45 +368,33 @@ pluginKeys.cmp = function(cmp)
     -- 如果窗口内容太多，可以滚动
     ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    -- snippets 跳转
-    ['<C-l>'] = cmp.mapping(function(_)
-      if vim.fn['vsnip#available'](1) == 1 then
-        feedkey('<Plug>(vsnip-expand-or-jump)', '')
-      end
-    end, { 'i', 's' }),
-    ['<C-h>'] = cmp.mapping(function()
-      if vim.fn['vsnip#jumpable'](-1) == 1 then
-        feedkey('<Plug>(vsnip-jump-prev)', '')
-      end
-    end, { 'i', 's' }),
-
-    -- super Tab
-    ['<Tab>'] = cmp.mapping(function(fallback)
+        -- Super Tab
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn['vsnip#available'](1) == 1 then
-        feedkey('<Plug>(vsnip-expand-or-jump)', '')
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
       elseif has_words_before() then
         cmp.complete()
       else
         fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
       end
-    end, { 'i', 's' }),
+    end, {"i", "s"}),
 
-    ['<S-Tab>'] = cmp.mapping(function()
+    ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-        feedkey('<Plug>(vsnip-jump-prev)', '')
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
       end
-    end, { 'i', 's' }),
-    -- end of super Tab
+    end, {"i", "s"})
+    -- end of super Tab  
   }
 end
 
 ------一键运行
-map('n', '<F5>', ':!clang++ *.cpp<CR>', opt)
-map('n', '<F4>', ':!clang++ -g *.cpp<CR>', opt)
+map('n', '<F5>', ':!g++ *.cpp<CR>', opt)
+map('n', '<F4>', ':!g++ -g *.cpp<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
 -- <leader>ta 浮动
@@ -406,7 +409,7 @@ pluginKeys.mapToggleTerm = function(toggleterm)
   vim.keymap.set({ 'n', 't' }, 'tg', toggleterm.toggleG)
 end
 
--- gitsigns
+-- gitsigns查看更改记录
 pluginKeys.gitsigns_on_attach = function(bufnr)
   local gs = package.loaded.gitsigns
 
