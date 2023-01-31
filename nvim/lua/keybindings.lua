@@ -60,8 +60,10 @@ map('v', 'p', '"_dP', opt)
 --map('n', 'q', ':q<CR>', opt)
 map('n', 'w', ':w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
-map("n", "<leader>q", ":qa!<CR>", opt)
+map('n', "<leader>q", ":q<CR>", opt)
+map('n', "<leader>qq", ":qa!<CR>", opt)
 map('i', 'jj', '<ESC>', opt)
+map('n', 'nt', ':tabnew<CR>', opt)
 -- 翻译
 map('v', 'fy', ':TranslateW<CR>', opt)
 
