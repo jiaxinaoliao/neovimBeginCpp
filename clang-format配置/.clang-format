@@ -1,0 +1,4 @@
+Language: Cpp
+BasedOnStyle: Microsoft
+AccessModifierOffset: -4
+IndentWidth: 2

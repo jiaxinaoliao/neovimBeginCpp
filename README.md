@@ -747,3 +747,25 @@ vscode-cpptools的下载在这
 ```
 
 windows下默认用的gdb不是很好用（没有配置好）还不如直接用上面的lldb
+
+
+
+
+
+## 9. clang-format（cpp的自定义格式化）
+
+在本仓库配置的~\nvim\lua\lsp\formatter.lua文件中
+
+![image-20230208193034227](assets/image-20230208193034227.png)
+
+在这里将冒号后面的地址替换为自己的.clang-format配置文件地址
+
+注意这里精确到文件.clang-format而不是文件夹
+
+
+
+配置文件的写法可以去官网查看
+
+https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+也可以去本仓库的 ’ clang-format配置 ‘ 文件夹中查看（精简版）
