@@ -16,7 +16,9 @@ db.setup {
     center = {
       {
         icon = '                     ',
+        icon_hl = 'title',
         desc = 'Find file                           ',
+        desc_hl = 'string',
         action = 'Telescope find_files',
       },
       -- {
@@ -31,7 +33,9 @@ db.setup {
       -- },
       {
         icon = '                     ',
+        icon_hl = 'title',
         desc = 'Edit keybindings                    ',
+        desc_hl = 'string',
         action = 'edit ~/AppData/local/nvim/lua/keybindings.lua',
       },
       -- {
@@ -41,7 +45,9 @@ db.setup {
       -- },
       {
         icon = '                     ',
+        icon_hl = 'title',
         desc = 'Edit PowerShell                     ',
+        desc_hl = 'string',
         action = 'edit D:/UsersData/Documents/PowerShell/Microsoft.PowerShell_profile.ps1',
       },
       -- {
@@ -51,7 +57,9 @@ db.setup {
       -- },
       {
         icon = '                     ',
+        icon_hl = 'title',
         desc = "Edit init.lua                       ",
+        desc_hl = 'string',
         action = 'edit ~/AppData/local/nvim/init.lua',
       },
       -- {

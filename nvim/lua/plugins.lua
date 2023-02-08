@@ -39,7 +39,7 @@ packer.startup({
     ------------------ 基本api ------------------
     use('nvim-lua/plenary.nvim')
     ------------------ 弹窗窗口 -----------------
-    use('nvim-lua/popup.nvim')
+    --use('nvim-lua/popup.nvim')
     use('rcarriga/nvim-notify')
     ------------------ 图标插件 -----------------
     use('kyazdani42/nvim-web-devicons')
@@ -49,7 +49,7 @@ packer.startup({
       'nvim-tree/nvim-tree.lua',
       requires = { 'nvim-tree/nvim-web-devicons' },
     })
-    use('majutsushi/tagbar')
+    use('preservim/tagbar')
     ------------------上下状态栏 ----------------
     -- bufferline
     use({
@@ -77,13 +77,13 @@ packer.startup({
     use("iamcco/markdown-preview.nvim")
     ------------------- 跳转插件-------------
     use('ggandor/flit.nvim')
-    use('ggandor/leap-ast.nvim')
-    use('ggandor/leap-spooky.nvim')
-    use('ggandor/leap.nvim')
+    --use('ggandor/leap-ast.nvim')
+    --use('ggandor/leap-spooky.nvim')
+    --use('ggandor/leap.nvim')
     -- dashboard-nvim
     use('glepnir/dashboard-nvim')
     -- project
-    use('ahmedkhalf/project.nvim')
+    --use('ahmedkhalf/project.nvim')
     --------语法高亮 treesitter
     use('nvim-treesitter/nvim-treesitter')
     use('p00f/nvim-ts-rainbow')
@@ -96,7 +96,7 @@ packer.startup({
     use('neovim/nvim-lspconfig')
     use('ray-x/lsp_signature.nvim')
     -- cmake
-    use('Shatur/neovim-cmake')
+    -- use('Shatur/neovim-cmake')
     -- 补全引擎
     use('hrsh7th/nvim-cmp')
     -- 补全源
@@ -114,7 +114,7 @@ packer.startup({
     use('tami5/lspsaga.nvim')
     -- 代码格式化
     use('mhartington/formatter.nvim')
-    use({ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' })
+    --use({ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' })
     -- TypeScript 增强
     use({ 'jose-elias-alvarez/nvim-lsp-ts-utils', requires = 'nvim-lua/plenary.nvim' })
     -- Lua 增强
@@ -183,21 +183,25 @@ packer.startup({
     --------显示lsp状态
     use('j-hui/fidget.nvim')
     ----------------测试代码片段
-    use('vim-test/vim-test')
-    use('nvim-neotest/neotest')
+    -- use('vim-test/vim-test')
+    -- use('nvim-neotest/neotest')
     --------------自动保存
-    --use("Pocco81/AutoSave.nvim")
-    use('djoshea/vim-autoread')
+    -- use("Pocco81/AutoSave.nvim")
+    -- use('djoshea/vim-autoread')
     -----------j，k加速
-    use('rhysd/accelerated-jk')
+    -- use('rhysd/accelerated-jk')
     ------------导航栏
-    use('aserowy/tmux.nvim')
+    -- use('aserowy/tmux.nvim')
 
     if paccker_bootstrap then
       packer.sync()
     end
   end,
   config = {
+    -- profile = {
+    --   enable = true,
+    --   threshold = 1,
+    -- },
     compile_on_sync = true,
     -- profile = {
     --   enable = false,

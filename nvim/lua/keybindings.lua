@@ -83,10 +83,10 @@ map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
 map('n', 'so', '<C-w>o', opt)
 -- ctrl + hjkl  窗口之间跳转
-map('n', '<C-h>', '<C-w>h', opt)
-map('n', '<C-j>', '<C-w>j', opt)
-map('n', '<C-k>', '<C-w>k', opt)
-map('n', '<C-l>', '<C-w>l', opt)
+map('n', 'H', '<C-w>h', opt)
+map('n', 'J', '<C-w>j', opt)
+map('n', 'K', '<C-w>k', opt)
+map('n', 'L', '<C-w>l', opt)
 -- <leader> + hjkl 窗口之间跳转
 map('n', '<leader>h', '<C-w>h', opt)
 map('n', '<leader>j', '<C-w>j', opt)

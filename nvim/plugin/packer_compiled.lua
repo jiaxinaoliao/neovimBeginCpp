@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
-  ["accelerated-jk"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\accelerated-jk",
-    url = "https://github.com/rhysd/accelerated-jk"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
@@ -174,21 +169,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["leap-ast.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leap-ast.nvim",
-    url = "https://github.com/ggandor/leap-ast.nvim"
-  },
-  ["leap-spooky.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leap-spooky.nvim",
-    url = "https://github.com/ggandor/leap-spooky.nvim"
-  },
-  ["leap.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leap.nvim",
-    url = "https://github.com/ggandor/leap.nvim"
-  },
   ["lf.vim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lf.vim",
@@ -239,16 +219,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
-  neotest = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neotest",
-    url = "https://github.com/nvim-neotest/neotest"
-  },
-  ["neovim-cmake"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neovim-cmake",
-    url = "https://github.com/Shatur/neovim-cmake"
-  },
   ["nightfox.nvim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nightfox.nvim",
@@ -258,11 +228,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -354,16 +319,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\popup.nvim",
-    url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["project.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\project.nvim",
-    url = "https://github.com/ahmedkhalf/project.nvim"
-  },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim",
@@ -377,7 +332,7 @@ _G.packer_plugins = {
   tagbar = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tagbar",
-    url = "https://github.com/majutsushi/tagbar"
+    url = "https://github.com/preservim/tagbar"
   },
   ["telescope-dap.nvim"] = {
     loaded = true,
@@ -414,11 +369,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tmux.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tmux.nvim",
-    url = "https://github.com/aserowy/tmux.nvim"
-  },
   ["toggleterm.nvim"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
@@ -434,11 +384,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\true-zen.nvim",
     url = "https://github.com/Pocco81/true-zen.nvim"
   },
-  ["vim-autoread"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-autoread",
-    url = "https://github.com/djoshea/vim-autoread"
-  },
   ["vim-bbye"] = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-bbye",
@@ -453,11 +398,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-log-highlighting",
     url = "https://github.com/mtdl9/vim-log-highlighting"
-  },
-  ["vim-test"] = {
-    loaded = true,
-    path = "C:\\Users\\29033\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-test",
-    url = "https://github.com/vim-test/vim-test"
   },
   ["vim-translator"] = {
     loaded = true,

@@ -24,15 +24,14 @@ require('plugin-config.comment')
 require('plugin-config.nvim-autopairs')
 require('plugin-config.impatient')
 require('plugin-config.nvim-notify')
-require('plugin-config.popup')
-require('plugin-config.neotest')
+--require('plugin-config.popup')
+--require('plugin-config.neotest')
 require('plugin-config.sniprun')
-require('plugin-config.nvim-cmake')
 require('plugin-config.hop')
 require('plugin-config.which-key')
-require('plugin-config.transparent')
+--require('plugin-config.transparent')
 require('plugin-config.flit')
-require('plugin-config.leap')
+--require('plugin-config.leap')
 require('plugin-config.lf')
 -- 内置LSP
 require('lsp.setup')
@@ -44,7 +43,7 @@ require('lsp.formatter')
 --一键运行
 -- DAP
 --require('dap.vimspector')
-require('dap.nvim-dap')
+--require('dap.nvim-dap')
 -- utils
 -- 复制到windows剪贴板
 require('utils.fix-yank')
