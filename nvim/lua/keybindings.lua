@@ -39,8 +39,8 @@ map('n', '<C-k>', '5k', opt)
 map('v', '<C-j>', '5j', opt)
 map('v', '<C-k>', '5k', opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map('n', '<C-u>', '10k', opt)
-map('n', '<C-d>', '10j', opt)
+--map('n', '<C-u>', '10k', opt)
+--map('n', '<C-d>', '10j', opt)
 
 -- magic search
 map('n', '/', '/\\v', { noremap = true, silent = false })
