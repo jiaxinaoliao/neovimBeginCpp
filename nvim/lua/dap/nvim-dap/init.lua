@@ -1,89 +1,76 @@
--- local dap_install = require("dap-install")
--- dap_install.setup({
---   installation_path = vim.fn.stdpath("data") .. "/dapinstall/",
--- })
-
 local dap = require("dap")
 local dapui = require("dapui")
 
 require("nvim-dap-virtual-text").setup({
-	commented = true,
+    enabled = true,
+    enable_commands = true,
+    highlight_changed_variables = true,
+    highlight_new_as_changed = false,
+    show_stop_reason = true,
+    commented = false,
+    only_first_definition = true,
+    all_references = false,
+    filter_references_pattern = '<module',
+    virt_text_pos = 'eol',
+    all_frames = false,
+    virt_lines = false,
+    virt_text_win_col = nil
 })
 
-vim.fn.sign_define("DapBreakpoint", {
-	text = "🛑",
-	texthl = "LspDiagnosticsSignError",
-	linehl = "",
-	numhl = "",
-})
+vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0 })
+vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0 })
+vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, })
 
-vim.fn.sign_define("DapStopped", {
-	text = "",
-	texthl = "LspDiagnosticsSignInformation",
-	linehl = "DiagnosticUnderlineInfo",
-	numhl = "LspDiagnosticsSignInformation",
-})
+local dap_breakpoint = {
+    error = {
+        text = "🛑",
+        texthl = "DapBreakpoint",
+        linehl = "DapBreakpoint",
+        numhl = "DapBreakpoint",
+    },
+    condition = {
+        text = 'ﳁ',
+        texthl = 'DapBreakpoint',
+        linehl = 'DapBreakpoint',
+        numhl = 'DapBreakpoint',
+    },
+    rejected = {
+        text = "",
+        texthl = "DapBreakpint",
+        linehl = "DapBreakpoint",
+        numhl = "DapBreakpoint",
+    },
+    logpoint = {
+        text = '',
+        texthl = 'DapLogPoint',
+        linehl = 'DapLogPoint',
+        numhl = 'DapLogPoint',
+    },
+    stopped = {
+        text = '',
+        texthl = 'DapStopped',
+        linehl = 'DapStopped',
+        numhl = 'DapStopped',
+    },
+}
 
-vim.fn.sign_define("DapBreakpointRejected", {
-	text = "",
-	texthl = "LspDiagnosticsSignHint",
-	linehl = "",
-	numhl = "",
-})
-
-dapui.setup({
-	icons = { expanded = "▾", collapsed = "▸" },
-	mappings = {
-		-- Use a table to apply multiple mappings
-		expand = { "o", "<CR>", "<2-LeftMouse>" },
-		open = "o",
-		remove = "d",
-		edit = "e",
-		repl = "r",
-		toggle = "t",
-	},
-	layouts = {
-		-- You can change the order of elements in the sidebar
-		elements = {
-			-- Provide as ID strings or tables with "id" and "size" keys
-			{
-				id = "scopes",
-				size = 0.35, -- Can be float or integer > 1
-			},
-			{ id = "breakpoints", size = 0.35 },
-			{ id = "stacks", size = 0.15 },
-			{ id = "watches", size = 00.15 },
-		},
-		size = 40,
-		position = "left", -- Can be "left", "right", "top", "bottom"
-	},
-	{
-		elements = { "repl" },
-		size = 5,
-		position = "bottom", -- Can be "left", "right", "top", "bottom"
-	},
-	floating = {
-		max_height = nil, -- These can be integers or a float between 0 and 1.
-		max_width = nil, -- Floats will be treated as percentage of your screen.
-		border = "single", -- Border style. Can be "single", "double" or "rounded"
-		mappings = {
-			close = { "q", "<Esc>" },
-		},
-	},
-	windows = { indent = 1 },
-	render = {
-		max_type_length = nil, -- Can be integer or nil.
-	},
-}) -- use default
+vim.fn.sign_define('DapBreakpoint', dap_breakpoint.error)
+vim.fn.sign_define('DapBreakpointCondition', dap_breakpoint.condition)
+vim.fn.sign_define('DapBreakpointRejected', dap_breakpoint.rejected)
+vim.fn.sign_define('DapLogPoint', dap_breakpoint.logpoint)
+vim.fn.sign_define('DapStopped', dap_breakpoint.stopped)
 
 
+dapui.setup({})
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end
+
 dap.listeners.before.event_terminated["dapui_config"] = function()
 	dapui.close()
 end
+
 dap.listeners.before.event_exited["dapui_config"] = function()
 	dapui.close()
 end

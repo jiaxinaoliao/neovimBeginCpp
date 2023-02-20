@@ -58,7 +58,7 @@ map('v', 'p', '"_dP', opt)
 
 -- 退出
 --map('n', 'q', ':q<CR>', opt)
-map('n', 'w', ':w<CR>', opt)
+map('n', 'w', '<cmd>w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
 map('n', "<leader>q", ":q<CR>", opt)
 --map('n', "<leader>qq", ":qa!<CR>", opt)
@@ -307,8 +307,8 @@ pluginKeys.mapDAP = function()
   -- 开始/继续
   map('n', '<leader>dc', ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
-  map('n', '<leader>dt', ":lua require('dap').toggle_breakpoint()<CR>", opt)
-  map('n', '<leader>dT', ":lua require('dap').clear_breakpoints()<CR>", opt)
+  map('n', '<leader>dt', ":lua require'dap'.toggle_breakpoint()<CR>", opt)
+  map('n', '<leader>dT', ":lua require'dap'.clear_breakpoints()<CR>", opt)
   --  stepOver, stepOut, stepInto
   map('n', '<leader>dj', ":lua require'dap'.step_over()<CR>", opt)
   map('n', '<leader>dk', ":lua require'dap'.step_out()<CR>", opt)

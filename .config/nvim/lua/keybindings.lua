@@ -172,8 +172,7 @@ map('n', '<A-h>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<A-l>', ':BufferLineCycleNext<CR>', opt)
 -- "moll/vim-bbye" 关闭当前 buffer
 --map("n", "<leader>bc", ":Bdelete!<CR>", opt)
-map('n', 'xc', ':Bdelete!<CR>', opt)
-map('n', 'xx', ':Bdelete!<CR><cmd>close<CR>', opt)
+map('n', 'xx', ':Bdelete!<CR>', opt)
 -- 关闭左/右侧标签页
 map('n', '<leader>xh', ':BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>xl', ':BufferLineCloseRight<CR>', opt)

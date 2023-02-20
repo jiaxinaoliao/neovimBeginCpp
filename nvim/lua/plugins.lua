@@ -167,10 +167,7 @@ lazy.setup({
         ---------------------------dap调试--------------
         "mfussenegger/nvim-dap",
         "theHamsta/nvim-dap-virtual-text",
-        {
-            "rcarriga/nvim-dap-ui",
-            requires = { "mfussenegger/nvim-dap" },
-        },
+        "rcarriga/nvim-dap-ui",
         -------------lf插件----------
         {
             "ptzz/lf.vim",

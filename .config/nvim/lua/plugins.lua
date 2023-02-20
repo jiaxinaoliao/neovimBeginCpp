@@ -1,6 +1,6 @@
--- 自动安装 Packer.nvim
+-- 自动安装 Lazy.nvim
 -- 插件安装目录
--- ~/user/.Appdate/local/nvim-data/share/nvim/site/pack/packer/
+-- ~/user/.Appdate/local/nvim-data/lazy/
 local fn = vim.fn
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -52,10 +52,10 @@ lazy.setup({
         "preservim/tagbar",
         ------------------上下状态栏 ----------------
         -- bufferline
-        {
-            "akinsho/bufferline.nvim",
-            requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" },
-        },
+        "akinsho/bufferline.nvim",
+        "kyazdani42/nvim-web-devicons", 
+        "moll/vim-bbye",
+        
         -- lualine
         {
             "nvim-lualine/lualine.nvim",
