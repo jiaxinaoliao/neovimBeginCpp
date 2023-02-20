@@ -1,4 +1,4 @@
-local colorscheme = "vscode"
+local colorscheme = "gruvbox"
 -- tokyonight
 -- OceanicNext
 -- gruvbox

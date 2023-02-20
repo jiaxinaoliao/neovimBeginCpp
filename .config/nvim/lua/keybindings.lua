@@ -106,9 +106,9 @@ map('n', '<C-Up>', ':resize +1<CR>', opt)
 map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
-map('n', 'sth', ':sp | terminal pwsh -nologo<CR>', opt)
-map('n', 'stv', ':vsp | terminal pwsh -nologo<CR>', opt)
-map('n', 'ss', ':terminal pwsh -nologo<CR>', opt)
+map('n', 'sth', ':sp | terminal zsh<CR>', opt)
+map('n', 'stv', ':vsp | terminal zsh<CR>', opt)
+map('n', 'ss', ':terminal zsh<CR>', opt)
 -- Esc 回 Normal 模式
 map('t', 'jj', '<C-\\><C-n>', opt)
 map('t', '<C-h>', [[ <C-\><C-N><C-w>h ]], opt)

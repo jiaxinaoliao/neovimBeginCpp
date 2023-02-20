@@ -2,7 +2,6 @@ local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = 'D:\\CppApp\\cpptools\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe',
   options = {
     detached = false
   }

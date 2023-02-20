@@ -31,7 +31,6 @@ require("mason").setup({
 require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
-    "sumneko_lua",
     "clangd",
     "cmake",
     --"asm_lsp",
@@ -55,7 +54,7 @@ require("mason-lspconfig").setup({
 -- key 必须为下列网址列出的 server name，不可以随便写
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
-  sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+  lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
   clangd = require("lsp.config.clangd"),
   --asm_lsp = require("lsp.config.asm"),
   pylsp = require("lsp.config.pylsp"),
