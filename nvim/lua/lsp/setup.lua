@@ -45,7 +45,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"pyright",
 		"pylsp",
-		"rust_analyzer",
+		-- "rust_analyzer",
 		-- "taplo",
 		"yamlls",
 		"gopls",

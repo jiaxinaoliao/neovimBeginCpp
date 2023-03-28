@@ -42,25 +42,18 @@ lazy.setup({
         "MunifTanjim/nui.nvim",
         "folke/noice.nvim",
         ------------------ 图标插件 -----------------
-        "kyazdani42/nvim-web-devicons",
+        "nvim-tree/nvim-web-devicons",
         ------------------ 文件树   -----------------
         -- nvim-tree
-        {
-            "nvim-tree/nvim-tree.lua",
-            requires = { "nvim-tree/nvim-web-devicons" },
-        },
+        "nvim-tree/nvim-tree.lua",
         "preservim/tagbar",
         ------------------上下状态栏 ----------------
         -- bufferline
         "akinsho/bufferline.nvim",
-        "kyazdani42/nvim-web-devicons", 
         "moll/vim-bbye",
         
         -- lualine
-        {
-            "nvim-lualine/lualine.nvim",
-            requires = { "kyazdani42/nvim-web-devicons" },
-        },
+        "nvim-lualine/lualine.nvim",
         "arkav/lualine-lsp-progress",
         ------------------ 多光标 ----------------
         "mg979/vim-visual-multi",
@@ -116,7 +109,8 @@ lazy.setup({
         "mhartington/formatter.nvim",
         --use({ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' })
         -- TypeScript 增强
-        { "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" },
+        "jose-elias-alvarez/nvim-lsp-ts-utils",
+        "nvim-lua/plenary.nvim",
         -- Lua 增强
         "folke/neodev.nvim",
         -- JSON 增强
@@ -141,7 +135,7 @@ lazy.setup({
         -- vscode
         "Mofiqul/vscode.nvim",
         -- catppuccin
-        { "catppuccin/nvim", as = "catppuccin" },
+        "catppuccin/nvim",
         --------------------主题透明---------------------------
         "xiyaowong/nvim-transparent",
         ----------------------纯净模式-------------------------
@@ -167,15 +161,10 @@ lazy.setup({
         ---------------------------dap调试--------------
         "mfussenegger/nvim-dap",
         "theHamsta/nvim-dap-virtual-text",
-        {
-            "rcarriga/nvim-dap-ui",
-            requires = { "mfussenegger/nvim-dap" },
-        },
+        "rcarriga/nvim-dap-ui",
         -------------lf插件----------
-        {
-            "ptzz/lf.vim",
-            requires = { "voldikss/vim-floaterm" },
-        },
+        "ptzz/lf.vim",
+        "voldikss/vim-floaterm",
         -----翻译插件
         "voldikss/vim-translator",
         --------高亮

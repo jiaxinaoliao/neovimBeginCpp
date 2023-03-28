@@ -6,6 +6,10 @@ end
 
 require('notify').setup({
     background_colour = '#000000',
+    render = "compact",--minimal default
+    stages = "slide",
+    timeout = 1000,
+    minimum_width = 50,
 })
 
 require('noice').setup({

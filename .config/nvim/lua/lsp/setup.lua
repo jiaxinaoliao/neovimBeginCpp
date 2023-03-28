@@ -31,21 +31,15 @@ require("mason").setup({
 require("mason-lspconfig").setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
-    "lua_ls",
     "clangd",
-    "cmake",
     --"asm_lsp",
     "tsserver",
     "tailwindcss",
     "bashls",
-    "cssls",
     "dockerls",
     "emmet_ls",
-    "html",
-    "jsonls",
     "pyright",
     "pylsp",
-    "rust_analyzer",
     -- "taplo",
     "yamlls",
     "gopls",

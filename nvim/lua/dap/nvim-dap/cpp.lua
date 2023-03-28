@@ -2,7 +2,7 @@ local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = "C:/Users/29033/AppData/Local/nvim-data/mason/bin/OpenDebugAD7.cmd",
+  command = "C:/Users/29033/AppData/Local/nvim-data/mason/bin/codelldb.cmd",
   options = {
     detached = false
   }

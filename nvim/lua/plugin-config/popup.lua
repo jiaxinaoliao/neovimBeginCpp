@@ -93,15 +93,15 @@ if test_level == 9 then
     })
 end
 
--- if test_level == 10 then
--- 	popup.create({ "JIA"},{
--- 		line = "cursor+2",
--- 		col = "cursor+2",
--- 		border = { 1, 1, 1, 1 },
--- 		enter = true,
--- 		cursorline = true,
--- 		callback = function(win_id, sel)
--- 			print(sel)
--- 	end,
--- })
--- end
+if test_level == 10 then
+	popup.create({ "JIA"},{
+		line = "cursor+2",
+		col = "cursor+2",
+		border = { 1, 1, 1, 1 },
+		enter = true,
+		cursorline = true,
+		callback = function(win_id, sel)
+			print(sel)
+	end,
+})
+end

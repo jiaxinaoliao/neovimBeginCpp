@@ -58,7 +58,7 @@ map('v', 'p', '"_dP', opt)
 
 -- 退出
 --map('n', 'q', ':q<CR>', opt)
-map('n', 'w', ':w<CR>', opt)
+map('n', 'w', '<cmd>w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
 map('n', "<leader>q", ":q<CR>", opt)
 --map('n', "<leader>qq", ":qa!<CR>", opt)
