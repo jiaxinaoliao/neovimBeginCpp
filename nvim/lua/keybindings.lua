@@ -68,8 +68,8 @@ map('n', 'nt', ':tabnew<CR>', opt)
 map('v', 'fy', ':TranslateW<CR>', opt)
 
 -- insert 模式下，跳到行首行尾
--- map("i", "<C-h>", "<ESC>I", opt)
--- map("i", "<C-l>", "<ESC>A", opt)
+map("i", "<C-h>", "<ESC>I", opt)
+map("i", "<C-l>", "<ESC>A", opt)
 
 ------------------------------------------------------------------
 -- windows 分屏快捷键
