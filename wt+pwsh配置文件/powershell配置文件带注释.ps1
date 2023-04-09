@@ -75,6 +75,8 @@ function ls {Color-List "-Exclude .*"}
 function la {Color-List "$args"}
 function cj {cd ..}
 function cl {clear}
+# fzf的利用
+function cf {cd $(fzf)}
 function et {exit}
 function lt {tree /f /a}
 function vim {nvim}
@@ -82,5 +84,7 @@ function hpp {hexo clean && hexo generate && hexo deploy}
 function hss {hexo s}
 function gaa {git add .}
 function gpp {git push}
+# musicfox终端的网易云
+function wyy {musicfox}
 # btop连接top先用scoop安装
 function top {btop}

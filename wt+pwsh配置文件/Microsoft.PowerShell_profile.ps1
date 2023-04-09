@@ -32,10 +32,15 @@ function Color-List($str) {
         $itemList += $item}
     echo $itemList | Format-Wide -AutoSize}
 Set-Alias vim nvim
+Set-Alias cc g++
+Set-Alias lc leetcode
+function gvim {neovide}
+function n {neofetch}
 function ls {Color-List "-Exclude .*"}
 function ll {Color-List "$args"}
-function cl {cls}
+function cl {Clear-Host}
 function cj {cd ..}
+function cf {cd $(fzf)}
 function et {exit}
 function lt {tree /f /a}
 function hpp {hexo clean && hexo generate && hexo deploy}
@@ -46,3 +51,4 @@ function gpp {git push}
 function gpg {git push --tag}
 function top {btop}
 function dl {dir | lolcat}
+function wyy {musicfox}
