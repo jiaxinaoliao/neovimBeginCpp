@@ -1,18 +1,18 @@
 # 纯windows下的neovim快速配置过程
 
-由于github的问题可能图片加载不是很好可以直接下方连接下载最新版解压即可
+由于github连接的问题，可能图片加载不出来，可以直接点下面的连接下载最新版的.zip解压即可
 
 https://github.com/jiaxinaoliao/neovimBeginCpp/releases
 
-解压之后的REDME.md文件（推荐用typora打开或者notepads（alt+p开启markdown预览）也可以）即可查看
+解压之后打开REDME.md文件（推荐用typora打开或者notepads（alt+p开启markdown预览）也可以）即可查看
 
 虽然不是开箱即用但是也省略了大部分配置时间
 
 下载之后进行简单的安装即可使用
 
-纯windows环境**不需要虚拟机**纯windows环境下
+纯windows环境下**不需要虚拟机**纯windows环境下
 
-linux--wsl（ubuntu22.04LTS）（配置文件在.config）也可以，小改动即可
+linux或者wsl也可以使用，小改动即可
 
 macos应该也能兼容（没有试过）
 
@@ -38,19 +38,19 @@ python应该也可以（没有试过）
 
 * 注意 ：Microsoft powershell和powershell不一样
 
-PowerShell 7.2 是下一个长期服务 (LTS) 版本，基于 .NET 6.0 构建。
+PowerShell 7.x.x 是下一个长期服务 (LTS) 版本，基于 .NET 6.0 构建。
 
 在windows和macos和linux都可以支持
 
 **美化：** **oh-my-push**
 
-编译用的clangd调试用的lldb
+编译用的gcc（或者clangd也可以）调试用的lldb
 
 windows下lldb用的是MinGW64的llvm-mingw
 
+**包管理器：scoop**
 
-
-利用的工具是scoop类比于ubuntu下的apt，apt-get
+利用的工具是scoop类比于ubuntu下的apt，arch的pacman
 
 
 
@@ -58,9 +58,7 @@ windows下lldb用的是MinGW64的llvm-mingw
 
 
 
-**总结：windows + windows terminal + powershell + oh-my-push + neovim + cpp（clang + lldb）**
-
-
+**总结：windows + windows terminal + powershell + oh-my-push + neovim + cpp（gcc + lldb）**
 
 主要用于C++其他语言也可以，前端、python、java等也可以，需要小改动
 
@@ -94,7 +92,7 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 ### 2.2 配置终端设置
 
-微软商店下载最新版本**Windows Terminal**和**Powershell**
+微软商店下载最新版本**Windows Terminal**和**Powershell**（直接去商店搜索安装即可）
 
 打开下载的配置文件夹里面有一个字体的文件夹里面有Inconsolata LGC Bold Nerd Font Complete Mono Windows Compatible.ttf字体双击打开安装即可，或者自行去(https://www.nerdfonts.com/)官网下载nerd fonts的自己喜欢的字体
 
@@ -106,7 +104,7 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 ![wt配置](./assets/nvim-peizhi-3.png)
 
-打开配置文件夹打开wt+pwsh配置文件的文件夹里面有一个**windowsterminal 配置.txt**文件将其中的内容复制**替换**原本的JSON配置文件
+在配置文件夹中打开wt+pwsh配置文件的文件夹里面有一个**windowsterminal 配置.txt**文件将其中的内容复制**替换**原本的JSON配置文件
 
 之后保存关闭即可，再次打开wt如果改变说明设置成功，标签栏默认隐藏（alt+z可以打开打开标签栏）如果不习惯也可以在设置->启动->启动模式中的启动模式改为别的即可
 
@@ -118,7 +116,7 @@ windows直接下载压缩包之后解压放在一边（方便的位置如桌面�
 
 设置完成之后wt就可以投入使用了
 
-可以用win+r输入wt快速打开和用cmd类似可以理解为高级好看的cmd终端
+可以用win+r输入wt快速打开和用cmd类似可以理解为cmd的一个超集
 
 
 
@@ -213,7 +211,7 @@ scoop bucket add java
 
 main是默认的extras里面有大量的常用的软件java的就是提供java的一些工具
 
-添加仓库之后用`scoop update`更新
+添加仓库之后用`scoop update *`更新所有软件
 
 之后开始安装软件
 
@@ -311,6 +309,8 @@ scoop config aria2-enabled true
 
    主要就是安装python添加环境变量打开powershell之后输入python --version输出版本号书名成功了
 
+或者用scoop安装也可以
+
    
 
 ### 6. python的环境
@@ -343,7 +343,7 @@ gcc的话用gdb调试体验不是很好所以这里用lldb进行调试
 
 
 
-配置文件夹内有一份llvm-mingw快速使用.md有一些基本的lldb的使用方法可以参考一下，也可以直接去官网查看文档
+配置文件夹内有一份**llvm-mingw快速使用.md**有一些基本的lldb的使用方法可以参考一下，也可以直接去官网查看文档
 
 
 
@@ -553,6 +553,14 @@ windows的兼容性不是很好只是用来浏览用的
 
 
 
+### 4.1 补充
+
+这个配置用了比如markdown的lsp需要`scoop install marksman`还有lua的lsp需要`scoop install lua-language server`
+
+
+
+
+
 ## 5. 自定义改动
 
 在配置文件中nvim->lua->**keybindings.lua**文件包含快捷键以及注释可以自行更改
@@ -591,14 +599,6 @@ windows的兼容性不是很好只是用来浏览用的
 
 
 
-文件中如果安装`scoop install busybox`的话可以将`Remove-Item alias:\ls`之后的删除
-
-建议安装busybox提供了很多linux的指令
-
-
-
-
-
 在nvim->lua->plugin-config->**dashboard.lua**可以更改自己喜欢的开机界面
 
 ![屏幕截图 2022-09-27 112230](./assets/nvim-peizhi-17.png)
@@ -629,8 +629,6 @@ windows的兼容性不是很好只是用来浏览用的
 
 
 
-
-
 注：由于github连接问题可能加载不了图片所以所有的截图都放在了单独的文件夹中下载之后就能看了
 
 
@@ -638,10 +636,6 @@ windows的兼容性不是很好只是用来浏览用的
 [精通 VIM ，此文就够了 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/68111471)
 
 可以看看快速了解一下vim以及tmux
-
-
-
-
 
 
 
@@ -769,3 +763,13 @@ windows下默认用的gdb不是很好用（没有配置好）还不如直接用�
 https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 
 也可以去本仓库的 ’ clang-format配置 ‘ 文件夹中查看（精简版）
+
+
+
+## 10 windows下fzf的使用
+
+这里直接用`scoop install fzf`的方式进行安装，fzf是一个非常好用的模糊搜索的工具，可以直接去github看一看官方的文档
+
+安装好后在终端里面输入fzf就可以使用了
+
+利用cd命令可以快速跳转到指定的文件夹，但是cd只能是跳转到文件夹不能是文件所以这里加一个..返回上一级就行了比如：`cd “$（fzf）\..”`即可实现快速搜索跳转了或者`vim $(fzf)`即可快速打开文件
