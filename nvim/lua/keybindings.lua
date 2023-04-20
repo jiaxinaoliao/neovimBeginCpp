@@ -63,9 +63,6 @@ map('n', 'wq', ':wq<CR>', opt)
 map('n', "<leader>q", ":q<CR>", opt)
 --map('n', "<leader>qq", ":qa!<CR>", opt)
 map('i', 'jj', '<ESC>', opt)
-map('n', 'nt', ':tabnew<CR>', opt)
--- 翻译
-map('v', 'fy', ':TranslateW<CR>', opt)
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
@@ -82,6 +79,8 @@ map('n', 'sb', ':sp<CR>', opt)
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
 map('n', 'so', '<C-w>o', opt)
+-- 创建新布
+map('n', 'nt', ':tabnew<CR>', opt)
 -- ctrl + hjkl  窗口之间跳转
 map('n', 'H', '<C-w>h', opt)
 map('n', 'J', '<C-w>j', opt)
@@ -98,15 +97,15 @@ map('n', '<C-Left>', ':vertical resize +1<CR>', opt)
 map('n', 's,', ':vertical resize +5<CR>', opt)
 map('n', 's.', ':vertical resize -5<CR>', opt)
 -- 上下比例
-map('n', 'sj', ':resize +5<CR>', opt)
-map('n', 'sk', ':resize -5<CR>', opt)
-map('n', '<C-Down>', ':resize -1<CR>', opt)
-map('n', '<C-Up>', ':resize +1<CR>', opt)
+map('n', 'sj', ':resize -1<CR>', opt)
+map('n', 'sk', ':resize +1<CR>', opt)
+-- map('n', '<C-Down>', ':resize -1<CR>', opt)
+-- map('n', '<C-Up>', ':resize +1<CR>', opt)
 -- 相等比例
 map('n', 's=', '<C-w>=', opt)
 
 -- Terminal相关
-map('n', 'sth', ':sp | terminal pwsh -nologo<CR>', opt)
+map('n', 'stb', ':sp | terminal pwsh -nologo<CR>', opt)
 map('n', 'stv', ':vsp | terminal pwsh -nologo<CR>', opt)
 map('n', 'ss', ':terminal pwsh -nologo<CR>', opt)
 -- Esc 回 Normal 模式
@@ -132,47 +131,48 @@ map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
 map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
 -- 跳转
 map('n', '<leader>w', ':HopWord<CR>', opt)
-
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
 --map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
-pluginKeys.nvimTreeList = {
-  -- 打开文件或文件夹
-  { key = { '<CR>', 'o', '<2-LeftMouse>' }, action = 'edit' },
-  -- v分屏打开文件
-  { key = 'v', action = 'vsplit' },
-  -- b分屏打开文件
-  { key = 'b', action = 'split' },
-  -- Ignore (node_modules)
-  { key = 'i', action = 'toggle_ignored' },
-  { key = '.', action = 'toggle_dotfiles' },
-  -- Hide (dotfiles)
-  { key = 'R', action = 'refresh' },
-  -- 文件操作
-  { key = 'a', action = 'create' },
-  { key = 'd', action = 'remove' },
-  { key = 'r', action = 'rename' },
-  { key = 'x', action = 'cut' },
-  { key = 'c', action = 'copy' },
-  { key = 'p', action = 'paste' },
-  { key = 'y', action = 'copy_name' },
-  { key = 'Y', action = 'copy_path' },
-  { key = 'gy', action = 'copy_absolute_path' },
-  { key = 'I', action = 'toggle_file_info' },
-  -- { key = 'n', action = 'tabnew' },
-  -- 进入下一级
-  { key = { 'n' }, action = 'cd' },
-  -- 进入上一级
-  { key = { 'N' }, action = 'dir_up' },
-}
+-- nvim-tree的已经放在plugin-config\nvim-tree.lua里面了
+-- pluginKeys.nvimTreeList = {
+--   -- 打开文件或文件夹
+--   { key = { '<CR>', 'o', '<2-LeftMouse' }, action = 'edit' },
+--   -- v分屏打开文件
+--   { key = 'v', action = 'vsplit' },
+--   -- b分屏打开文件
+--   { key = 'b', action = 'split' },
+--   -- ignore (node_modules)
+--   { key = 'i', action = 'toggle_ignored' },
+--   { key = '.', action = 'toggle_dotfiles' },
+--   -- Hide (dotfiles)
+--   { key = 'R', action = 'refresh' },
+--   -- 文件操作
+--   { key = 'a', action = 'create' },
+--   { key = 'd', action = 'remove' },
+--   { key = 'r', action = 'rename' },
+--   { key = 'x', action = 'cut' },
+--   { key = 'c', action = 'copy' },
+--   { key = 'p', action = 'paste' },
+--   { key = 'y', action = 'copy_name' },
+--   { key = 'Y', action = 'copy_path' },
+--   { key = 'gy', action = 'copy_absolute_path' },
+--   { key = 'I', action = 'toggle_file_info' },
+--   { key = 'n', action = 'tabnew' },
+--   -- 进入下一级
+--   { key = { '[' }, action = 'cd' },
+--   -- 进入上一级
+--   { key = { ']' }, action = 'dir_up' },
+-- }
 -- bufferline
 -- 左右Tab切换
 map('n', '<A-h>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<A-l>', ':BufferLineCycleNext<CR>', opt)
 -- "moll/vim-bbye" 关闭当前 buffer
 --map("n", "<leader>bc", ":Bdelete!<CR>", opt)
-map('n', 'xx', ':Bdelete!<CR>', opt)
+map("n", "xx", ":Bdelete!<CR>", opt)
+map('n', 'xc', '<cmd>Bdelete!<CR><cmd>close<CR>', opt)
 -- 关闭左/右侧标签页
 map('n', '<leader>xh', ':BufferLineCloseLeft<CR>', opt)
 map('n', '<leader>xl', ':BufferLineCloseRight<CR>', opt)
@@ -180,6 +180,9 @@ map('n', '<leader>xl', ':BufferLineCloseRight<CR>', opt)
 map('n', '<leader>xo', ':BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>', opt)
 -- 关闭选中标签页
 map('n', '<leader>xp', ':BufferLinePickClose<CR>', opt)
+
+-- 翻译
+map('v', 'fy', ':TranslateW<CR>', opt)
 
 -- Telescope
 map('n', '<C-p>', ':Telescope find_files<CR>', opt)
@@ -284,11 +287,11 @@ pluginKeys.mapLSP = function(mapbuf)
 end
 
 -- typescript 快捷键
-pluginKeys.mapTsLSP = function(mapbuf)
-  mapbuf('n', 'gs', ':TSLspOrganize<CR>', opt)
-  mapbuf('n', 'gR', ':TSLspRenameFile<CR>', opt)
-  mapbuf('n', 'gi', ':TSLspImportAll<CR>', opt)
-end
+-- pluginKeys.mapTsLSP = function(mapbuf)
+--   mapbuf('n', 'gs', ':TSLspOrganize<CR>', opt)
+--   mapbuf('n', 'gR', ':TSLspRenameFile<CR>', opt)
+--   mapbuf('n', 'gi', ':TSLspImportAll<CR>', opt)
+-- end
 
 -- nvim-dap
 pluginKeys.mapDAP = function()
@@ -396,7 +399,7 @@ map('n', '<F5>', ':!g++ *.cpp<CR>', opt)
 map('n', '<F4>', ':!g++ -g *.cpp<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
--- <leader>ta 浮动
+-- <leader>tt 浮动
 -- <leader>tb 右侧
 -- <leader>tc 下方
 -- 特殊lazygit 窗口，需要安装lazygit
