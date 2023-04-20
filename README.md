@@ -6,6 +6,12 @@ https://github.com/jiaxinaoliao/neovimBeginCpp/releases
 
 解压之后打开REDME.md文件（推荐用typora打开或者notepads（alt+p开启markdown预览）也可以）即可查看
 
+
+
+或者直接克隆仓库命令行中先`cd`到桌面或者好找的地方输入`git clone https://github.com/jiaxinaoliao/neovimBeginCpp.git`即可
+
+
+
 虽然不是开箱即用但是也省略了大部分配置时间
 
 下载之后进行简单的安装即可使用
