@@ -679,6 +679,8 @@ tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官�
 
 快捷键的话在~nvim\lua下面的keybindings.lua文件中
 
+配置文件夹中有个人按键说明的说明文档可以自行对照
+
 
 
 ## 7. 补充
