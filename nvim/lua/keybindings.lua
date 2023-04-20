@@ -79,8 +79,9 @@ map('n', 'sb', ':sp<CR>', opt)
 map('n', 'sc', '<C-w>c', opt)
 -- 关闭其他
 map('n', 'so', '<C-w>o', opt)
--- 创建新布
+-- 创建新布局
 map('n', 'nt', ':tabnew<CR>', opt)
+map('n', 'nc', ':tabclose<CR>', opt)
 -- ctrl + hjkl  窗口之间跳转
 map('n', 'H', '<C-w>h', opt)
 map('n', 'J', '<C-w>j', opt)
