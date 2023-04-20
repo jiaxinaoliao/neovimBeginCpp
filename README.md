@@ -687,6 +687,7 @@ tokyonight（星星也很高）和catppuccin/nvim效果差不多可以去看官�
 
 配置文件夹中有个人按键说明的说明文档可以自行对照
 
+https://github.com/jiaxinaoliao/neovimBeginCpp/blob/main/%E4%B8%AA%E4%BA%BA%E6%8C%89%E9%94%AE%E8%AF%B4%E6%98%8E.md
 
 
 ## 7. 补充
