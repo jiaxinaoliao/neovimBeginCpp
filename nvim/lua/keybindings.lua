@@ -245,12 +245,12 @@ pluginKeys.mapDAP = function()
   -- 开始/继续
   map('n', '<C-F5>', ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
-  map('n', '<F9>', ":lua require'dap'.toggle_breakpoint()<CR>", opt)
-  map('n', '<S-F9>', ":lua require'dap'.clear_breakpoints()<CR>", opt)
+  map('n', '<F6>', ":lua require'dap'.toggle_breakpoint()<CR>", opt)
+  map('n', '<S-F6>', ":lua require'dap'.clear_breakpoints()<CR>", opt)
   --  stepOver, stepOut, stepInto
   map('n', '<F12>', ":lua require'dap'.step_over()<CR>", opt)
-  map('n', '<S-F10>', ":lua require'dap'.step_out()<CR>", opt)
-  map('n', '<F10>', ":lua require'dap'.step_into()<CR>", opt)
+  map('n', '<S-F7>', ":lua require'dap'.step_out()<CR>", opt)
+  map('n', '<F7>', ":lua require'dap'.step_into()<CR>", opt)
   -- 弹窗
   map('n', '<S-F12>', ":lua require'dapui'.eval()<CR>", opt)
 end
