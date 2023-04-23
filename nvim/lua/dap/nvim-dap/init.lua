@@ -61,7 +61,64 @@ vim.fn.sign_define('DapLogPoint', dap_breakpoint.logpoint)
 vim.fn.sign_define('DapStopped', dap_breakpoint.stopped)
 
 
-dapui.setup({})
+dapui.setup({
+  element_mappings = {
+    scopes = {
+      edit = "e",
+      expand = "o",
+      repl = "r",
+    },
+    watches = {
+      remove = "d",
+      edit = "e",
+      repl = "r",
+    },
+    stacks = {
+      open = "<CR>",
+    },
+    breakpoints = {
+      open = "g",
+      toggle = "b",
+    },
+  },
+
+  layouts = {
+    {
+      elements = {
+        -- Elements can be strings or table with id and size keys.
+        "scopes",
+        "breakpoints",
+        "stacks",
+        "watches",
+      },
+      size = 0.2, -- 40 columns
+      position = "left",
+    },
+    {
+      elements = {
+        "repl",
+      },
+      size = 0.25, -- 25% of total lines
+      position = "bottom",
+    },
+    {
+      elements = {
+        "console",
+      },
+      size = 0.2,
+      position = "right",
+    },
+  },
+
+  floating = {
+    max_height = nil, -- These can be integers or a float between 0 and 1.
+    max_width = nil, -- Floats will be treated as percentage of your screen.
+    border = "rounded", -- Border style. Can be "single", "double" or "rounded"
+    mappings = {
+      close = { "q", "<Esc>" },
+    },
+  },
+})
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
