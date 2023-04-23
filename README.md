@@ -337,7 +337,7 @@ scoop config aria2-enabled true
 
 也可以不用下载
 
-这个配置文件夹里面也有直接复制出来之后添加环境变量即可
+这个配置文件夹里面（已经移动到另一个仓库llvm-mingw）直接复制出来之后添加环境变量即可
 
 怎么添加环境变量后文有说，可以先复制出来一会一起添加，添加完要重启才能生效
 
@@ -403,16 +403,6 @@ ucrt更通用i686是32位x86_64是64位根据自己电脑下载有macos和ubuntu
 
 
 
-补充：这个是msvc的(可以跳过)
-
-[Releases · llvm/llvm-project (github.com)](https://github.com/llvm/llvm-project/releases)
-
-llvm的github上有了windows班去github上下载llvm-win32或64位的安装程序
-
-选择添加环境变量安装即可
-
-优点：llvm-win用的是vs库文件需要安转vs或者安装vs的库
-
 llvm-mingw用的是gnu的库可以用`clang -v`来查看
 
 ![屏幕截图 2022-09-27 095804](./assets/nvim-peizhi-12.png)
@@ -424,10 +414,6 @@ gnu就是mingw的库llvm-mingw默认用的就是gnu的
 msvc的好处是，在终端支持中文显示，但是在neovim内会utf-8乱码（个人觉得不影响-在终端使用方便）
 
 llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱码
-
-用llvm-wim的msvc不管是.c还是.cpp文件都可以用clang编译
-
-但是gnu的.cpp必须用clang++编译
 
 **gnu和msvc二选一即可**
 
@@ -455,23 +441,23 @@ llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱�
 
 
 
-<F5>一键编译之后用快捷键tt（中）或tb（右）或tc（下）打开一个终端窗口（位置不同）
+\<F5\>一键编译之后用快捷键tt（中）或tb（右）或tc（下）打开一个终端窗口（位置不同）
 
 用编译好的.exe的名称回车即可运行
 
-powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按<TAB>自动补全也可以
+powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按\<TAB\>自动补全也可以
 
 或者用-o改名如`g++ hello.cpp -o test.exe`即可编译生成hello.exe文件
 
-之后`hello`按<TAB>自动补全`.\hello.exe`回车运行输出结果
+之后`hello`按\<TAB\>自动补全`.\hello.exe`回车运行输出结果
 
-默认<F5><F4>的名称为a.exe
+默认按\<F5\>\<F4\>的名称为a.exe
 
 
 
 #### 7.3 结合
 
-这里使用的是gcc的编译器，clang也可以，看个人选择
+这里使用的是gcc的编译器，clang也可以，看个人选择（windows下推荐用gcc）
 
 clang的提示会更好mac的话默认用的clang的
 
@@ -725,9 +711,11 @@ https://github.com/jiaxinaoliao/neovimBeginCpp/blob/main/%E4%B8%AA%E4%BA%BA%E6%8
 
 
 
-## 8. gdb调试
+## 8. neovim里面使用gdb调试
 
-说明在这儿
+利用的是nvim-dap的插件
+
+安装说明在这儿
 
 [C C Rust (gdb via vscode cpptools) · mfussenegger/nvim-dap Wiki (github.com)](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools))
 
@@ -737,9 +725,9 @@ vscode-cpptools的下载在这
 
 下载vscode-cpptools之后
 
+在配置文件夹~/nvim/lua/dap/nvim-dap/cpp.lua(C语言和C++都用这一个就可以了)
+
 ![image-20221110155807366](assets/image-20221110155807366.png)
-
-
 
 将command改为自己刚刚下载的路径即可
 
@@ -749,7 +737,9 @@ vscode-cpptools的下载在这
 ,de 停止调试
 ```
 
-windows下默认用的gdb不是很好用（没有配置好）还不如直接用上面的lldb
+
+
+调试的时候使用gdb需要前缀`-ecec`如a打断点`dap> -exec b hello.cpp : 6`
 
 
 

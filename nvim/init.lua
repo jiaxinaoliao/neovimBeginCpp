@@ -41,7 +41,7 @@ require("lsp.ui")
 -- 格式化
 require("lsp.formatter")
 -- DAP
---require("dap.nvim-dap")
+require("dap.nvim-dap")
 -- utils
 -- 复制到windows剪贴板
 require("utils.fix-yank")
