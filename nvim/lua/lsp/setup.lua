@@ -34,7 +34,6 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"clangd",
 		"cmake",
-		--"asm_lsp",
 		"tsserver",
 		"tailwindcss",
 		"bashls",
@@ -44,9 +43,6 @@ require("mason-lspconfig").setup({
 		"html",
 		"jsonls",
 		"pyright",
-		--"pylsp",
-		-- "rust_analyzer",
-		-- "taplo",
 		"yamlls",
 		"gopls",
 	},
@@ -55,10 +51,8 @@ require("mason-lspconfig").setup({
 -- key 必须为下列网址列出的 server name，不可以随便写
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
-	lua_ls = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+	lua_ls = require("lsp.config.lua"),
 	clangd = require("lsp.config.clangd"),
-	--asm_lsp = require("lsp.config.asm"),
-	--pylsp = require("lsp.config.pylsp"),
 	pyright = require("lsp.config.pyright"),
 	bashls = require("lsp.config.bash"),
 	html = require("lsp.config.html"),

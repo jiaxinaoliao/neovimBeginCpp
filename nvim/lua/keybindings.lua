@@ -28,7 +28,6 @@ map('n', 'g_', '$', opt)
 map('c', '<C-j>', '<C-n>', { noremap = false })
 map('c', '<C-k>', '<C-p>', { noremap = false })
 
-
 -- fix :set wrap
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -57,7 +56,6 @@ map('v', 'K', ":move '<-2<CR>gv-gv", opt)
 map('v', 'p', '"_dP', opt)
 
 -- 退出
---map('n', 'q', ':q<CR>', opt)
 map('n', 'w', '<cmd>w<CR>', opt)
 map('n', 'wq', ':wq<CR>', opt)
 map('n', "<leader>q", ":q<CR>", opt)
@@ -131,44 +129,12 @@ map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
 map('n', '<leader>w', ':HopWord<CR>', opt)
 -- nvim-tree
 map('n', '<A-m>', ':NvimTreeToggle<CR>', opt)
---map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 -- nvim-tree的已经放在plugin-config\nvim-tree.lua里面了
--- pluginKeys.nvimTreeList = {
---   -- 打开文件或文件夹
---   { key = { '<CR>', 'o', '<2-LeftMouse' }, action = 'edit' },
---   -- v分屏打开文件
---   { key = 'v', action = 'vsplit' },
---   -- b分屏打开文件
---   { key = 'b', action = 'split' },
---   -- ignore (node_modules)
---   { key = 'i', action = 'toggle_ignored' },
---   { key = '.', action = 'toggle_dotfiles' },
---   -- Hide (dotfiles)
---   { key = 'R', action = 'refresh' },
---   -- 文件操作
---   { key = 'a', action = 'create' },
---   { key = 'd', action = 'remove' },
---   { key = 'r', action = 'rename' },
---   { key = 'x', action = 'cut' },
---   { key = 'c', action = 'copy' },
---   { key = 'p', action = 'paste' },
---   { key = 'y', action = 'copy_name' },
---   { key = 'Y', action = 'copy_path' },
---   { key = 'gy', action = 'copy_absolute_path' },
---   { key = 'I', action = 'toggle_file_info' },
---   { key = 'n', action = 'tabnew' },
---   -- 进入下一级
---   { key = { '[' }, action = 'cd' },
---   -- 进入上一级
---   { key = { ']' }, action = 'dir_up' },
--- }
--- bufferline
 -- 左右Tab切换
 map('n', '<A-h>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<A-l>', ':BufferLineCycleNext<CR>', opt)
 -- "moll/vim-bbye" 关闭当前 buffer
---map("n", "<leader>bc", ":Bdelete!<CR>", opt)
 map("n", "xx", ":Bdelete!<CR>", opt)
 map('n', 'xc', '<cmd>Bdelete!<CR><cmd>close<CR>', opt)
 -- 关闭左/右侧标签页
@@ -233,41 +199,12 @@ map('v', '<leader>h', ':TZNarrow<CR>', opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
-  -- rename
-  --[[
-  Lspsaga 替换 rn
-  mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
-  --]]
   mapbuf('n', '<leader>s', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opt)
   mapbuf('n', 'cm', '<cmd>Lspsaga rename<CR>', opt)
-  -- code action
-  --[[
-  Lspsaga 替换 ca
-  mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
-  --]]
   mapbuf('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opt)
-  -- go xx
-  --[[
-    mapbuf('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
-  --]]
   mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
-  --[[
-  Lspsaga 替换 gh
-  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-  --]]
   mapbuf('n', 'gh', '<cmd>Lspsaga hover_doc<cr>', opt)
-  --[[
-  Lspsaga 替换 gr
-  mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
-  --]]
   mapbuf('n', 'gr', '<cmd>Lspsaga lsp_finder<CR>', opt)
-  --[[
-  Lspsaga 替换 gp, gj, gk
-  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-  mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-  --]]
-  -- diagnostic
   mapbuf('n', 'gp', '<cmd>Lspsaga show_line_diagnostics<CR>', opt)
   mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', opt)
   mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opt)
@@ -377,7 +314,7 @@ pluginKeys.cmp = function(cmp)
       elseif has_words_before() then
         cmp.complete()
       else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+        fallback()
       end
     end, {"i", "s"}),
 
@@ -388,7 +325,6 @@ pluginKeys.cmp = function(cmp)
         feedkey("<Plug>(vsnip-jump-prev)", "")
       end
     end, {"i", "s"})
-    -- end of super Tab  
   }
 end
 

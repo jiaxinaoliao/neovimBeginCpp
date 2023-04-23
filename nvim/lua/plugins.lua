@@ -33,30 +33,25 @@ lazy.setup({
         "wbthomason/packer.nvim",
         -- 加速lua
         "lewis6991/impatient.nvim",
-        ------------------ 基础插件------------------
-        ------------------ 基本api ------------------
+        ------------- 基础插件------------------
+        -- 基本api
         "nvim-lua/plenary.nvim",
-        ------------------ 弹窗窗口 -----------------
-        --"nvim-lua/popup.nvim",
+        -- 弹窗窗口
         "rcarriga/nvim-notify",
         "MunifTanjim/nui.nvim",
         "folke/noice.nvim",
-        ------------------ 文件树   -----------------
         -- nvim-tree
         "nvim-tree/nvim-tree.lua",
         "nvim-tree/nvim-web-devicons",
         "preservim/tagbar",
-        ------------------上下状态栏 ----------------
         -- bufferline
         "akinsho/bufferline.nvim",
         "moll/vim-bbye",
-        
         -- lualine
         "nvim-lualine/lualine.nvim",
         "arkav/lualine-lsp-progress",
-        ------------------ 多光标 ----------------
+        -- 多光标
         "mg979/vim-visual-multi",
-        ------------------ 搜索弹窗 ----------------
         -- telescope
         "nvim-telescope/telescope.nvim",
         "nvim-telescope/telescope-live-grep-args.nvim",
@@ -65,18 +60,18 @@ lazy.setup({
         "nvim-telescope/telescope-ui-select.nvim",
         "nvim-telescope/telescope-rg.nvim",
         "nvim-telescope/telescope-dap.nvim",
-        ---------------- markdown预览 -------------
+        -- markdown preview
         "iamcco/markdown-preview.nvim",
-        ------------------- 跳转插件-------------
-        "ggandor/flit.nvim",
-        --use("ggandor/leap-ast.nvim")
-        --use("ggandor/leap-spooky.nvim")
+        -- 跳转插件
         "ggandor/leap.nvim",
+        "ggandor/flit.nvim",
+        -- 单词跳转
+        "phaazon/hop.nvim",
         -- dashboard-nvim
         "glepnir/dashboard-nvim",
         -- project
-        --use("ahmedkhalf/project.nvim")
-        --------语法高亮 treesitter
+        -- "ahmedkhalf/project.nvim",
+        --语法高亮
         "nvim-treesitter/nvim-treesitter",
         "p00f/nvim-ts-rainbow",
         -- indent-blankline
@@ -88,7 +83,7 @@ lazy.setup({
         "neovim/nvim-lspconfig",
         "ray-x/lsp_signature.nvim",
         -- cmake
-        -- use("Shatur/neovim-cmake")
+        "Shatur/neovim-cmake",
         -- 补全引擎
         "hrsh7th/nvim-cmp",
         -- 补全源
@@ -106,7 +101,8 @@ lazy.setup({
         "tami5/lspsaga.nvim",
         -- 代码格式化
         "mhartington/formatter.nvim",
-        --use({ 'jose-elias-alvarez/null-ls.nvim', requires = 'nvim-lua/plenary.nvim' })
+        -- "jose-elias-alvarez/null-ls.nvim", 
+        -- "nvim-lua/plenary.nvim",
         -- TypeScript 增强
         "jose-elias-alvarez/nvim-lsp-ts-utils", 
         "nvim-lua/plenary.nvim",
@@ -135,15 +131,14 @@ lazy.setup({
         "Mofiqul/vscode.nvim",
         -- catppuccin
         "catppuccin/nvim",
-        --------------------主题透明---------------------------
+        --主题透明
         "xiyaowong/nvim-transparent",
-        ----------------------纯净模式-------------------------
+        --纯净模式
         "Pocco81/true-zen.nvim",
-        --不同位置的终端tt
+        --不同位置的终端
         "akinsho/toggleterm.nvim",
-        ------关键字调用hop跳转
+        --关键字
         "folke/which-key.nvim",
-        "phaazon/hop.nvim", -- like easymotion, but more powerful
         -- surround
         "kylechui/nvim-surround",
         -- Comment
@@ -152,12 +147,12 @@ lazy.setup({
         "windwp/nvim-autopairs",
         -- git
         "lewis6991/gitsigns.nvim",
-        -- vimspector
-        --use('puremourning/vimspector')
         ---------------------------dap调试--------------
+        -- vimspector
+        -- "puremourning/vimspector",
         "mfussenegger/nvim-dap",
-        "theHamsta/nvim-dap-virtual-text",
         "rcarriga/nvim-dap-ui",
+        "theHamsta/nvim-dap-virtual-text",
         -------------lf插件----------
         "ptzz/lf.vim",
         "voldikss/vim-floaterm",
@@ -167,32 +162,9 @@ lazy.setup({
         "mtdl9/vim-log-highlighting",
         --------显示lsp状态
         "j-hui/fidget.nvim",
-        ----------------测试代码片段
-        -- use('vim-test/vim-test')
-        -- use('nvim-neotest/neotest')
-        --------------自动保存
-        -- use("Pocco81/AutoSave.nvim")
-        -- use('djoshea/vim-autoread')
-        -----------j，k加速
-        -- use('rhysd/accelerated-jk')
-        ------------导航栏
-        -- use('aserowy/tmux.nvim')
 
     config = {
-        -- profile = {
-        --   enable = true,
-        --   threshold = 1,
-        -- },
         compile_on_sync = true,
-        -- profile = {
-        --   enable = false,
-        --   threshold = 1
-        -- },
-        -- 锁定插件版本在snapshots目录
-        --snapshot_path = require("packer.util").join_paths(vim.fn.stdpath("config"), "snapshots"),
-        -- 这里锁定插件版本在v1，不会继续更新插件
-        --snapshot = "v1",
-
         -- 最大并发数
         max_jobs = 16,
         -- 自定义源
@@ -205,19 +177,8 @@ lazy.setup({
         display = {
             -- 使用浮动窗口显示
             open_fn = function()
-                return require('packer.util').float({ border = 'single' })
+                return require('lazy.util').float({ border = 'single' })
             end,
         },
     },
 })
-
--- 每次保存 plugins.lua 自动安装插件
--- pcall(
---   vim.cmd,
---   [[
--- augroup packer_user_config
--- autocmd!
--- autocmd BufWritePost plugins.lua source <afile> | PackerSync
--- augroup end
--- ]]
--- )
