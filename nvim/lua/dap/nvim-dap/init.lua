@@ -65,16 +65,14 @@ dapui.setup({
   element_mappings = {
     scopes = {
       edit = "e",
-      expand = "o",
       repl = "r",
     },
     watches = {
-      remove = "d",
       edit = "e",
       repl = "r",
     },
     stacks = {
-      open = "<CR>",
+      open = "g",
     },
     breakpoints = {
       open = "g",
@@ -85,10 +83,9 @@ dapui.setup({
   layouts = {
     {
       elements = {
-        -- Elements can be strings or table with id and size keys.
         "scopes",
-        "breakpoints",
         "stacks",
+        "breakpoints",
         "watches",
       },
       size = 0.2, -- 40 columns
