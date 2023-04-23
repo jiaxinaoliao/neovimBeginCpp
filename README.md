@@ -423,17 +423,17 @@ llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱�
 
 **window的话建议用gnu**
 
-改用llvm-mingw用Target：gnu的库，在用msvc的在使用lldb调试的时候打断点会报错
-
-用mingw的的话编译c++需要用clang++
+用mingw的的话编译c++需要用g++
 
 在nvim文件夹内的lua文件夹下keybindings.lua的最后
 
-![屏幕截图 2022-09-27 103040](./assets/nvim-peizhi-14.png)
+![image-20230423233113959](assets/image-20230423233113959.png)
 
-大概四百多行的位置将clang改为clang++即可如果是.c文件用clang即可
+大概四百行左右的位置F4是编译如果想用clang就把F4后面的g++改成clang++即可
 
-或者使用gcc改成gcc即可，cpp文件就改成g++
+第二行是Ctrl+F4是调试之前的编译如需调试可以先用Ctrl+F4
+
+c文件就用clang或者gcc
 
 可以用`:400`命令或者快捷键`400gg`快速跳转到四百行就可以看见了
 
@@ -441,9 +441,9 @@ llvm-mingw默认用的gnu的库，utf-8在vim和终端中都是英文不会乱�
 
 
 
-\<F5\>一键编译之后用快捷键tt（中）或tb（右）或tc（下）打开一个终端窗口（位置不同）
+\<F4\>一键编译之后用快捷键tt（中）或tb（右）或tc（下）打开一个终端窗口（位置不同）
 
-用编译好的.exe的名称回车即可运行
+用编译好的.exe的名称回车即可运行（或者F5在vim中运行预览一下效果）
 
 powershell的格式是.\a.exe也可以输入文件(.exe)名称如`a`之后按\<TAB\>自动补全也可以
 
