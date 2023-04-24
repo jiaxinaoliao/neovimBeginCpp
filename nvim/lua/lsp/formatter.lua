@@ -22,10 +22,7 @@ formatter.setup({
 				return {
 					exe = "stylua",
 					args = {
-						-- "--config-path "
-						--   .. os.getenv("XDG_CONFIG_HOME")
-						--   .. "/stylua/stylua.toml",
-						"-",
+            "-",
 					},
 					stdin = true,
 				}

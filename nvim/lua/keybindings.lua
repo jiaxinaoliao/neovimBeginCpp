@@ -149,8 +149,8 @@ map('n', '<leader>xp', ':BufferLinePickClose<CR>', opt)
 map('v', 'fy', ':TranslateW<CR>', opt)
 
 -- Telescope
-map('n', '<C-p>', ':Telescope find_files<CR>', opt)
-map('n', '<C-f>', ':Telescope live_grep<CR>', opt)
+map('n', '<C-f>', ':Telescope find_files<CR>', opt)
+map('n', '<C-p>', ':Telescope live_grep<CR>', opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {
