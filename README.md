@@ -779,4 +779,4 @@ https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 
 利用cd命令可以快速跳转到指定的文件夹，但是cd只能是跳转到文件夹不能是文件所以这里加一个..返回上一级就行了比如：`cd “$（fzf）\..”`即可实现快速搜索跳转了或者`vim $(fzf)`即可快速打开文件
 
-fzf在windows下的配置，在环境变量中新建一个名为`FZF_DEFAULT_OPTS`值为`--layout=reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'`代码预览需要bat可以用scoop安装
+fzf在windows下的配置，在环境变量中新建一个名为`FZF_DEFAULT_OPTS`值为`--layout=reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'`代码预览需要bat可以用scoop安装z`
