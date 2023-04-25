@@ -133,7 +133,7 @@ lazy.setup({
         -- catppuccin
         "catppuccin/nvim",
         --主题透明
-        -- "xiyaowong/nvim-transparent",
+        "xiyaowong/nvim-transparent",
         --纯净模式
         "Pocco81/true-zen.nvim",
         --不同位置的终端
