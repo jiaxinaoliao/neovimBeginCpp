@@ -5,9 +5,8 @@ require("keybindings")
 -- Packer插件管理
 require("plugins")
 -- 主题设置
---require('config.colorscheme')
---require('plugin.transparent')
-require("plugin.catppuccin")
+require("colorscheme")
+-- require("plugin.transparent")
 -- 插件配置
 require("plugin.impatient")
 --require("plugin.neo-tree")

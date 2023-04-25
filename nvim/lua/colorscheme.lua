@@ -1,4 +1,17 @@
-vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+local colorscheme = "catppuccin"
+-- tokyonight
+-- OceanicNext
+-- gruvbox
+-- zephyr
+-- nord
+-- onedark
+-- nightfox
+-- default
+-- catppuccin
+-- vscode
+
+------------------catppuccin set----
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup({
 	transparent_background = true,
@@ -36,3 +49,10 @@ require("catppuccin").setup({
 })
 
 vim.cmd [[colorscheme catppuccin]]
+--------------------------end
+
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+  vim.notify("colorscheme: " .. colorscheme .. " 没有找到！")
+  return
+end
