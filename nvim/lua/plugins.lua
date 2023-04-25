@@ -155,8 +155,8 @@ lazy.setup({
         "rcarriga/nvim-dap-ui",
         "theHamsta/nvim-dap-virtual-text",
         -------------lf插件----------
-        "ptzz/lf.vim",
-        "voldikss/vim-floaterm",
+        -- "ptzz/lf.vim",
+        -- "voldikss/vim-floaterm",
         -----翻译插件
         "voldikss/vim-translator",
         --------高亮

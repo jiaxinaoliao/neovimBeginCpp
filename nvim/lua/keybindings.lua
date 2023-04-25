@@ -151,6 +151,8 @@ map('v', 'fy', ':TranslateW<CR>', opt)
 -- Telescope
 map('n', '<C-f>', ':Telescope find_files<CR>', opt)
 map('n', '<C-p>', ':Telescope live_grep<CR>', opt)
+map('n', '<C-b>', ':Telescope buffers<CR>', opt)
+
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
   i = {
