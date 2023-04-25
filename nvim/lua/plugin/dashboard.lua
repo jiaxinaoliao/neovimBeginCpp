@@ -36,7 +36,7 @@ db.setup {
         icon_hl = 'title',
         desc = 'Edit keybindings                    ',
         desc_hl = 'string',
-        action = 'edit ~/AppData/local/nvim/lua/keybindings.lua',
+        action = 'edit D:/CppApp/neovim/nvim/lua/keybindings.lua',
       },
       -- {
       --   icon = "  ",
@@ -60,7 +60,7 @@ db.setup {
         icon_hl = 'title',
         desc = "Edit init.lua                       ",
         desc_hl = 'string',
-        action = 'edit ~/AppData/local/nvim/init.lua',
+        action = 'edit D:/CppApp/neovim/nvim/init.lua',
       },
       -- {
       --   icon = "  ",

@@ -42,6 +42,7 @@ lazy.setup({
         "folke/noice.nvim",
         -- nvim-tree
         "nvim-tree/nvim-tree.lua",
+        -- "nvim-neo-tree/neo-tree.nvim",
         "nvim-tree/nvim-web-devicons",
         "preservim/tagbar",
         -- bufferline

@@ -10,6 +10,7 @@ require("plugins")
 require("plugin.catppuccin")
 -- 插件配置
 require("plugin.impatient")
+--require("plugin.neo-tree")
 require("plugin.nvim-tree")
 require("plugin.bufferline")
 require("plugin.lualine")
