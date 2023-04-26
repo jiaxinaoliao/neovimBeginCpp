@@ -4,10 +4,15 @@ if not status then
   return
 end
 
+require("nvim-treesitter.install").prefer_git = true
+for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
+  config.install_info.url = config.install_info.url:gsub("https://hub.njuu.cf/", "something else")
+end
+
 treesitter.setup({
   -- 安装 language parser
   -- :TSInstallInfo 命令查看支持的语言
-  ensure_installed = { "c", "cpp", "java", "python", 
+  ensure_installed = { "c", "cpp", "c_sharp", "cmake", "java", "python", 
     "json", "html", "css", "vim", "lua", "markdown",
     "javascript", "typescript" },
   -- ensure_installed = "maintained",

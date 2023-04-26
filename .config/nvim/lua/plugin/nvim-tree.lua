@@ -13,11 +13,11 @@ local function on_attach(bufnr)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
-  vim.keymap.set('n', ']', api.tree.change_root_to_node,          opts('CD'))
+  vim.keymap.set('n', 'n', api.tree.change_root_to_node,          opts('CD'))
 --  vim.keymap.set('n', '<C-e>', api.node.open.replace_tree_buffer,     opts('Open: In Place'))
   vim.keymap.set('n', 'I', api.node.show_info_popup,              opts('Info'))
   vim.keymap.set('n', '<C-r>', api.fs.rename_sub,                     opts('Rename: Omit Filename'))
-  vim.keymap.set('n', 'n',     api.node.open.tab,                     opts('Open: New Tab'))
+  vim.keymap.set('n', '<C-n>',     api.node.open.tab,                     opts('Open: New Tab'))
   vim.keymap.set('n', 'v', api.node.open.vertical,                opts('Open: Vertical Split'))
   vim.keymap.set('n', 'b', api.node.open.horizontal,              opts('Open: Horizontal Split'))
   vim.keymap.set('n', '<BS>',  api.node.navigate.parent_close,        opts('Close Directory'))
@@ -26,7 +26,7 @@ local function on_attach(bufnr)
   vim.keymap.set('n', '>',     api.node.navigate.sibling.next,        opts('Next Sibling'))
   vim.keymap.set('n', '<',     api.node.navigate.sibling.prev,        opts('Previous Sibling'))
   vim.keymap.set('n', '.',     api.node.run.cmd,                      opts('Run Command'))
-  vim.keymap.set('n', '[',     api.tree.change_root_to_parent,        opts('Up'))
+  vim.keymap.set('n', 'N',     api.tree.change_root_to_parent,        opts('Up'))
   vim.keymap.set('n', 'a',     api.fs.create,                         opts('Create'))
   vim.keymap.set('n', 'bmv',   api.marks.bulk.move,                   opts('Move Bookmarked'))
   vim.keymap.set('n', 'B',     api.tree.toggle_no_buffer_filter,      opts('Toggle No Buffer'))
@@ -68,7 +68,6 @@ local function on_attach(bufnr)
 
 end
 
-
 -- 列表操作快捷键
 --local list_keys = require("keybindings").nvimTreeList
 
@@ -78,7 +77,7 @@ nvim_tree.setup({
   disable_netrw = true,
   -- 不显示 git 状态图标
   git = {
-    enable = false,
+    enable = true,
   },
   -- project plugin 需要这样设置
   update_cwd = false,
@@ -94,7 +93,7 @@ nvim_tree.setup({
   },
   view = {
     -- 宽度
-    width = 23,
+    width = 20,
     -- 也可以 'right'
     side = "left",
     -- 隐藏根目录
@@ -103,13 +102,24 @@ nvim_tree.setup({
     mappings = {
       -- 只用内置快捷键
       custom_only = true,
-      list = list_keys,
     },
     -- 不显示行数
     number = false,
     relativenumber = false,
     -- 显示图标
     signcolumn = "yes",
+    float = {
+      enable = false,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 40,
+        height = 25,
+        row = 3,
+        col = 32,
+      }, 
+    },
   },
   actions = {
     open_file = {
@@ -123,9 +133,10 @@ nvim_tree.setup({
   -- https://github.com/4U6U57/wsl-open/
   system_open = {
     -- mac
-    cmd = "open",
+    -- cmd = "open",
     -- windows
     -- cmd = "wsl-open",
+    cmd = "",
   },
 })
 
