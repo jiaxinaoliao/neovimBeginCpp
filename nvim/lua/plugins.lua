@@ -44,7 +44,8 @@ lazy.setup({
         "nvim-tree/nvim-tree.lua",
         -- "nvim-neo-tree/neo-tree.nvim",
         "nvim-tree/nvim-web-devicons",
-        "preservim/tagbar",
+        -- "preservim/tagbar",
+        "simrat39/symbols-outline.nvim",
         -- bufferline
         "akinsho/bufferline.nvim",
         "moll/vim-bbye",
@@ -127,7 +128,7 @@ lazy.setup({
         -- onedark
         "ful1e5/onedark.nvim",
         -- nightfox
-        "EdenEast/nightfox.nvim",
+        -- "EdenEast/nightfox.nvim",
         -- vscode
         "Mofiqul/vscode.nvim",
         -- catppuccin

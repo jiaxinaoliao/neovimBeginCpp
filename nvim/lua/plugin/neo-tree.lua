@@ -1,5 +1,5 @@
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
-local status, nvim_tree = pcall(require, "neo-tree")
+local status, neo-tree = pcall(require, "neo-tree")
 if not status then
   vim.notify("没有找到 neo-tree")
   return

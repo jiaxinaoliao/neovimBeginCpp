@@ -1,4 +1,4 @@
-local status, nvim_tree = pcall(require, "nvim-transparent")
+local status, nvim_transparent = pcall(require, "nvim-transparent")
 if not status then
   vim.notify("没有找到 nvim-transparent")
   return

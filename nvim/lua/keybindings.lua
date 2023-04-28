@@ -121,7 +121,7 @@ local pluginKeys = {}
 map('n', 'zz', ':foldclose<CR>', opt)
 map('n', 'Z', ':foldopen<CR>', opt)
 --tagvar大纲
-map('n', '<F8>', ':Tagbar<CR>', opt)
+map('n', '<F8>', ':SymbolsOutline<CR>', opt)
 --markdown
 map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
 map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
