@@ -24,7 +24,7 @@ require("symbols-outline").setup({
     close = {"<Esc>", "q"},
     goto_location = "<Cr>",
     focus_location = "o",
-    hover_symbol = "<C-space>",
+    hover_symbol = "I",
     toggle_preview = "K",
     rename_symbol = "r",
     code_actions = "a",
