@@ -8,7 +8,7 @@ end
 toggleterm.setup({
   size = function(term)
     if term.direction == "horizontal" then
-      return 15
+      return 10
     elseif term.direction == "vertical" then
       return vim.o.columns * 0.3
     end
@@ -65,6 +65,12 @@ local tc = Terminal:new({
   close_on_exit = true,
 })
 
+local aexe = Terminal:new({
+  cmd = ".\\a.exe",
+  direction = "float",
+  close_on_exit = true,
+})
+
 local M = {}
 
 M.toggleA = function()
@@ -99,6 +105,10 @@ end
 
 M.toggleG = function()
   lazygit:toggle()
+end
+
+M.toggleE = function()
+  aexe:toggle()
 end
 
 require("keybindings").mapToggleTerm(M)

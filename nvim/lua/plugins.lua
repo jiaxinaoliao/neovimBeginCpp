@@ -160,6 +160,11 @@ lazy.setup({
         -- "voldikss/vim-floaterm",
         -----翻译插件
         "voldikss/vim-translator",
+        -- {
+        --   "JuanZoran/Trans.nvim",
+        --   build = function () require'Trans'.install() end,
+        --   dependencies = { 'kkharji/sqlite.lua', },
+        -- },
         --------高亮
         "mtdl9/vim-log-highlighting",
         --------显示lsp状态
