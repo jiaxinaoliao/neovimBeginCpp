@@ -15,7 +15,7 @@ db.setup {
 
     center = {
       {
-        icon = '                     ',
+        icon = '                   󰈞  ',
         icon_hl = 'title',
         desc = 'Find file                           ',
         desc_hl = 'string',
@@ -32,7 +32,7 @@ db.setup {
       --   action = "Telescope oldfiles",
       -- },
       {
-        icon = '                     ',
+        icon = '                     ',
         icon_hl = 'title',
         desc = 'Edit keybindings                    ',
         desc_hl = 'string',

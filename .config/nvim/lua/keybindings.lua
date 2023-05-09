@@ -333,7 +333,7 @@ end
 ------一键运行
 map('n', '<F4>', ':!g++ *.cpp<CR>', opt)
 map('n', '<F3>', ':!g++ -g *.cpp<CR>', opt)
-map('n', '<F5>', ':!a.out<CR>', opt)
+-- map('n', '<F5>', ':!a.out<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
 -- <leader>tt 浮动
@@ -346,6 +346,7 @@ pluginKeys.mapToggleTerm = function(toggleterm)
   vim.keymap.set({ 'n', 't' }, 'tb', toggleterm.toggleB)
   vim.keymap.set({ 'n', 't' }, 'tc', toggleterm.toggleC)
   vim.keymap.set({ 'n', 't' }, 'tg', toggleterm.toggleG)
+  vim.keymap.set({ 'n', 't' }, '<F5>', toggleterm.toggleE)
 end
 
 -- gitsigns查看更改记录

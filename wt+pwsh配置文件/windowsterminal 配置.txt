@@ -20,6 +20,15 @@
             "keys": "ctrl+shift+f"
         },
         {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
             "command": "unbound",
             "keys": "alt+shift+w"
         },
@@ -32,26 +41,19 @@
             "keys": "ctrl+shift+w"
         },
         {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
             "command": "toggleFocusMode",
             "keys": "alt+z"
         }
     ],
     "alwaysOnTop": false,
     "alwaysShowTabs": true,
+    "autoHideWindow": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "disableAnimations": false,
     "firstWindowPreference": "defaultProfile",
+    "focusFollowMouse": false,
     "initialCols": 88,
     "initialPosition": "222,100",
     "initialRows": 28,
@@ -63,13 +65,15 @@
             "backgroundImage": null,
             "colorScheme": "Campbell",
             "cursorShape": "filledBox",
+            "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "CodeNewRoman NFM",
-                "size": 21,
+                "face": "CodeNewRoman Nerd Font Mono",
+                "size": 21.0,
                 "weight": "normal"
             },
-            "opacity": 66
+            "opacity": 66,
+            "useAcrylic": false
         },
         "list": 
         [
@@ -108,22 +112,16 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "guid": "{f9ceaf27-504c-58d7-927c-d1d6a7ac7d3c}",
-                "hidden": false,
-                "name": "Ubuntu 22.04.1 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
-            },
-            {
-                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-                "hidden": true,
-                "name": "Ubuntu-22.04",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
                 "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{d7b20cea-47a9-518c-95a4-c8bd91e2e1c6}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.2 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
     },
@@ -361,7 +359,11 @@
         }
     ],
     "showTabsInTitlebar": true,
+    "showTerminalTitleInTitlebar": true,
     "snapToGridOnResize": false,
+    "tabSwitcherMode": "inOrder",
     "tabWidthMode": "equal",
-    "useAcrylicInTabRow": false
+    "theme": "system",
+    "themes": [],
+    "useAcrylicInTabRow": true
 }
