@@ -10,7 +10,7 @@ local colorscheme = "catppuccin"
 -- catppuccin
 -- vscode
 
-------------------catppuccin set----
+----------------------
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup({
@@ -49,7 +49,8 @@ require("catppuccin").setup({
 })
 
 vim.cmd [[colorscheme catppuccin]]
---------------------------end
+--------------------
+
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

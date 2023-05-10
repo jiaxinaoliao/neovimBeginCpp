@@ -29,13 +29,13 @@ local dap_breakpoint = {
         numhl = "DapBreakpoint",
     },
     condition = {
-        text = 'ﳁ',
+        text = '󰟃',
         texthl = 'DapBreakpoint',
         linehl = 'DapBreakpoint',
         numhl = 'DapBreakpoint',
     },
     rejected = {
-        text = "",
+        text = "󰃤",
         texthl = "DapBreakpint",
         linehl = "DapBreakpoint",
         numhl = "DapBreakpoint",
@@ -47,7 +47,7 @@ local dap_breakpoint = {
         numhl = 'DapLogPoint',
     },
     stopped = {
-        text = '',
+        text = '󰜴',
         texthl = 'DapStopped',
         linehl = 'DapStopped',
         numhl = 'DapStopped',
