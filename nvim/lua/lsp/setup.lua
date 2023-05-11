@@ -33,6 +33,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
 		"clangd",
+    "csharp_ls",
 		"cmake",
 		"tsserver",
 		"tailwindcss",
@@ -53,6 +54,7 @@ require("mason-lspconfig").setup({
 local servers = {
 	lua_ls = require("lsp.config.lua"),
 	clangd = require("lsp.config.clangd"),
+	csharp_ls = require("lsp.config.csharp"),
 	pyright = require("lsp.config.pyright"),
 	bashls = require("lsp.config.bash"),
 	html = require("lsp.config.html"),

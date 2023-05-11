@@ -55,7 +55,7 @@
     "firstWindowPreference": "defaultProfile",
     "focusFollowMouse": false,
     "initialCols": 88,
-    "initialPosition": "222,100",
+    "initialPosition": "250,100",
     "initialRows": 28,
     "launchMode": "focus",
     "profiles": 
@@ -72,7 +72,9 @@
                 "size": 21.0,
                 "weight": "normal"
             },
-            "opacity": 66,
+            "opacity": 60,
+            "padding": "0",
+            "scrollbarState": "hidden",
             "useAcrylic": false
         },
         "list": 
