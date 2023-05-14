@@ -169,6 +169,8 @@ lazy.setup({
         "mtdl9/vim-log-highlighting",
         --------显示lsp状态
         "j-hui/fidget.nvim",
+        --------平滑光标
+        "gen740/SmoothCursor.nvim",
 
     config = {
         compile_on_sync = true,
