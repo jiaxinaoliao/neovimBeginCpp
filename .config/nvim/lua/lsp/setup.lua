@@ -39,7 +39,7 @@ require("mason-lspconfig").setup({
     "dockerls",
     "emmet_ls",
     "pyright",
-    "pylsp",
+    -- "pylsp",
     -- "taplo",
     "yamlls",
     "gopls",

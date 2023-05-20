@@ -66,9 +66,9 @@ local tc = Terminal:new({
 })
 
 local aexe = Terminal:new({
-  cmd = ".\\a.exe",
+  cmd = "./a.out",
   direction = "float",
-  close_on_exit = true,
+  close_on_exit = false,
 })
 
 local M = {}

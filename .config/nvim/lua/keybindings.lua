@@ -235,7 +235,8 @@ pluginKeys.mapDAP = function()
   -- 结束
   map(
     'n',
-    '<leader>de',
+    --  shift+F5
+    '<F17>',
     ":lua require'dap'.close()<CR>"
     .. ":lua require'dap'.terminate()<CR>"
     .. ":lua require'dap.repl'.close()<CR>"
@@ -245,16 +246,17 @@ pluginKeys.mapDAP = function()
     opt
   )
   -- 开始/继续
-  map('n', '<leader>dc', ":lua require'dap'.continue()<CR>", opt)
+  -- ctrl+F5  <F6> <S-F6> <F12> <S-F7> <F7> <S-F12>
+  map('n', '<F29>', ":lua require'dap'.continue()<CR>", opt)
   -- 设置断点
-  map('n', '<leader>dt', ":lua require'dap'.toggle_breakpoint()<CR>", opt)
-  map('n', '<leader>dT', ":lua require'dap'.clear_breakpoints()<CR>", opt)
+  map('n', '<F6>', ":lua require'dap'.toggle_breakpoint()<CR>", opt)
+  map('n', '<F18>', ":lua require'dap'.clear_breakpoints()<CR>", opt)
   --  stepOver, stepOut, stepInto
-  map('n', '<leader>dj', ":lua require'dap'.step_over()<CR>", opt)
-  map('n', '<leader>dl', ":lua require'dap'.step_out()<CR>", opt)
-  map('n', '<leader>dk', ":lua require'dap'.step_into()<CR>", opt)
+  map('n', '<F12>', ":lua require'dap'.step_over()<CR>", opt)
+  map('n', '<F19>', ":lua require'dap'.step_out()<CR>", opt)
+  map('n', '<F7>', ":lua require'dap'.step_into()<CR>", opt)
   -- 弹窗
-  map('n', '<leader>dh', ":lua require'dapui'.eval()<CR>", opt)
+  map('n', '<F24>', ":lua require'dapui'.eval()<CR>", opt)
 end
 --
 -- -- vimspector
@@ -332,7 +334,8 @@ end
 
 ------一键运行
 map('n', '<F4>', ':!g++ *.cpp<CR>', opt)
-map('n', '<F3>', ':!g++ -g *.cpp<CR>', opt)
+--  ctrl+F4
+map('n', '<F28>', ':!g++ -g *.cpp<CR>', opt)
 -- map('n', '<F5>', ':!a.out<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
