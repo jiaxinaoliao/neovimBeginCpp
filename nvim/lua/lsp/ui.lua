@@ -4,7 +4,7 @@ vim.diagnostic.config({
 	signs = true,
 	update_in_insert = false,
 })
-local signs = { Error = " ", Warn = " ", Hint = "󰌶 ", Info = " " }
+local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -66,7 +66,7 @@ lspsaga.setup({ -- defaults ...
 	warn_sign = "",
 	hint_sign = "󰌶",
 	infor_sign = "",
-	diagnostic_header_icon = "   ",
+	diagnostic_header_icon = "",
 	-- code action title icon
 	code_action_icon = " ",
 	code_action_prompt = {
@@ -98,7 +98,7 @@ lspsaga.setup({ -- defaults ...
 		quit = "<ESC>",
 		exec = "<CR>",
 	},
-	definition_preview_icon = "󰀹  ",
+	definition_preview_icon = "󰀹",
 	border_style = "single",
 	rename_prompt_prefix = "➤",
 	rename_output_qflist = {

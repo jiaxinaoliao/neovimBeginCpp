@@ -170,7 +170,7 @@ lazy.setup({
         --------显示lsp状态
         "j-hui/fidget.nvim",
         --------平滑光标
-        "gen740/SmoothCursor.nvim",
+        -- "gen740/SmoothCursor.nvim",
 
     config = {
         compile_on_sync = true,

@@ -8,7 +8,7 @@ lualine.setup({
   options = {
     -- 指定皮肤
     -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
-    theme = "catppuccin",
+    theme = "auto",
     -- 分割线
     component_separators = {
       left = "|",
@@ -23,6 +23,13 @@ lualine.setup({
   },
   extensions = { "nvim-tree" },
   sections = {
+    lualine_a = {
+      { 
+        'mode',
+        separator = { left = '' },
+        right_padding = 2
+      },
+    },
     lualine_c = {
       "filename",
       {
@@ -32,6 +39,7 @@ lualine.setup({
     },
     lualine_x = {
       "filesize",
+      "encoding",
       {
         "fileformat",
          symbols = {
@@ -45,8 +53,14 @@ lualine.setup({
           mac = "CR",
         },
       },
-      "encoding",
       "filetype",
+    }, 
+    lualine_z = {
+      {
+        'location',
+        separator = { right = '' },
+        left_padding = 2
+      },
     },
   },
 })
