@@ -33,22 +33,26 @@ function Color-List($str) {
     echo $itemList | Format-Wide -AutoSize}
 Set-Alias vim nvim
 Set-Alias cc g++
-Set-Alias lc leetcode
+Set-Alias cat lolcat
+Set-Alias lc leetgo
 function gvim {neovide}
 function n {neofetch}
 function ls {Color-List "-Exclude .*"}
 function ll {Color-List "$args"}
 function cl {Clear-Host}
 function cj {cd ..}
-function cf {cd $(fzf)}
+function cf {cd "$(fzf)\.."}
+function vimf {vim $(fzf)}
 function et {exit}
 function lt {tree /f /a}
-function hpp {hexo clean && hexo generate && hexo deploy}
-function hps {hexo clean && hexo generate && hexo deploy && hexo server}
+function hpp {(hexo clean) -and (hexo generate) -and (hexo deploy)}
 function hss {hexo server}
 function gaa {git add .}
 function gpp {git push}
 function gpg {git push --tag}
 function top {btop}
-function dl {dir | lolcat}
+function dl  {dir | lolcat}
 function wyy {musicfox}
+
+function pro {$env:HTTP_PROXY="socks5://127.0.0.1:13140" ; $env:HTTPS_PROXY="socks5://127.0.0.1:13140"}
+function unpro {$env:HTTP_PROXY="" ; $env:HTTPS_PROXY=""}
