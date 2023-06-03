@@ -3,7 +3,7 @@ local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = 'D:\\CppApp\\cpptools-win64\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe',
+  command = 'D:\\CppApp\\VSCodetools\\extensions\\opendebug\\OpenDebugAD7.exe',
   options = {
     detached = false
   }
@@ -14,11 +14,15 @@ dap.configurations.cpp = {
     name = "Launch file",
     type = "cppdbg",
     request = "launch",
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
+    -- program = function()
+    --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\', 'file')
+    -- end,
+    program = "${workspaceFolder}\\a.exe",
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
+    externalConsole = false,
+    MIMode = "gdb",
+    -- miDebuggerPath = "D:\\CppApp\\llvm-mingw\\bin\\lldb.exe",
   },
   -- {
   --   name = 'Attach to gdbserver :1234',

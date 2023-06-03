@@ -11,11 +11,15 @@ dap.configurations.cpp = {
     name = "Launch file",
     type = "cppdbg",
     request = "launch",
-    program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-    end,
+    -- program = function()
+    --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    -- end,
+    program = "${workspaceFolder}/a.out",
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
+    externalConsole = false,
+    MiMode = "gdb",
+    -- miDebuggerPath = "/usr/bin/lldb",
   },
   -- {
   --   name = 'Attach to gdbserver :1234',
