@@ -99,7 +99,7 @@ lazy.setup({
         "rafamadriz/friendly-snippets",
         -- UI 增强
         "onsails/lspkind-nvim",
-        "tami5/lspsaga.nvim",
+        "glepnir/lspsaga.nvim",
         -- 代码格式化
         "mhartington/formatter.nvim",
         -- "jose-elias-alvarez/null-ls.nvim", 

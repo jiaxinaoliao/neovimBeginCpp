@@ -109,6 +109,32 @@ lspsaga.setup({ -- defaults ...
   diagnostic_prefix_format = "%d. ",
   diagnostic_message_format = "%m %c",
   highlight_prefix = false,
+  ui = {
+    title = true,
+    border = "rounded",
+  },
+  lightbulb = {
+    enable = false,
+  },
+  symbol_in_winbar = {
+    enable = false,
+  },
+  outline = {
+    win_position = "right",
+    win_with = "",
+    win_width = 30,
+    preview_width = 0.4,
+    show_detail = true,
+    auto_preview = true,
+    auto_refresh = true,
+    auto_close = true,
+    auto_resize = false,
+    custom_sort = nil,
+    keys = {
+      expand_or_jump = 'o',
+      quit = "<F8>",
+    },
+  },
 })
 
 local M = {}

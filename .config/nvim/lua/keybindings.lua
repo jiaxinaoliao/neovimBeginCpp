@@ -120,8 +120,6 @@ local pluginKeys = {}
 -- treesitter 折叠
 map('n', 'zz', ':foldclose<CR>', opt)
 map('n', 'Z', ':foldopen<CR>', opt)
---tagvar大纲
-map('n', '<F8>', ':Tagbar<CR>', opt)
 --markdown
 map('n', '<leader>mb', ':MarkdownPreview<CR>', opt)
 map('n', '<leader>me', ':MarkdownPreviewStop<CR>', opt)
@@ -204,23 +202,15 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf('n', '<leader>s', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opt)
   mapbuf('n', 'cm', '<cmd>Lspsaga rename<CR>', opt)
   mapbuf('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opt)
-  mapbuf('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opt)
+  mapbuf('n', 'gd', '<cmd>Lspsaga goto_definition<CR>', opt)
+  mapbuf('n', 'gD', '<cmd>Lspsaga peek_definition<CR>', opt)
+  mapbuf('n', 'gt', '<cmd>Lspsaga peek_definition<CR>', opt)
   mapbuf('n', 'gh', '<cmd>Lspsaga hover_doc<cr>', opt)
   mapbuf('n', 'gr', '<cmd>Lspsaga lsp_finder<CR>', opt)
   mapbuf('n', 'gp', '<cmd>Lspsaga show_line_diagnostics<CR>', opt)
-  mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', opt)
-  mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opt)
-  --mapbuf("n", '<C-n>', '<cmd>Lspsaga vim.lsp.buf.format<CR>', opt)
-  --mapbuf("n", "<C-n>", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
-  -- 未用
-  -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-  -- mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
-  -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
-  -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)
-  -- mapbuf('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opt)
-  -- mapbuf('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opt)
-  -- mapbuf('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opt)
-  -- mapbuf('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opt)
+  mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<CR>', opt)
+  mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opt)
+  mapbuf('n', '<F8>', '<cmd>Lspsaga outline<CR>', opt)
 end
 
 -- typescript 快捷键
