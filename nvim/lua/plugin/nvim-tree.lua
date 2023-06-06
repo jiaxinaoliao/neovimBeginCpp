@@ -128,6 +128,11 @@ nvim_tree.setup({
       -- 打开文件时关闭 tree
       quit_on_open = true,
     },
+    file_popup = {
+      open_win_config = {
+        border = "rounded",
+      },
+    },
   },
   -- wsl install -g wsl-open
   -- https://github.com/4U6U57/wsl-open/
