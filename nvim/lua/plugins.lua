@@ -30,7 +30,7 @@ end
 
 lazy.setup({
   -- Packer 可以升级自己
-  "wbthomason/packer.nvim",
+  --"wbthomason/packer.nvim",
   -- 加速lua
   "lewis6991/impatient.nvim",
   ------------- 基础插件------------------
@@ -134,7 +134,7 @@ lazy.setup({
   -- catppuccin
   "catppuccin/nvim",
   --主题透明
-  "xiyaowong/nvim-transparent",
+  "xiyaowong/transparent.nvim",
   --纯净模式
   "Pocco81/true-zen.nvim",
   --不同位置的终端

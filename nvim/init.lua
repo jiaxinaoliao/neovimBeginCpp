@@ -6,7 +6,7 @@ require("keybindings")
 require("plugins")
 -- 主题设置
 require("colorscheme")
-require("plugin.transparent")
+--require("plugin.transparent")
 -- 插件配置
 require("plugin.impatient")
 -- require("plugin.neo-tree")
