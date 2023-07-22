@@ -1,3 +1,4 @@
+$OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
 Import-Module PSReadLine
 Remove-Alias sl -Force
@@ -32,6 +33,7 @@ function Color-List($str) {
         $itemList += $item}
     echo $itemList | Format-Wide -AutoSize}
 Set-Alias vim nvim
+Set-Alias vi nvim
 Set-Alias cc g++
 Set-Alias cat lolcat
 Set-Alias lc leetgo

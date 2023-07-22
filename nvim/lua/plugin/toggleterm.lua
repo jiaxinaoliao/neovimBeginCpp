@@ -66,7 +66,8 @@ local tc = Terminal:new({
 })
 
 local aexe = Terminal:new({
-  cmd = ".\\a.exe",
+  cmd = "a.exe",
+  -- cmd = "g++ *.cpp & a.exe",
   direction = "float",
   close_on_exit = true,
 })

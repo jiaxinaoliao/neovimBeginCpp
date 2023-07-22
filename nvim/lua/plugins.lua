@@ -126,7 +126,7 @@ lazy.setup({
   -- nord
   "shaunsingh/nord.nvim",
   -- onedark
-  "ful1e5/onedark.nvim",
+  "navarasu/onedark.nvim",
   -- nightfox
   -- "EdenEast/nightfox.nvim",
   -- vscode
