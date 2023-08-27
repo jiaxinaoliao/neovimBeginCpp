@@ -192,6 +192,10 @@ map('v', '<C-_>', 'gcc', { noremap = false })
 -- ctrl + s 格式化
 map('n', '<C-s>', ':Format<CR>', opt)
 
+--- chatgpt  neoai.nvim
+map('n', '<leader>a', ":NeoAI<CR>", opt)
+map('n', '<leader>i', ":NeoAIInject ", opt)
+
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
 map('n', '<leader>g', ':TZMinimalist<CR>', opt)

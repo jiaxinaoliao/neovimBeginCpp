@@ -10,6 +10,7 @@ local colorscheme = "catppuccin"
 -- catppuccin
 -- vscode
 
+
 ----------------------
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha

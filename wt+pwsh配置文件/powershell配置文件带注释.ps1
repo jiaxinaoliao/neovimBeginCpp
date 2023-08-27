@@ -20,15 +20,20 @@ $OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Obj
 # powershell初始化加载 PSReadLine 模块
 Import-Module PSReadLine
 
-# 使用历史记录进行脚本提示
-Set-PSReadLineOption -PredictionSource History
-
-# alt在windows中有特殊用途，这里使用ctrl键代替
-Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
-
 # 删除默认的连接（强制删除）
 Remove-Alias ls -Force
 Remove-Alias sl -Force
+
+# 使用历史记录进行脚本提示
+Set-PSReadLineOption -PredictionSource History
+
+#tab菜单选择以及上下键补全以及emacs模式
+Set-PSReadLineOption -EditMode Emacs
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# alt在windows中有特殊用途，这里使用ctrl键代替
+Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 
 # 自定义函数添加ls的颜色
 function Color-List($str) {
@@ -70,21 +75,36 @@ function Color-List($str) {
     echo $itemList | Format-Wide -AutoSize # 格式化输出
 }
 
+# fzf的主题
+$ENV:FZF_DEFAULT_OPTS=@"
+--layout=reverse
+--preview 'bat --style=numbers --color=always --line-range :500 {}'
+--color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+"@
+
 # 类似软连接
+Set-Alias vim nvim
+Set-Alias vi nvim
+Set-Alias cc g++
+Set-Alias cat lolcat
+Set-Alias lc leetgo
+Set-Alias touch New-Item
+function gvim {neovide}
+function n {neofetch}
 function ls {Color-List "-Exclude .*"}
-function la {Color-List "$args"}
+function ll {Color-List "$args"}
+function cl {Clear-Host}
 function cj {cd ..}
-function cl {clear}
-# fzf的利用
-function cf {cd $(fzf)}
+function cf {cd "$(fzf)\.."}
 function et {exit}
 function lt {tree /f /a}
-function vim {nvim}
-function hpp {hexo clean && hexo generate && hexo deploy}
-function hss {hexo s}
+function hpp {(hexo clean) -and (hexo generate) -and (hexo deploy)}
+function hss {hexo server}
 function gaa {git add .}
 function gpp {git push}
-# musicfox终端的网易云
-function wyy {musicfox}
-# btop连接top先用scoop安装
+function gpg {git push --tag}
 function top {btop}
+function dl  {dir | lolcat}
+function wyy {musicfox}

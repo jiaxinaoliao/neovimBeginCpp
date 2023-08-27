@@ -118,13 +118,13 @@ lazy.setup({
   -- tokyonight
   "folke/tokyonight.nvim",
   -- OceanicNext
-  "mhartington/oceanic-next",
+  --"mhartington/oceanic-next",
   -- gruvbox
   "ellisonleao/gruvbox.nvim",
   -- zephyr
-  "glepnir/zephyr-nvim",
+  --"glepnir/zephyr-nvim",
   -- nord
-  "shaunsingh/nord.nvim",
+  --"shaunsingh/nord.nvim",
   -- onedark
   "navarasu/onedark.nvim",
   -- nightfox
@@ -171,6 +171,8 @@ lazy.setup({
   "j-hui/fidget.nvim",
   --------平滑光标
   -- "gen740/SmoothCursor.nvim",
+  ------------neoai,chatgpt
+  { "Bryley/neoai.nvim", dependencies = { "MunifTanjim/nui.nvim" },},
 
   config = {
     compile_on_sync = true,

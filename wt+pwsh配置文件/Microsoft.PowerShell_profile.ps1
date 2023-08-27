@@ -4,7 +4,21 @@ Import-Module PSReadLine
 Remove-Alias sl -Force
 Remove-Alias ls -Force
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -EditMode Emacs
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
+Set-PSReadlineKeyHandler -Chord "Ctrl+f" -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('cd "$(fzf)\.."')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('vim $(fzf)')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
 function Color-List($str) {
     $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase-bor [System.Text.RegularExpressions.RegexOptions]::Compiled)
     $fore = $Host.UI.RawUI.ForegroundColor
@@ -30,13 +44,23 @@ function Color-List($str) {
         {$item | Add-Member NoteProperty name ("`e[35m" + $_.name)}
         else
         {$item | Add-Member NoteProperty name ("`e[37m" + $_.name)} 
-        $itemList += $item}
-    echo $itemList | Format-Wide -AutoSize}
+        $itemList += $item
+    }
+  echo $itemList | Format-Wide -AutoSize
+}
+$ENV:FZF_DEFAULT_OPTS=@"
+--layout=reverse
+--preview 'bat --style=numbers --color=always --line-range :500 {}'
+--color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+"@
 Set-Alias vim nvim
 Set-Alias vi nvim
 Set-Alias cc g++
 Set-Alias cat lolcat
 Set-Alias lc leetgo
+Set-Alias touch New-Item
 function gvim {neovide}
 function n {neofetch}
 function ls {Color-List "-Exclude .*"}
@@ -44,7 +68,6 @@ function ll {Color-List "$args"}
 function cl {Clear-Host}
 function cj {cd ..}
 function cf {cd "$(fzf)\.."}
-function vimf {vim $(fzf)}
 function et {exit}
 function lt {tree /f /a}
 function hpp {(hexo clean) -and (hexo generate) -and (hexo deploy)}
@@ -55,6 +78,3 @@ function gpg {git push --tag}
 function top {btop}
 function dl  {dir | lolcat}
 function wyy {musicfox}
-
-function pro {$env:HTTP_PROXY="socks5://127.0.0.1:13140" ; $env:HTTPS_PROXY="socks5://127.0.0.1:13140"}
-function unpro {$env:HTTP_PROXY="" ; $env:HTTPS_PROXY=""}

@@ -50,7 +50,9 @@ treesitter.setup({
       "#b38bf5",
       "#7cc7fe",
     }, -- table of hex strings
-    -- termcolors = { } -- table of colour name strings
+    -- termcolors = { 
+    --   Latex
+    -- } -- table of colour name strings
   },
 })
 -- 开启 Folding 模块
