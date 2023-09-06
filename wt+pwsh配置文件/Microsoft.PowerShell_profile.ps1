@@ -6,17 +6,20 @@ Remove-Alias ls -Force
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
-Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
+Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('vim $(fzf)')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
 Set-PSReadlineKeyHandler -Chord "Ctrl+f" -ScriptBlock {
   [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
   [Microsoft.PowerShell.PSConsoleReadLine]::Insert('cd "$(fzf)\.."')
   [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
-Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
+Set-PSReadlineKeyHandler -Chord "Ctrl+w" -ScriptBlock {
   [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
-  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('vim $(fzf)')
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('cd E:\')
   [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 function Color-List($str) {

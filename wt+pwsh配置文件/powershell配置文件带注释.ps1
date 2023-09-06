@@ -35,6 +35,19 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 # alt在windows中有特殊用途，这里使用ctrl键代替
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 
+# 添加快捷键ctrl+f打开fzf并且cd进去，ctrl+e打开fzf用vim打开文件
+Set-PSReadlineKeyHandler -Chord "Ctrl+f" -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('cd "$(fzf)\.."')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
+  [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('$fzfAndVim = fzf ; cd $fzfAndVim\.. ; vim ($fzfAndVim -split "\\" | tail -1)')
+ # [Microsoft.PowerShell.PSConsoleReadLine]::Insert('cd "$(fzf)\.."')
+  [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
+
 # 自定义函数添加ls的颜色
 function Color-List($str) {
     $regex_opts = ([System.Text.RegularExpressions.RegexOptions]::IgnoreCase-bor [System.Text.RegularExpressions.RegexOptions]::Compiled)
