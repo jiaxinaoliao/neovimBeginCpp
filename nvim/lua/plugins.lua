@@ -77,7 +77,10 @@ lazy.setup({
   "nvim-treesitter/nvim-treesitter",
   "p00f/nvim-ts-rainbow",
   -- indent-blankline
-  "lukas-reineke/indent-blankline.nvim",
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = 'ibl'
+  },
   --------------------- LSP --------------------
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",

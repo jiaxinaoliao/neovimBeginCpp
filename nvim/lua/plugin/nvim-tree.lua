@@ -13,6 +13,8 @@ local function on_attach(bufnr)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
+  api.config.mappings.default_on_attach(bufnr)
+
   vim.keymap.set('n', 'n', api.tree.change_root_to_node,          opts('CD'))
 --  vim.keymap.set('n', '<C-e>', api.node.open.replace_tree_buffer,     opts('Open: In Place'))
   vim.keymap.set('n', 'I', api.node.show_info_popup,              opts('Info'))
@@ -70,6 +72,9 @@ end
 
 -- 列表操作快捷键
 --local list_keys = require("keybindings").nvimTreeList
+vim.opt.termguicolors = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 nvim_tree.setup({
   on_attach = on_attach,
@@ -97,7 +102,7 @@ nvim_tree.setup({
     -- 也可以 'right'
     side = "left",
     -- 隐藏根目录
-    hide_root_folder = false,
+    --
     -- 自定义列表中快捷键
     -- mappings = {
     --   -- 只用内置快捷键
