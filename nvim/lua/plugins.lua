@@ -158,6 +158,7 @@ lazy.setup({
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
   "theHamsta/nvim-dap-virtual-text",
+  "mfussenegger/nvim-dap-python",
   -------------lf插件----------
   -- "ptzz/lf.vim",
   -- "voldikss/vim-floaterm",

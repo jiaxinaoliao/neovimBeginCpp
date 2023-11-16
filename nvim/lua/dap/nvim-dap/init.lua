@@ -130,5 +130,6 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 require("dap.nvim-dap.cpp")
+require("dap.nvim-dap.python")
 require("dap.nvim-dap.lua").setup()
 require("keybindings").mapDAP()

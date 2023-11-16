@@ -10,7 +10,7 @@ require("neoai").setup({
     ui = {
         output_popup_text = "jarvis",
         input_popup_text = "sxtt",
-        width = 40, -- As percentage eg. 30%
+        width = 45, -- As percentage eg. 30%
         output_popup_height = 80, -- As percentage eg. 80%
         submit = "<Enter>", -- Key binding to submit the prompt
     },
@@ -45,7 +45,7 @@ require("neoai").setup({
     open_ai = {
         api_key = {
             env = "OPENAI_API_KEY",
-            value = "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",
+            value = "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",
             -- `get` is is a function that retrieves an API key, can be used to override the default method.
             -- get = function() ... end
 

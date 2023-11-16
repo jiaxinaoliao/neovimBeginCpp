@@ -42,8 +42,8 @@ map('v', '<C-k>', '5k', opt)
 --map('n', '<C-d>', '10j', opt)
 
 -- magic search
-map('n', '/', '/\\v', { noremap = true, silent = false })
-map('v', '/', '/\\v', { noremap = true, silent = false })
+map('n', '?', '/\\v', { noremap = true, silent = false })
+map('v', '?', '/\\v', { noremap = true, silent = false })
 
 -- visual模式下缩进代码
 map('v', '<', '<gv', opt)
