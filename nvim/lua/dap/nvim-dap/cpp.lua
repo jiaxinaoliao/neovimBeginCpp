@@ -15,9 +15,12 @@ dap.configurations.cpp = {
     type = "cppdbg",
     request = "launch",
     -- program = function()
-    --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\', 'file')
+    --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '\\' .. vim.fn.expand('%:r') .. '.exe', 'file')
     -- end,
-    program = "${workspaceFolder}\\a.exe",
+    program = function()
+      return (vim.fn.getcwd() .. '\\' .. vim.fn.expand('%:r') .. '.exe')
+    end,
+    -- program = '${workspaceFolder}'
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
     externalConsole = false,

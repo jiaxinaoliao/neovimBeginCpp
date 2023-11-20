@@ -65,12 +65,12 @@ local tc = Terminal:new({
   close_on_exit = true,
 })
 
-local aexe = Terminal:new({
-  cmd = "a.exe",
-  -- cmd = "g++ *.cpp & a.exe",
-  direction = "float",
-  close_on_exit = true,
-})
+-- local aexe = Terminal:new({
+--   cmd = "a.exe",
+--   -- cmd = "g++ *.cpp & a.exe",
+--   direction = "float",
+--   close_on_exit = true,
+-- })
 
 local M = {}
 
@@ -108,8 +108,15 @@ M.toggleG = function()
   lazygit:toggle()
 end
 
-M.toggleE = function()
-  aexe:toggle()
-end
-
+-- M.toggleE = function()
+--   if aexe:is_open() then
+--     aexe:close()
+--     return
+--   end
+--   ta:close()
+--   tb:close()
+--   tc:close()
+--   aexe:open()
+-- end
+--
 require("keybindings").mapToggleTerm(M)

@@ -325,8 +325,8 @@ pluginKeys.cmp = function(cmp)
 end
 
 ------一键运行
-map('n', '<F4>', ':!g++ *.cpp<CR>', opt)
-map('n', '<C-F4>', ':!g++ -g *.cpp<CR>', opt)
+-- map('n', '<F4>', ':!g++ *.cpp<CR>', opt)
+-- map('n', '<C-F4>', ':!g++ -g *.cpp<CR>', opt)
 -- map('n', '<F5>', ':!a.exe<CR>', opt)
 
 -- 自定义 toggleterm 3个不同类型的命令行窗口
@@ -340,7 +340,7 @@ pluginKeys.mapToggleTerm = function(toggleterm)
   vim.keymap.set({ 'n', 't' }, 'tb', toggleterm.toggleB)
   vim.keymap.set({ 'n', 't' }, 'tc', toggleterm.toggleC)
   vim.keymap.set({ 'n', 't' }, 'tg', toggleterm.toggleG)
-  vim.keymap.set({ 'n', 't' }, '<F5>', toggleterm.toggleE)
+  -- vim.keymap.set({ 'n', 't' }, '<F5>', toggleterm.toggleE)
 end
 
 -- gitsigns查看更改记录
