@@ -1,5 +1,8 @@
 # 纯windows下的neovim快速配置过程
 
+最新版说明在博客中
+https://516518.xyz/2023/12/07/neovim%E5%BF%AB%E9%80%9F%E9%85%8D%E7%BD%AE/
+
 由于github连接的问题，可能图片加载不出来，可以直接点下面的连接下载最新版的.zip解压即可
 
 https://github.com/jiaxinaoliao/neovimBeginCpp/releases
