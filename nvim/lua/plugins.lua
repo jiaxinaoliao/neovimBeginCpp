@@ -110,7 +110,7 @@ lazy.setup({
   -- "nvim-lua/plenary.nvim",
   -- TypeScript 增强
   "jose-elias-alvarez/nvim-lsp-ts-utils",
-  "nvim-lua/plenary.nvim",
+  -- "nvim-lua/plenary.nvim",
   -- Lua 增强
   "folke/neodev.nvim",
   -- JSON 增强
@@ -177,6 +177,11 @@ lazy.setup({
   -- "gen740/SmoothCursor.nvim",
   ------------neoai,chatgpt
   { "Bryley/neoai.nvim", dependencies = { "MunifTanjim/nui.nvim" },},
+  ---- 细胞---
+  "eandrju/cellular-automaton.nvim",
+  -- leetcode
+  -- "kawre/leetcode.nvim",
+
 
   config = {
     compile_on_sync = true,
