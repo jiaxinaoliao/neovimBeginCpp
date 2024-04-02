@@ -29,13 +29,13 @@ local dap_breakpoint = {
         numhl = "DapBreakpoint",
     },
     condition = {
-        text = 'ﳁ',
+        text = '󰟃',
         texthl = 'DapBreakpoint',
         linehl = 'DapBreakpoint',
         numhl = 'DapBreakpoint',
     },
     rejected = {
-        text = "",
+        text = "󰃤",
         texthl = "DapBreakpint",
         linehl = "DapBreakpoint",
         numhl = "DapBreakpoint",
@@ -47,7 +47,7 @@ local dap_breakpoint = {
         numhl = 'DapLogPoint',
     },
     stopped = {
-        text = '',
+        text = '󰜴',
         texthl = 'DapStopped',
         linehl = 'DapStopped',
         numhl = 'DapStopped',
@@ -59,6 +59,7 @@ vim.fn.sign_define('DapBreakpointCondition', dap_breakpoint.condition)
 vim.fn.sign_define('DapBreakpointRejected', dap_breakpoint.rejected)
 vim.fn.sign_define('DapLogPoint', dap_breakpoint.logpoint)
 vim.fn.sign_define('DapStopped', dap_breakpoint.stopped)
+
 
 dapui.setup({
   element_mappings = {
@@ -116,7 +117,6 @@ dapui.setup({
   },
 })
 
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end
@@ -130,5 +130,6 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 require("dap.nvim-dap.cpp")
+require("dap.nvim-dap.python")
 require("dap.nvim-dap.lua").setup()
 require("keybindings").mapDAP()

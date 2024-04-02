@@ -12,6 +12,10 @@
             "keys": "ctrl+c"
         },
         {
+            "command": "unbound",
+            "keys": "alt+shift+w"
+        },
+        {
             "command": "paste",
             "keys": "ctrl+v"
         },
@@ -27,10 +31,6 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+w"
         },
         {
             "command": "closePane",
@@ -71,11 +71,11 @@
             "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "CodeNewRoman Nerd Font Mono",
+                "face": "ComicShannsMono Nerd Font Mono",
                 "size": 18.0,
                 "weight": "normal"
             },
-            "opacity": 60,
+            "opacity": 66,
             "padding": "0",
             "scrollbarState": "hidden",
             "useAcrylic": false
@@ -129,12 +129,6 @@
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
-            },
-            {
-                "guid": "{d7b20cea-47a9-518c-95a4-c8bd91e2e1c6}",
-                "hidden": false,
-                "name": "Ubuntu 22.04.2 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
     },

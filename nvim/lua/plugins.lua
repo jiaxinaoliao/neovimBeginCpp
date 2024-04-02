@@ -29,7 +29,7 @@ if not status_ok then
 end
 
 lazy.setup({
-  -- Packer 可以升级自己
+  -- Lazy 可以升级自己
   --"wbthomason/packer.nvim",
   -- 加速lua
   "lewis6991/impatient.nvim",
@@ -158,6 +158,7 @@ lazy.setup({
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
   "theHamsta/nvim-dap-virtual-text",
+  "nvim-neotest/nvim-nio",
   "mfussenegger/nvim-dap-python",
   -------------lf插件----------
   -- "ptzz/lf.vim",

@@ -1,4 +1,4 @@
-local status, nvim_tree = pcall(require, 'noice')
+local status, noice = pcall(require, 'noice')
 if not status then
     vim.notify('没有找到 noice')
     return

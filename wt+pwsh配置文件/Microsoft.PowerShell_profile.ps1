@@ -9,7 +9,7 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
   [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
-  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('vim $(fzf)')
+  [Microsoft.PowerShell.PSConsoleReadLine]::Insert('vim')
   [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 Set-PSReadlineKeyHandler -Chord "Ctrl+f" -ScriptBlock {
@@ -64,13 +64,13 @@ Set-Alias cc g++
 Set-Alias cat lolcat
 Set-Alias lc leetgo
 Set-Alias touch New-Item
+Set-Alias py38 "D:\CppApp\python\python"
 function gvim {neovide}
 function n {neofetch}
 function ls {Color-List "-Exclude .*"}
 function ll {Color-List "$args"}
 function cl {Clear-Host}
 function cj {cd ..}
-function cf {cd "$(fzf)\.."}
 function et {exit}
 function lt {tree /f /a}
 function hpp {(hexo clean) -and (hexo generate) -and (hexo deploy)}
@@ -80,4 +80,20 @@ function gpp {git push}
 function gpg {git push --tag}
 function top {btop}
 function dl  {dir | lolcat}
-function wyy {musicfox}
+function wyy {chcp 936 | musicfox}
+function lci {leetgo init -t cn -l cpp}
+function lce {leetgo edit last}
+function lct {leetgo test last -L}
+function lcts {leetgo test last -L -s}
+
+function dwmon{
+  komorebic start
+  D:\ScoopApp\Scoop\apps\autohotkey\current\v2\AutoHotKey64.exe D:\win11meihua\komorebi.ahk2
+  python python D:\win11meihua\yasb-main\src\main.py
+}
+function dwmoff{
+  komorebic stop
+  Stop-Process -Name AutoHotKey64
+  Stop-Process -Name komorebic
+  Stop-Process -Name pythonw
+}

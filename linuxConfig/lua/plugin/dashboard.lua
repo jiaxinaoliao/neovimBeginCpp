@@ -1,23 +1,28 @@
-local status, db = pcall(require, 'dashboard')
+local status, db = pcall(require, "dashboard")
 if not status then
-  vim.notify('没有找到 dashboard')
+  vim.notify("没有找到 dashboard")
   return
 end
 
-db.setup {
-  theme = 'doom',
+db.setup({
+  theme = "doom",
   config = {
+    -- week_header = {
+    --   enable = true,
+    -- },
     footer = {
-      '',
-      '',
-      'https://github.com/jiaxinaoliao',
+      "",
+      "",
+      " https://github.com/jiaxinaoliao",
     },
 
     center = {
       {
-        icon = '                     ',
-        desc = 'Find file                           ',
-        action = 'Telescope find_files',
+        icon = "                    󰈞  ",
+        icon_hl = "title",
+        desc = "Find file                           ",
+        desc_hl = "string",
+        action = "Telescope find_files",
       },
       -- {
       --   icon = "  ",
@@ -30,9 +35,11 @@ db.setup {
       --   action = "Telescope oldfiles",
       -- },
       {
-        icon = '                     ',
-        desc = 'Edit keybindings                    ',
-        action = 'edit ~/.config/nvim/lua/keybindings.lua',
+        icon = "                      ",
+        icon_hl = "title",
+        desc = "Edit keybindings                    ",
+        desc_hl = "string",
+        action = "edit ~/.config/nvim/lua/keybindings.lua",
       },
       -- {
       --   icon = "  ",
@@ -40,9 +47,11 @@ db.setup {
       --   action = "edit ~/.local/share/nvim/project_nvim/project_history",
       -- },
       {
-        icon = '                     ',
-        desc = 'Edit zshrc                          ',
-        action = 'edit ~/.zshrc',
+        icon = "                      ",
+        icon_hl = "title",
+        desc = "Edit zsh                     ",
+        desc_hl = "string",
+        action = "edit ~/.zshrc",
       },
       -- {
       --   icon = '            ',
@@ -50,9 +59,11 @@ db.setup {
       --   action = ':ColorScheme',
       -- },
       {
-        icon = '                     ',
+        icon = "                      ",
+        icon_hl = "title",
         desc = "Edit init.lua                       ",
-        action = 'edit ~/.config/nvim/init.lua',
+        desc_hl = "string",
+        action = "edit ~/.config/nvim/init.lua",
       },
       -- {
       --   icon = "  ",
@@ -63,21 +74,21 @@ db.setup {
 
     header = {
       [[]],
-      [[                                              ]],
-      [[       ██╗██╗ █████╗        █████╗  ██████╗   ]],
-      [[       ██║██║██╔══██╗      ██╔══██╗██╔═══██╗  ]],
-      [[       ██║██║███████║      ███████║██║   ██║  ]],
-      [[  ██   ██║██║██╔══██║      ██╔══██║██║   ██║  ]],
-      [[  ╚█████╔╝██║██║  ██║      ██║  ██║╚██████╔╝  ]],
-      [[   ╚════╝ ╚═╝╚═╝  ╚═╝      ╚═╝  ╚═╝ ╚═════╝   ]],
-      [[                                              ]],
-      [[                                              ]],
-      [[              [ version : 5.2.1 ]             ]],
+      [[                                               ]],
+      [[        ██╗██╗ █████╗        █████╗  ██████╗   ]],
+      [[        ██║██║██╔══██╗      ██╔══██╗██╔═══██╗  ]],
+      [[        ██║██║███████║      ███████║██║   ██║  ]],
+      [[   ██   ██║██║██╔══██║      ██╔══██║██║   ██║  ]],
+      [[   ╚█████╔╝██║██║  ██║      ██║  ██║╚██████╔╝  ]],
+      [[    ╚════╝ ╚═╝╚═╝  ╚═╝      ╚═╝  ╚═╝ ╚═════╝   ]],
+      [[                                               ]],
+      [[                                               ]],
+      [[               [ version : 5.2.1 ]             ]],
       [[]],
       [[]],
     },
-  }
-}
+  },
+})
 
 -- db.custom_header = {
 --     [[]],

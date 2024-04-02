@@ -10,14 +10,15 @@ lualine.setup({
     -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
     theme = "auto",
     -- 分割线
+    -- component_separators = '|',
     component_separators = {
-      left = "|",
-      right = "|",
+      left = "|",   --" or | or "
+      right = "",  --" or | or "
     },
     -- https://github.com/ryanoasis/powerline-extra-symbols
     section_separators = {
-      left = "" ,    --" ",
-      right = "",     --"",
+      left = "" ,    --"  or  or ",
+      right = "",     --" or  or ",
     },
     globalstatus = true,
   },
@@ -34,7 +35,7 @@ lualine.setup({
       "filename",
       {
         "lsp_progress",
-        spinner_symbols = { " ", " ", " ", " ", " ", " " },
+        spinner_symbols = { "󰇊", "󰇋", "󰇌", "󰇍", "󰇎", "󰇏" },
       },
     },
     lualine_x = {
@@ -47,14 +48,14 @@ lualine.setup({
            dos = '', -- e70f
            mac = '', -- e711
          },
-        symbols = {
+         symbols = {
           unix = "LF",
           dos = "CRLF",
           mac = "CR",
-        },
+         },
       },
       "filetype",
-    }, 
+    },
     lualine_z = {
       {
         'location',

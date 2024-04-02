@@ -6,21 +6,21 @@ vim.api.nvim_create_autocmd("FileType", {
       0,
       "n",
       "<F5>",
-      "<ESC>:w<CR>:TermExec direction=float cmd=\"g++ *.cpp -o %:t:r.out && ./%:t:r.out\"<CR>",
+      "<ESC>:w<CR>:TermExec direction=float cmd=\"g++ *.cpp -I ./ -o %:t:r.exe ; ./%:t:r.exe\"<CR>",
       { silent = true, noremap = true }
     )
     vim.api.nvim_buf_set_keymap(
       0,
       "n",
       "<F4>",
-      "<ESC>:w<CR>:!g++ *.cpp -o %:t:r.out<CR>",
+      "<ESC>:w<CR>:!g++ *.cpp -I ./ -o %:t:r.exe<CR>",
       { silent = true, noremap = true }
     )
     vim.api.nvim_buf_set_keymap(
       0,
       "n",
       "<C-F4>",
-      "<ESC>:w<CR>:!g++ -g *.cpp -o %:t:r.out<CR>",
+      "<ESC>:w<CR>:!g++ -g *.cpp -I ./ -o %:t:r.exe<CR>",
       { silent = true, noremap = true }
     )
   end,
@@ -33,21 +33,21 @@ vim.api.nvim_create_autocmd("FileType", {
       0,
       "n",
       "<F5>",
-      "<ESC>:w<CR>:TermExec direction=float cmd=\"gcc *.c -o %:t:r.out && ./%:t:r.out\"<CR>",
+      "<ESC>:w<CR>:TermExec direction=float cmd=\"gcc *.c -I ./ -o %:t:r.exe ; ./%:t:r.exe\"<CR>",
       { silent = true, noremap = true }
     )
     vim.api.nvim_buf_set_keymap(
       0,
       "n",
       "<F4>",
-      "<ESC>:w<CR>:!gcc *.c -o %:t:r.out<CR>",
+      "<ESC>:w<CR>:!gcc *.c -I ./ -o %:t:r.exe<CR>",
       { silent = true, noremap = true }
     )
     vim.api.nvim_buf_set_keymap(
       0,
       "n",
       "<C-F4>",
-      "<ESC>:w<CR>:!gcc -g *.cpp -o %:t:r.out<CR>",
+      "<ESC>:w<CR>:!gcc -g *.cpp -I ./ -o %:t:r.exe<CR>",
       { silent = true, noremap = true }
     )
   end,
@@ -84,7 +84,7 @@ vim.api.nvim_create_autocmd("FileType", {
       0,
       "n",
       "<F5>",
-      "<ESC>:w<CR>:TermExec direction=float cmd=\"javac %:t:r.java && java %:t:r\"<CR>",
+      "<ESC>:w<CR>:TermExec direction=float cmd=\"javac %:t:r.java ; java %:t:r\"<CR>",
       { silent = true, noremap = true }
     )
     vim.api.nvim_buf_set_keymap(
@@ -124,7 +124,7 @@ vim.api.nvim_create_autocmd("FileType", {
       0,
       "n",
       "<F5>",
-      "<ESC>:w<CR>:TermExec direction=float cmd=\"rustc %:t:r.rs && ./%:t:r.out\"<CR>",
+      "<ESC>:w<CR>:TermExec direction=float cmd=\"rustc %:t:r.rs ; ./%:t:r.exe\"<CR>",
       { silent = true, noremap = true }
     )
     vim.api.nvim_buf_set_keymap(
