@@ -2,3 +2,16 @@ Language: Cpp
 BasedOnStyle: Microsoft
 AccessModifierOffset: -4
 IndentWidth: 2
+AlignArrayOfStructures: Left
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 1
+BreakBeforeBraces: Custom
+BraceWrapping:
+   AfterEnum: true
+   AfterCaseLabel: true
+   AfterClass: true
+   AfterStruct: true
+   SplitEmptyFunction: true
+   AfterNamespace: true
+   AfterUnion: true
