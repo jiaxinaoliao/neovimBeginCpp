@@ -116,6 +116,10 @@ map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
+
+map("n", "tbn", "<cmd>tabnew<CR>", opt)
+map("n", "tbx", "<cmd>tabnext<CR>", opt)
+map("n", "tbc", "<cmd>tabclose<CR>", opt)
 --------------------------------------------------------------------
 -- 插件快捷键
 local pluginKeys = {}
@@ -200,7 +204,7 @@ map("n", "<leader>i", ":NeoAIInject ", opt)
 
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
-map("n", "<leader>g", ":TZMinimalist<CR>", opt)
+map("n", "<leader>h", ":TZMinimalist<CR>", opt)
 map("v", "<leader>h", ":TZNarrow<CR>", opt)
 
 -- 细胞cam 游戏cha
@@ -237,7 +241,7 @@ pluginKeys.mapDAP = function()
 		"n",
 		"<S-F5>",
 		":lua require'dap'.terminate()<CR>"
-		-- ":lua require'dap'.disconnect()<CR>"
+			-- ":lua require'dap'.disconnect()<CR>"
 			.. ":lua require'dap'.close()<CR>"
 			.. ":lua require'dap.repl'.close()<CR>"
 			.. ":lua require'dapui'.close()<CR>"

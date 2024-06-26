@@ -265,7 +265,6 @@
             "int main ()",
                   "{$0",
             "",
-                  "\tsystem(\"pause\");",
             "\treturn 0;",
             "}"
         ],

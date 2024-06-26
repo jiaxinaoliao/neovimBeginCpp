@@ -46,7 +46,6 @@
             "int main(void)",
             "{$0",
             "",
-                  "\tsystem(\"pause\");",
             "\treturn 0;",
             "}"
         ],
