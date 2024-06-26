@@ -57,6 +57,7 @@
     {
         "defaults": 
         {
+            "colorScheme": "myTerminal",
             "cursorShape": "filledBox",
             "font": 
             {
@@ -322,6 +323,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#C0C0C0",
             "yellow": "#808000"
+        },
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#4261C5",
+            "brightBlack": "#FEFCFC",
+            "brightBlue": "#93ADFF",
+            "brightCyan": "#5ED1E5",
+            "brightGreen": "#FEFF75",
+            "brightPurple": "#FFAAD9",
+            "brightRed": "#FF7B7C",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#96FF96",
+            "cursorColor": "#C8FFF4",
+            "cyan": "#2ABBD4",
+            "foreground": "#8FFFF7",
+            "green": "#39B13A",
+            "name": "myTerminal",
+            "purple": "#F920FB",
+            "red": "#FF4C4F",
+            "selectionBackground": "#BABABA",
+            "white": "#E0B5FF",
+            "yellow": "#F5FF4D"
         }
     ],
     "theme": "system",
