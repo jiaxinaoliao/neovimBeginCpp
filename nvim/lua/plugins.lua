@@ -44,6 +44,8 @@ lazy.setup({
 	"nvim-tree/nvim-tree.lua",
 	-- "nvim-neo-tree/neo-tree.nvim",
 	"nvim-tree/nvim-web-devicons",
+  { "echasnovski/mini.icons", version = false },
+  { "echasnovski/mini.nvim", version = false},
 	-- "preservim/tagbar",
 	-- "simrat39/symbols-outline.nvim",
 	-- bufferline
