@@ -1,3 +1,4 @@
+local common = require("lsp.common-config")
 return {
   on_setup = function(server)
     server.setup({
