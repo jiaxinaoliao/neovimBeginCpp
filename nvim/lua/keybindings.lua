@@ -57,8 +57,8 @@ map("v", "p", '"_dP', opt)
 
 -- 退出
 map("n", "w", "<cmd>w<CR>", opt)
-map("n", "wq", ":wq<CR>", opt)
-map("n", "<leader>q", ":q<CR>", opt)
+map("n", "wq", "<cmd>wq<CR>", opt)
+map("n", "<leader>q", "<cmd>q<CR>", opt)
 --map('n', "<leader>qq", ":qa!<CR>", opt)
 map("i", "jj", "<ESC>", opt)
 
@@ -90,15 +90,15 @@ map("n", "<leader>j", "<C-w>j", opt)
 map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 -- 左右比例控制
-map("n", "<C-Right>", ":vertical resize -1<CR>", opt)
-map("n", "<C-Left>", ":vertical resize +1<CR>", opt)
-map("n", "s,", ":vertical resize +5<CR>", opt)
-map("n", "s.", ":vertical resize -5<CR>", opt)
+map("n", "<C-Right>", ":vertical resize -5<CR>", opt)
+map("n", "<C-Left>", ":vertical resize +5<CR>", opt)
+map("n", "s,", ":vertical resize +1<CR>", opt)
+map("n", "s.", ":vertical resize -1<CR>", opt)
 -- 上下比例
 map("n", "sj", ":resize -1<CR>", opt)
 map("n", "sk", ":resize +1<CR>", opt)
--- map('n', '<C-Down>', ':resize -1<CR>', opt)
--- map('n', '<C-Up>', ':resize +1<CR>', opt)
+map('n', '<C-Down>', ':resize -5<CR>', opt)
+map('n', '<C-Up>', ':resize +5<CR>', opt)
 -- 相等比例
 map("n", "s=", "<C-w>=", opt)
 
@@ -204,8 +204,8 @@ map("n", "<leader>i", ":NeoAIInject ", opt)
 
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
-map("n", "<leader>h", ":TZMinimalist<CR>", opt)
-map("v", "<leader>h", ":TZNarrow<CR>", opt)
+map("n", "<leader>h", "<cmd>TZMinimalist<CR>", opt)
+map("v", "<leader>h", "<cmd>TZNarrow<CR>", opt)
 
 -- 细胞cam 游戏cha
 map("n", "cam", ":CellularAutomaton make_it_rain<CR>", opt)
