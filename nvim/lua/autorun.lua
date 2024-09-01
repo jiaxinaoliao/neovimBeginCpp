@@ -26,6 +26,14 @@ vim.api.nvim_create_autocmd("FileType", {
 			"<ESC>:w<CR>:!g++ -g %:t:r.cpp -o %:t:r.exe<CR>",
 			{ silent = true, noremap = true }
 		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<S-F4>",
+			-- "<ESC>:w<CR>:!g++ -g *.cpp -I ./ -o %:t:r.exe<CR>",
+			'<ESC>:w<CR>:TermExec direction=float cmd="get-Content a.txt | time ./%:t:r.exe > b.txt ; type b.txt"<CR>',
+			{ silent = true, noremap = true }
+		)
 	end,
 })
 vim.api.nvim_create_autocmd("FileType", {

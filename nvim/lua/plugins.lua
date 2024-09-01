@@ -66,6 +66,7 @@ lazy.setup({
   "nvim-telescope/telescope-dap.nvim",
   -- markdown preview
   "iamcco/markdown-preview.nvim",
+  "MeanderingProgrammer/render-markdown.nvim",
   -- 跳转插件
   "ggandor/leap.nvim",
   "ggandor/flit.nvim",
@@ -96,10 +97,10 @@ lazy.setup({
   -- 补全源
   "hrsh7th/vim-vsnip",
   "hrsh7th/cmp-vsnip",
-  "hrsh7th/cmp-nvim-lsp",                -- { name = nvim_lsp }
-  "hrsh7th/cmp-buffer",                  -- { name = 'buffer' },
-  "hrsh7th/cmp-path",                    -- { name = 'path' }
-  "hrsh7th/cmp-cmdline",                 -- { name = 'cmdline' }
+  "hrsh7th/cmp-nvim-lsp",               -- { name = nvim_lsp }
+  "hrsh7th/cmp-buffer",                 -- { name = 'buffer' },
+  "hrsh7th/cmp-path",                   -- { name = 'path' }
+  "hrsh7th/cmp-cmdline",                -- { name = 'cmdline' }
   "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
   -- 常见编程语言代码段
   "rafamadriz/friendly-snippets",
@@ -183,27 +184,10 @@ lazy.setup({
   { "Bryley/neoai.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
   ---- 细胞---
   "eandrju/cellular-automaton.nvim",
+  -- 刷题
+  -- "xeluxee/competitest.nvim",
   -- leetcode
-  -- {
-  --   "kawre/leetcode.nvim",
-  --   build = ":TSUpdate html",
-  --   dependencies = {
-  --     "nvim-telescope/telescope.nvim",
-  --     "nvim-lua/plenary.nvim", -- telescope 所需
-  --     "MunifTanjim/nui.nvim",
-  --
-  --     -- 可选
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "rcarriga/nvim-notify",
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   opts = {
-  --     -- 配置放在这里
-  --     cn = {
-  --       enabled = true,
-  --     },
-  --   },
-  -- },
+  -- "kawre/leetcode.nvim",
 
   config = {
     compile_on_sync = true,
