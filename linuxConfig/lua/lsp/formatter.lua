@@ -10,7 +10,7 @@ formatter.setup({
 			-- clang-format
 			function()
 				return {
-					exe = "clang-format --style=file:D:/CppApp/lf-windows-amd64/.clang-format",
+					exe = "clang-format --style=file:/home/jia/jiafile/.clang-format",
 					args = {},
 					stdin = true,
 					try_node_modules = true,
@@ -32,7 +32,7 @@ formatter.setup({
 			-- clang-format
 			function()
 				return {
-					exe = "clang-format --style=file:D:/CppApp/lf-windows-amd64/.clang-format",
+					exe = "clang-format --style=file:/home/jia/jiafile/.clang-format",
 					args = {},
 					stdin = true,
 					try_node_modules = true,
