@@ -4,7 +4,7 @@ if vim.g.neovide then
   --
   vim.g.neovide_window_blurred = true
   -- 透明度
-  vim.g.neovide_transparency = 1
+  vim.g.neovide_transparency = 0.8
   -- 全屏
   vim.g.neovide_fullscreen = false
   -- 设置行距
@@ -14,9 +14,9 @@ if vim.g.neovide then
   -- 上次的大小
   vim.g.neovide_remember_window_size = true
   -- 动画时间
-  vim.g.neovide_cursor_animation_length = 0.13
+  vim.g.neovide_cursor_animation_length = 0.08
   -- 轨迹大小
-  vim.g.neovide_cursor_trail_size = 0.8
+  vim.g.neovide_cursor_trail_size = 0.5
   -- 抗锯齿
   vim.g.neovide_cursor_antialiasing = true
   -- 光标模式(void railgun torpedo pixiedust sonicboom ripple wireframe)
