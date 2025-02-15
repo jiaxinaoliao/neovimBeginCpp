@@ -45,7 +45,7 @@ require("neoai").setup({
     open_ai = {
         api_key = {
             env = "OPENAI_API_KEY",
-            value = "you gpt api",
+            value = "you api key",
             -- `get` is is a function that retrieves an API key, can be used to override the default method.
             -- get = function() ... end
 

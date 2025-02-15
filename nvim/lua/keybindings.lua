@@ -97,8 +97,8 @@ map("n", "s.", ":vertical resize -1<CR>", opt)
 -- 上下比例
 map("n", "sj", ":resize -1<CR>", opt)
 map("n", "sk", ":resize +1<CR>", opt)
-map('n', '<C-Down>', ':resize -5<CR>', opt)
-map('n', '<C-Up>', ':resize +5<CR>', opt)
+map("n", "<C-Down>", ":resize -5<CR>", opt)
+map("n", "<C-Up>", ":resize +5<CR>", opt)
 -- 相等比例
 map("n", "s=", "<C-w>=", opt)
 
@@ -199,8 +199,10 @@ map("v", "<C-_>", "gcc", { noremap = false })
 map("n", "<C-s>", ":Format<CR>", opt)
 
 --- chatgpt  neoai.nvim
-map("n", "<leader>a", ":NeoAI<CR>", opt)
-map("n", "<leader>i", ":NeoAIInject ", opt)
+-- map("n", "<leader>a", ":NeoAI<CR>", opt)
+-- map("n", "<leader>i", ":NeoAIInject ", opt)
+map("n", "<leader>a", ":CodeCompanionChat<CR>", opt)
+map("n", "<leader>i", ":CodeCompanion<CR>", opt)
 
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
@@ -214,7 +216,7 @@ map("n", "cag", ":CellularAutomaton game_of_life<CR>", opt)
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
 	mapbuf("n", "<leader>s", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
-	mapbuf("n", "cm", "<cmd>Lspsaga rename<CR>", opt)
+	mapbuf("n", "<leader>cm", "<cmd>Lspsaga rename<CR>", opt)
 	mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
 	mapbuf("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opt)
 	mapbuf("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opt)

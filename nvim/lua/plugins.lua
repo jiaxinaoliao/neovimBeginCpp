@@ -180,8 +180,9 @@ lazy.setup({
   "j-hui/fidget.nvim",
   --------平滑光标
   -- "gen740/SmoothCursor.nvim",
-  ------------neoai,chatgpt
-  { "Bryley/neoai.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
+  ------------neoai,chatgpt,deepseek
+  -- { "Bryley/neoai.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
+  "olimorris/codecompanion.nvim",
   ---- 细胞---
   "eandrju/cellular-automaton.nvim",
   -- 刷题
