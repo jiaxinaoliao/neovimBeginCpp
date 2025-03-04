@@ -4,7 +4,7 @@ if vim.g.neovide then
   --
   vim.g.neovide_window_blurred = true
   -- 透明度
-  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_transparency = 0.66
   -- 全屏
   vim.g.neovide_fullscreen = false
   -- 设置行距
