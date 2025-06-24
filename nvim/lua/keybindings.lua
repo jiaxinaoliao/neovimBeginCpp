@@ -196,13 +196,14 @@ map("n", "<C-_>", "gcc", { noremap = false })
 map("v", "<C-_>", "gcc", { noremap = false })
 
 -- ctrl + s 格式化
-map("n", "<C-s>", ":Format<CR>", opt)
+map("n", "<C-s>", ":w<CR>:Format<CR>:w<CR>", opt)
 
 --- chatgpt  neoai.nvim
 -- map("n", "<leader>a", ":NeoAI<CR>", opt)
 -- map("n", "<leader>i", ":NeoAIInject ", opt)
 map("n", "<leader>a", ":CodeCompanionChat<CR>", opt)
 map("n", "<leader>i", ":CodeCompanion<CR>", opt)
+map("v", "<leader>i", ":CodeCompanion<CR>", opt)
 
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式

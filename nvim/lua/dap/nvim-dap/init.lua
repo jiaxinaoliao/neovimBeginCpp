@@ -62,71 +62,71 @@ vim.fn.sign_define('DapStopped', dap_breakpoint.stopped)
 
 
 dapui.setup({
-  element_mappings = {
-    scopes = {
-      edit = "e",
-      repl = "r",
+    element_mappings = {
+        scopes = {
+            edit = "e",
+            repl = "r",
+        },
+        watches = {
+            edit = "e",
+            repl = "r",
+        },
+        stacks = {
+            open = "g",
+        },
+        breakpoints = {
+            open = "g",
+            toggle = "b",
+        },
     },
-    watches = {
-      edit = "e",
-      repl = "r",
-    },
-    stacks = {
-      open = "g",
-    },
-    breakpoints = {
-      open = "g",
-      toggle = "b",
-    },
-  },
 
-  layouts = {
-    {
-      elements = {
-        "scopes",
-        "stacks",
-        "breakpoints",
-        "watches",
-      },
-      size = 0.2, -- 40 columns
-      position = "left",
+    layouts = {
+        {
+            elements = {
+                "scopes",
+                "stacks",
+                "breakpoints",
+                "watches",
+            },
+            size = 0.2, -- 40 columns
+            position = "left",
+        },
+        {
+            elements = {
+                "repl",
+            },
+            size = 0.25, -- 25% of total lines
+            position = "bottom",
+        },
+        {
+            elements = {
+                "console",
+            },
+            size = 0.2,
+            position = "right",
+        },
     },
-    {
-      elements = {
-        "repl",
-      },
-      size = 0.25, -- 25% of total lines
-      position = "bottom",
-    },
-    {
-      elements = {
-        "console",
-      },
-      size = 0.2,
-      position = "right",
-    },
-  },
 
-  floating = {
-    max_height = nil, -- These can be integers or a float between 0 and 1.
-    max_width = nil, -- Floats will be treated as percentage of your screen.
-    border = "rounded", -- Border style. Can be "single", "double" or "rounded"
-    mappings = {
-      close = { "q", "<Esc>" },
+    floating = {
+        max_height = nil,   -- These can be integers or a float between 0 and 1.
+        max_width = nil,    -- Floats will be treated as percentage of your screen.
+        border = "rounded", -- Border style. Can be "single", "double" or "rounded"
+        mappings = {
+            close = { "q", "<Esc>" },
+        },
     },
-  },
 })
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-	dapui.open()
+    dapui.open()
 end
 
 dap.listeners.before.event_terminated["dapui_config"] = function()
-	dapui.close()
+    dapui.close()
 end
 
 dap.listeners.before.event_exited["dapui_config"] = function()
-	dapui.close()
+    dapui.close()
 end
 
 require("dap.nvim-dap.cpp")

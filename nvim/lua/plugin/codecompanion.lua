@@ -10,7 +10,7 @@ require("codecompanion").setup({
             return require("codecompanion.adapters").extend("openai_compatible", {
                 env = {
                     url = "https://dashscope.aliyuncs.com",
-                    api_key = "",
+                    api_key = "you-key",
                     chat_url = "/compatible-mode/v1/chat/completions",
                 },
                 schema = {
@@ -24,7 +24,7 @@ require("codecompanion").setup({
             return require("codecompanion.adapters").extend("deepseek", {
                 name = "deepseek",
                 env = {
-                    api_key = "",
+                    api_key = "you-key",
                 },
                 schema = {
                     model = {

@@ -93,18 +93,22 @@ lazy.setup({
     "williamboman/mason-lspconfig.nvim",
     -- Lspconfig
     "neovim/nvim-lspconfig",
-    "ray-x/lsp_signature.nvim",
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "InsertEnter",
+    },
     -- cmake
-    "Shatur/neovim-cmake",
+    -- "Shatur/neovim-cmake",
+    "Civitasv/cmake-tools.nvim",
     -- 补全引擎
     "hrsh7th/nvim-cmp",
     -- 补全源
     "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-vsnip",
-    "hrsh7th/cmp-nvim-lsp",                -- { name = nvim_lsp }
-    "hrsh7th/cmp-buffer",                  -- { name = 'buffer' },
-    "hrsh7th/cmp-path",                    -- { name = 'path' }
-    "hrsh7th/cmp-cmdline",                 -- { name = 'cmdline' }
+    "hrsh7th/cmp-nvim-lsp",             -- { name = nvim_lsp }
+    "hrsh7th/cmp-buffer",               -- { name = 'buffer' },
+    "hrsh7th/cmp-path",                 -- { name = 'path' }
+    "hrsh7th/cmp-cmdline",              -- { name = 'cmdline' }
     "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
     -- 常见编程语言代码段
     "rafamadriz/friendly-snippets",
@@ -183,7 +187,8 @@ lazy.setup({
     --------显示lsp状态
     "j-hui/fidget.nvim",
     --------平滑光标
-    -- "gen740/SmoothCursor.nvim",
+    "sphamba/smear-cursor.nvim",
+    "karb94/neoscroll.nvim",
     ------------neoai,chatgpt,deepseek
     -- { "Bryley/neoai.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
     "olimorris/codecompanion.nvim",
