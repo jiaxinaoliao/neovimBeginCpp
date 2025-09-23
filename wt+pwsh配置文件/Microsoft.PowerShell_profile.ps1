@@ -1,10 +1,17 @@
 $OutputEncoding = [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+# Invoke-Expression (&starship init powershell)
+# function Invoke-Starship-PreCommand {
+#   $host.ui.Write("`e]0; PS> $env:USERNAME@$env:COMPUTERNAME`: $pwd `a")
+#   $host.ui.Write("🚀 Jia")
+# }
+# powershell
+# Write-Host -NoNewLine "`e[2 q"
 & ([ScriptBlock]::Create((oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\kushal.omp.json" --print) -join "`n"))
 Import-Module PSReadLine
 Remove-Alias sl -Force
 Remove-Alias ls -Force
-Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+Set-PSReadLineOption -EditMode Vi
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 Set-PSReadlineKeyHandler -Chord "Ctrl+e" -ScriptBlock {
@@ -64,8 +71,11 @@ Set-Alias cc g++
 Set-Alias cat lolcat
 Set-Alias lc leetgo
 Set-Alias touch New-Item
-Set-Alias py38 "D:\CppApp\python\python"
-function gvim {neovide}
+# Set-Alias python "D:\CppApp\python\python"
+# Set-Alias py12 "D:\ScoopApp\Scoop\apps\python\current\python"
+Set-Alias wyy musicfox
+Set-Alias dazi typioca
+function gvim {neovide --frame none}
 function n {neofetch}
 function ls {Color-List "-Exclude .*"}
 function ll {Color-List "$args"}
@@ -80,7 +90,7 @@ function gpp {git push}
 function gpg {git push --tag}
 function top {btop}
 function dl  {dir | lolcat}
-function wyy {chcp 936 | musicfox}
+# function wyy {chcp 936 | musicfox}
 function lci {leetgo init -t cn -l cpp}
 function lce {leetgo edit last}
 function lct {leetgo test last -L}
@@ -97,3 +107,11 @@ function dwmoff{
   Stop-Process -Name komorebic
   Stop-Process -Name pythonw
 }
+
+function pro {$env:HTTP_PROXY="socks5://127.0.0.1:13140" ; $env:HTTPS_PROXY="socks5://127.0.0.1:13140"}
+function fastpro {$env:HTTP_PROXY="socks5://127.0.0.1:38457" ; $env:HTTPS_PROXY="socks5://127.0.0.1:38457"}
+function prohttp {$env:HTTP_PROXY="http://127.0.0.1:13141" ; $env:HTTPS_PROXY="http://127.0.0.1:13141"}
+function unpro {$env:HTTP_PROXY="" ; $env:HTTPS_PROXY=""}
+
+function flupro{$env:PUB_HOSTED_URL="https://pub.flutter-io.cn" ; $env:FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"}
+

@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			-- "<ESC>:w<CR>:TermExec direction=float cmd=\"g++ *.cpp -I ./ -o %:t:r.exe ; ./%:t:r.exe\"<CR>",
 			-- '<ESC>:w<CR>:TermExec direction=float cmd="g++ %:t:r.cpp -o %:t:r.exe ; ./%:t:r.exe"<CR>',
 			'<ESC>:w<CR>:TermExec direction=float cmd="if (Get-Item ../include) {g++ -I ../include/ *.cpp -o %:t:r.exe ; clear ; ./%:t:r.exe} elseif(Get-Item ./include) {g++ -I ./include/ *.cpp -o %:t:r.exe ; clear ; ./%:t:r.exe} else {g++ *.cpp -o %:t:r.exe ; clear ; ./%:t:r.exe}"<CR>',
@@ -14,10 +14,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<Ca-l>",
+			"<F5>",
 			-- "<ESC>:w<CR>:TermExec direction=float cmd=\"g++ *.cpp -I ./ -o %:t:r.exe ; ./%:t:r.exe\"<CR>",
 			-- '<ESC>:w<CR>:TermExec direction=float cmd="g++ %:t:r.cpp -o %:t:r.exe ; ./%:t:r.exe"<CR>',
-			'<ESC>:w<CR>:!start pwsh -nol -noe -c "if (Get-Item ../include) {g++ -I ../include/ *.cpp -o %:t:r.exe ; clear ; ./%:t:r.exe} elseif(Get-Item ./include) {g++ -I ./include/ *.cpp -o %:t:r.exe ; clear ; ./%:t:r.exe} else {g++ *.cpp -o %:t:r.exe ; clear ; ./%:t:r.exe}"<CR>',
+			'<ESC>:w<CR>:!start pwsh -nol -c "if (Get-Item ../include) {g++ -I ../include/ *.cpp -o %:t:r.exe ; clear ; ConsolePauser ./%:t:r.exe} elseif(Get-Item ./include) {g++ -I ./include/ *.cpp -o %:t:r.exe ; clear ; ConsolePauser ./%:t:r.exe} else {g++ *.cpp -o %:t:r.exe ; clear ; ConsolePauser ./%:t:r.exe}"<CR>',
 			{ silent = true, noremap = true }
 		)
 		vim.api.nvim_buf_set_keymap(
@@ -74,10 +74,19 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			-- "<ESC>:w<CR>:TermExec direction=float cmd=\"gcc *.c -I ./ -o %:t:r.exe ; ./%:t:r.exe\"<CR>",
 			-- '<ESC>:w<CR>:TermExec direction=float cmd="gcc %:t:r.c -o %:t:r.exe ; ./%:t:r.exe"<CR>',
 			'<ESC>:w<CR>:TermExec direction=float cmd="if (Get-Item ../include) {gcc -I ../include/ *.c -o %:t:r.exe ; clear ; ./%:t:r.exe} elseif(Get-Item ./include) {gcc -I ./include/ *.c -o %:t:r.exe ; clear ; ./%:t:r.exe} else {gcc *.c -o %:t:r.exe ; clear ; ./%:t:r.exe}"<CR>',
+			{ silent = true, noremap = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<F5>",
+			-- "<ESC>:w<CR>:TermExec direction=float cmd=\"g++ *.cpp -I ./ -o %:t:r.exe ; ./%:t:r.exe\"<CR>",
+			-- '<ESC>:w<CR>:TermExec direction=float cmd="g++ %:t:r.cpp -o %:t:r.exe ; ./%:t:r.exe"<CR>',
+			'<ESC>:w<CR>:!start pwsh -nol -c "if (Get-Item ../include) {gcc -I ../include/ *.c -o %:t:r.exe ; clear ; ConsolePauser ./%:t:r.exe} elseif(Get-Item ./include) {gcc -I ./include/ *.c -o %:t:r.exe ; clear ; ConsolePauser ./%:t:r.exe} else {gcc *.c -o %:t:r.exe ; clear ; ConsolePauser ./%:t:r.exe}"<CR>',
 			{ silent = true, noremap = true }
 		)
 		vim.api.nvim_buf_set_keymap(
@@ -127,8 +136,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			'<ESC>:w<CR>:TermExec direction=float cmd="python %"<CR>',
+			{ silent = true, noremap = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<F5>",
+			'<ESC>:w<CR>:!start pwsh -nol -c "ConsolePauser "python %""<CR>',
 			{ silent = true, noremap = true }
 		)
 	end,
@@ -139,8 +155,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			'<ESC>:w<CR>:TermExec direction=float cmd="lua %"<CR>',
+			{ silent = true, noremap = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<F5>",
+			'<ESC>:w<CR>:!start pwsh -nol -c "ConsolePauser "lua %""<CR>',
 			{ silent = true, noremap = true }
 		)
 	end,
@@ -152,8 +175,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			'<ESC>:w<CR>:TermExec direction=float cmd="javac %:t:r.java ; java %:t:r"<CR>',
+			{ silent = true, noremap = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<F5>",
+			'<ESC>:w<CR>:!start pwsh -nol -c "javac %:t:r.java ; ConsolePauser "java %:t:r""<CR>',
 			{ silent = true, noremap = true }
 		)
 		vim.api.nvim_buf_set_keymap(
@@ -172,8 +202,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			'<ESC>:w<CR>:TermExec direction=float cmd="go run %:t:r.go"<CR>',
+			{ silent = true, noremap = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<F5>",
+			'<ESC>:w<CR>:!start pwsh -nol -c "ConsolePauser "go run %:t:r.go""<CR>',
 			{ silent = true, noremap = true }
 		)
 		vim.api.nvim_buf_set_keymap(
@@ -192,8 +229,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<F5>",
+			"<Ca-l>",
 			'<ESC>:w<CR>:TermExec direction=float cmd="rustc %:t:r.rs ; ./%:t:r.exe"<CR>',
+			{ silent = true, noremap = true }
+		)
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<F5>",
+			'<ESC>:w<CR>:!start pwsh -nol -c "rustc %:t:r.rs ; ConsolePauser %:t:r.exe"<CR>',
 			{ silent = true, noremap = true }
 		)
 		vim.api.nvim_buf_set_keymap(
