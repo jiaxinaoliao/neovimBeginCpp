@@ -127,7 +127,7 @@ lazy.setup({
 		},
 	},
 	-- { "mistricky/codesnap.nvim", build = "make" },
-    -- { 'RaafatTurki/hex.nvim' },
+	{ "RaafatTurki/hex.nvim" },
 	-- 代码格式化
 	"mhartington/formatter.nvim",
 	-- "jose-elias-alvarez/null-ls.nvim",
@@ -188,12 +188,18 @@ lazy.setup({
 	-- "ptzz/lf.vim",
 	-- "voldikss/vim-floaterm",
 	-----翻译插件
-	"voldikss/vim-translator",
-	-- {
-	--   "JuanZoran/Trans.nvim",
-	--   build = function () require'Trans'.install() end,
-	--   dependencies = { 'kkharji/sqlite.lua', },
+	-- "voldikss/vim-translator",
+	-- {,
+	-- 	"JuanZoran/Trans.nvim",
+	-- 	dependencies = { "kkharji/sqlite.lua" },
 	-- },
+	{
+		"JuanZoran/Trans.nvim",
+		build = function()
+			require("Trans").install()
+		end,
+		dependencies = { "kkharji/sqlite.lua" },
+	},
 	--------高亮
 	-- "mtdl9/vim-log-highlighting",
 	"brenoprata10/nvim-highlight-colors",

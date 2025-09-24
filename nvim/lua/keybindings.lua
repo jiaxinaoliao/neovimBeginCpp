@@ -150,7 +150,7 @@ map("n", "<leader>xo", ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>xp", ":BufferLinePickClose<CR>", opt)
 
 -- 翻译
-map("v", "fy", ":TranslateW<CR>", opt)
+map("n", "<leader>fy", ":Translate<CR>", opt)
 
 -- Telescope
 map("n", "<C-f>", ":Telescope find_files<CR>", opt)

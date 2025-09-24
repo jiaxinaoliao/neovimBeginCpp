@@ -1,0 +1,661 @@
+    require("transparent").setup({
+      enable = true,
+      -- 设置需要透明化的额外高亮组
+      extra_groups = {
+        "BufferLineTabClose",
+        "BufferlineBufferSelected",
+        "BufferLineFill",
+        "BufferLineBackground",
+        "BufferLineSeparator",
+        "BufferLineIndicatorSelected",
+        -- 对于nvim-tree
+        "NvimTreeNormal",
+        "NvimTreeEndOfBuffer",
+        -- 对于telescope
+        "TelescopeNormal",
+        "TelescopePromptNormal",
+        "TelescopeResultsNormal",
+        "TelescopePreviewNormal",
+        "TelescopeBorder",
+        -- 对于lazy.nvim
+        "LazyNormal",
+        -- 对于mason.nvim
+        "MasonNormal",
+        -- 对于which-key
+        "WhichKeyFloat",
+        -- 对于cmp
+        "CmpItemMenu",
+        "CmpDocumentation",
+        "CmpDocumentationBorder",
+        -- 对于notify
+        "NotifyBackground",
+        -- 对于noice
+        "NoicePopup",
+        "NoicePopupBorder",
+        -- 对于lspinfo
+        "LspInfoBorder",
+        -- 对于dashboard
+        "DashboardHeader",
+        "DashboardCenter",
+        "DashboardFooter",
+        -- 对于alpha
+        "AlphaHeader",
+        "AlphaButtons",
+        "AlphaFooter",
+        -- 对于Trouble
+        "TroubleNormal",
+        -- 对于symbols-outline
+        "SymbolsOutlineNormal",
+        -- 对于neo-tree
+        "NeoTreeNormal",
+        "NeoTreeNormalNC",
+        -- 对于fidget
+        "FidgetTitle",
+        "FidgetTask",
+        -- 对于dap-ui
+        "DapUIFloatBorder",
+        "DapUINormal",
+        -- 对于所有浮动窗口
+        "NormalFloat",
+        "FloatBorder",
+        -- 对于状态栏插件（如lualine）
+        "StatusLine",
+        "StatusLineNC",
+        -- 对于标签栏插件（如barbar）
+        "TabLine",
+        "TabLineFill",
+        "TabLineSel",
+        -- 对于缩进指南
+        "IndentBlanklineChar",
+        "IndentBlanklineContextChar",
+        -- 对于滚动条
+        "ScrollbarHandle",
+        "ScrollbarThumb",
+        -- 对于侧边栏
+        "SidebarNormal",
+        "SidebarNvimNormal",
+        -- 对于终端
+        "Terminal",
+        "ToggleTerm",
+        "ToggleTermBorder",
+        -- 对于光标行
+        "CursorLine",
+        "CursorLineNr",
+        -- 对于搜索高亮
+        "Search",
+        "IncSearch",
+        -- 对于错误和警告
+        "Error",
+        "Warning",
+        "Info",
+        "Hint",
+        -- 对于diff
+        "DiffAdd",
+        "DiffChange",
+        "DiffDelete",
+        "DiffText",
+        -- 对于代码折叠
+        "Folded",
+        "FoldColumn",
+        -- 对于菜单
+        "Pmenu",
+        "PmenuSel",
+        "PmenuSbar",
+        "PmenuThumb",
+        -- 对于提示
+        "WildMenu",
+        -- 对于分割线
+        "VertSplit",
+        "WinSeparator",
+        -- 对于行号
+        "LineNr",
+        "CursorLineNr",
+        -- 对于符号列
+        "SignColumn",
+        -- 对于颜色列
+        "ColorColumn",
+        -- 对于结束符
+        "EndOfBuffer",
+        -- 对于非文本
+        "NonText",
+        -- 对于目录树
+        "Directory",
+        -- 对于标题
+        "Title",
+        -- 对于常量
+        "Constant",
+        -- 对于字符串
+        "String",
+        -- 对于字符
+        "Character",
+        -- 对于数字
+        "Number",
+        -- 对于布尔值
+        "Boolean",
+        -- 对于浮点数
+        "Float",
+        -- 对于标识符
+        "Identifier",
+        -- 对于函数
+        "Function",
+        -- 对于语句
+        "Statement",
+        -- 对于条件语句
+        "Conditional",
+        -- 对于循环
+        "Repeat",
+        -- 对于标签
+        "Label",
+        -- 对于运算符
+        "Operator",
+        -- 对于关键字
+        "Keyword",
+        -- 对于异常
+        "Exception",
+        -- 对于预处理器
+        "PreProc",
+        -- 对于类型
+        "Type",
+        -- 对于存储类
+        "StorageClass",
+        -- 对于结构
+        "Structure",
+        -- 对于特殊字符
+        "Special",
+        -- 对于特殊符号
+        "SpecialChar",
+        -- 对于标签
+        "Tag",
+        -- 对于分隔符
+        "Delimiter",
+        -- 对于特殊注释
+        "SpecialComment",
+        -- 对于调试
+        "Debug",
+        -- 对于下划线
+        "Underlined",
+        -- 对于忽略
+        "Ignore",
+        -- 对于错误
+        "Error",
+        -- 对于待办
+        "Todo",
+        -- 对于注释
+        "Comment",
+        -- 对于匹配括号
+        "MatchParen",
+        -- 对于搜索
+        "Search",
+        "IncSearch",
+        -- 对于视觉模式选择
+        "Visual",
+        "VisualNOS",
+        -- 对于光标
+        "Cursor",
+        "lCursor",
+        "CursorIM",
+        -- 对于模式消息
+        "ModeMsg",
+        -- 对于更多消息
+        "MoreMsg",
+        -- 对于问话消息
+        "Question",
+        -- 对于警告消息
+        "WarningMsg",
+        -- 对于错误消息
+        "ErrorMsg",
+        -- 对于目录
+        "Directory",
+        -- 对于折叠
+        "Folded",
+        "FoldColumn",
+        -- 对于diff
+        "DiffAdd",
+        "DiffChange",
+        "DiffDelete",
+        "DiffText",
+        -- 对于拼写错误
+        "SpellBad",
+        "SpellCap",
+        "SpellRare",
+        "SpellLocal",
+        -- 对于特殊键
+        "SpecialKey",
+        -- 对于非断行空格
+        "NonText",
+        -- 对于结束符
+        "EndOfBuffer",
+        -- 对于快速修复窗口
+        "QuickFixLine",
+        -- 对于当前行
+        "CursorLine",
+        "CursorColumn",
+        -- 对于颜色列
+        "ColorColumn",
+        -- 对于行号
+        "LineNr",
+        "CursorLineNr",
+        -- 对于符号列
+        "SignColumn",
+        -- 对于状态栏
+        "StatusLine",
+        "StatusLineNC",
+        "StatusLineTerm",
+        "StatusLineTermNC",
+        -- 对于标签栏
+        "TabLine",
+        "TabLineFill",
+        "TabLineSel",
+        -- 对于标题栏
+        "Title",
+        -- 对于浮动窗口
+        "NormalFloat",
+        "FloatBorder",
+        -- 对于命令行
+        "CommandMode",
+        -- 对于弹出菜单
+        "Pmenu",
+        "PmenuSel",
+        "PmenuSbar",
+        "PmenuThumb",
+        -- 对于提示
+        "WildMenu",
+        -- 对于分割线
+        "VertSplit",
+        "WinSeparator",
+        -- 对于目录树
+        "Directory",
+        -- 对于错误和警告符号（用于lsp）
+        "LspDiagnosticsDefaultError",
+        "LspDiagnosticsDefaultWarning",
+        "LspDiagnosticsDefaultInformation",
+        "LspDiagnosticsDefaultHint",
+        -- 对于lsp参考
+        "LspReferenceRead",
+        "LspReferenceText",
+        "LspReferenceWrite",
+        -- 对于lsp浮动提示
+        "LspFloatWinNormal",
+        "LspFloatWinBorder",
+        -- 对于lsp签名帮助
+        "LspSignatureActiveParameter",
+        -- 对于git signs
+        "GitSignsAdd",
+        "GitSignsChange",
+        "GitSignsDelete",
+        -- 对于gitsigns当前行
+        "GitSignsCurrentLineBlame",
+        -- 对于diffview
+        "DiffviewNormal",
+        "DiffviewFilePanelTitle",
+        -- 对于todo-comments
+        "TodoFgFIX",
+        "TodoFgHACK",
+        "TodoFgNOTE",
+        "TodoFgPERF",
+        "TodoFgTEST",
+        "TodoFgWARNING",
+        -- 对于indent-blankline
+        "IndentBlanklineChar",
+        "IndentBlanklineContextChar",
+        -- 对于scrollbar
+        "ScrollbarHandle",
+        "ScrollbarThumb",
+        -- 对于notify
+        "NotifyBackground",
+        -- 对于noice
+        "NoicePopup",
+        "NoicePopupBorder",
+        -- 对于dap-ui
+        "DapUIFloatBorder",
+        "DapUINormal",
+        -- 对于dap-repl
+        "DapReplFloatBorder",
+        "DapReplNormal",
+        -- 对于dap-breakpoints
+        "DapBreakpoint",
+        "DapBreakpointCondition",
+        -- 对于dap-stopped
+        "DapStopped",
+        -- 对于dap-log
+        "DapLogPoint",
+        -- 对于dap-hoe
+        "DapHOE",
+        -- 对于dap-hoe-breakpoints
+        "DapHOEBreakpoints",
+        -- 对于dap-hoe-stopped
+        "DapHOEStopped",
+        -- 对于dap-hoe-log
+        "DapHOELog",
+        -- 对于dap-hoe-frames
+        "DapHOEFrames",
+        -- 对于dap-hoe-watches
+        "DapHOEWatches",
+        -- 对于dap-hoe-repl
+        "DapHOERepl",
+        -- 对于dap-hoe-console
+        "DapHOEConsole",
+        -- 对于dap-hoe-float
+        "DapHOEFloat",
+        -- 对于dap-hoe-hover
+        "DapHOEHover",
+        -- 对于dap-hoe-signature
+        "DapHOESignature",
+        -- 对于dap-hoe-messages
+        "DapHOEMessages",
+        -- 对于dap-hoe-commands
+        "DapHOECommands",
+        -- 对于dap-hoe-scopes
+        "DapHOEScopes",
+        -- 对于dap-hoe-threads
+        "DapHOEThreads",
+        -- 对于dap-hoe-breakpoints-sign
+        "DapHOEBreakpointsSign",
+        -- 对于dap-hoe-stopped-sign
+        "DapHOEStoppedSign",
+        -- 对于dap-hoe-log-sign
+        "DapHOELogSign",
+        -- 对于dap-hoe-frames-sign
+        "DapHOEFramesSign",
+        -- 对于dap-hoe-watches-sign
+        "DapHOEWatchesSign",
+        -- 对于dap-hoe-repl-sign
+        "DapHOEReplSign",
+        -- 对于dap-hoe-console-sign
+        "DapHOEConsoleSign",
+        -- 对于dap-hoe-float-sign
+        "DapHOEFloatSign",
+        -- 对于dap-hoe-hover-sign
+        "DapHOEHoverSign",
+        -- 对于dap-hoe-signature-sign
+        "DapHOESignatureSign",
+        -- 对于dap-hoe-messages-sign
+        "DapHOEMessagesSign",
+        -- 对于dap-hoe-commands-sign
+        "DapHOECommandsSign",
+        -- 对于dap-hoe-scopes-sign
+        "DapHOEScopesSign",
+        -- 对于dap-hoe-threads-sign
+        "DapHOEThreadsSign",
+        -- 对于dap-hoe-breakpoints-line
+        "DapHOEBreakpointsLine",
+        -- 对于dap-hoe-stopped-line
+        "DapHOEStoppedLine",
+        -- 对于dap-hoe-log-line
+        "DapHOELogLine",
+        -- 对于dap-hoe-frames-line
+        "DapHOEFramesLine",
+        -- 对于dap-hoe-watches-line
+        "DapHOEWatchesLine",
+        -- 对于dap-hoe-repl-line
+        "DapHOEReplLine",
+        -- 对于dap-hoe-console-line
+        "DapHOEConsoleLine",
+        -- 对于dap-hoe-float-line
+        "DapHOEFloatLine",
+        -- 对于dap-hoe-hover-line
+        "DapHOEHoverLine",
+        -- 对于dap-hoe-signature-line
+        "DapHOESignatureLine",
+        -- 对于dap-hoe-messages-line
+        "DapHOEMessagesLine",
+        -- 对于dap-hoe-commands-line
+        "DapHOECommandsLine",
+        -- 对于dap-hoe-scopes-line
+        "DapHOEScopesLine",
+        -- 对于dap-hoe-threads-line
+        "DapHOEThreadsLine",
+        -- 对于dap-hoe-breakpoints-float
+        "DapHOEBreakpointsFloat",
+        -- 对于dap-hoe-stopped-float
+        "DapHOEStoppedFloat",
+        -- 对于dap-hoe-log-float
+        "DapHOELogFloat",
+        -- 对于dap-hoe-frames-float
+        "DapHOEFramesFloat",
+        -- 对于dap-hoe-watches-float
+        "DapHOEWatchesFloat",
+        -- 对于dap-hoe-repl-float
+        "DapHOEReplFloat",
+        -- 对于dap-hoe-console-float
+        "DapHOEConsoleFloat",
+        -- 对于dap-hoe-float-float
+        "DapHOEFloatFloat",
+        -- 对于dap-hoe-hover-float
+        "DapHOEHoverFloat",
+        -- 对于dap-hoe-signature-float
+        "DapHOESignatureFloat",
+        -- 对于dap-hoe-messages-float
+        "DapHOEMessagesFloat",
+        -- 对于dap-hoe-commands-float
+        "DapHOECommandsFloat",
+        -- 对于dap-hoe-scopes-float
+        "DapHOEScopesFloat",
+        -- 对于dap-hoe-threads-float
+        "DapHOEThreadsFloat",
+        -- 对于dap-hoe-breakpoints-virtual
+        "DapHOEBreakpointsVirtual",
+        -- 对于dap-hoe-stopped-virtual
+        "DapHOEStoppedVirtual",
+        -- 对于dap-hoe-log-virtual
+        "DapHOELogVirtual",
+        -- 对于dap-hoe-frames-virtual
+        "DapHOEFramesVirtual",
+        -- 对于dap-hoe-watches-virtual
+        "DapHOEWatchesVirtual",
+        -- 对于dap-hoe-repl-virtual
+        "DapHOEReplVirtual",
+        -- 对于dap-hoe-console-virtual
+        "DapHOEConsoleVirtual",
+        -- 对于dap-hoe-float-virtual
+        "DapHOEFloatVirtual",
+        -- 对于dap-hoe-hover-virtual
+        "DapHOEHoverVirtual",
+        -- 对于dap-hoe-signature-virtual
+        "DapHOESignatureVirtual",
+        -- 对于dap-hoe-messages-virtual
+        "DapHOEMessagesVirtual",
+        -- 对于dap-hoe-commands-virtual
+        "DapHOECommandsVirtual",
+        -- 对于dap-hoe-scopes-virtual
+        "DapHOEScopesVirtual",
+        -- 对于dap-hoe-threads-virtual
+        "DapHOEThreadsVirtual",
+        -- 对于dap-hoe-breakpoints-sign-virtual
+        "DapHOEBreakpointsSignVirtual",
+        -- 对于dap-hoe-stopped-sign-virtual
+        "DapHOEStoppedSignVirtual",
+        -- 对于dap-hoe-log-sign-virtual
+        "DapHOELogSignVirtual",
+        -- 对于dap-hoe-frames-sign-virtual
+        "DapHOEFramesSignVirtual",
+        -- 对于dap-hoe-watches-sign-virtual
+        "DapHOEWatchesSignVirtual",
+        -- 对于dap-hoe-repl-sign-virtual
+        "DapHOEReplSignVirtual",
+        -- 对于dap-hoe-console-sign-virtual
+        "DapHOEConsoleSignVirtual",
+        -- 对于dap-hoe-float-sign-virtual
+        "DapHOEFloatSignVirtual",
+        -- 对于dap-hoe-hover-sign-virtual
+        "DapHOEHoverSignVirtual",
+        -- 对于dap-hoe-signature-sign-virtual
+        "DapHOESignatureSignVirtual",
+        -- 对于dap-hoe-messages-sign-virtual
+        "DapHOEMessagesSignVirtual",
+        -- 对于dap-hoe-commands-sign-virtual
+        "DapHOECommandsSignVirtual",
+        -- 对于dap-hoe-scopes-sign-virtual
+        "DapHOEScopesSignVirtual",
+        -- 对于dap-hoe-threads-sign-virtual
+        "DapHOEThreadsSignVirtual",
+        -- 对于dap-hoe-breakpoints-line-virtual
+        "DapHOEBreakpointsLineVirtual",
+        -- 对于dap-hoe-stopped-line-virtual
+        "DapHOEStoppedLineVirtual",
+        -- 对于dap-hoe-log-line-virtual
+        "DapHOELogLineVirtual",
+        -- 对于dap-hoe-frames-line-virtual
+        "DapHOEFramesLineVirtual",
+        -- 对于dap-hoe-watches-line-virtual
+        "DapHOEWatchesLineVirtual",
+        -- 对于dap-hoe-repl-line-virtual
+        "DapHOEReplLineVirtual",
+        -- 对于dap-hoe-console-line-virtual
+        "DapHOEConsoleLineVirtual",
+        -- 对于dap-hoe-float-line-virtual
+        "DapHOEFloatLineVirtual",
+        -- 对于dap-hoe-hover-line-virtual
+        "DapHOEHoverLineVirtual",
+        -- 对于dap-hoe-signature-line-virtual
+        "DapHOESignatureLineVirtual",
+        -- 对于dap-hoe-messages-line-virtual
+        "DapHOEMessagesLineVirtual",
+        -- 对于dap-hoe-commands-line-virtual
+        "DapHOECommandsLineVirtual",
+        -- 对于dap-hoe-scopes-line-virtual
+        "DapHOEScopesLineVirtual",
+        -- 对于dap-hoe-threads-line-virtual
+        "DapHOEThreadsLineVirtual",
+        -- 对于dap-hoe-breakpoints-float-virtual
+        "DapHOEBreakpointsFloatVirtual",
+        -- 对于dap-hoe-stopped-float-virtual
+        "DapHOEStoppedFloatVirtual",
+        -- 对于dap-hoe-log-float-virtual
+        "DapHOELogFloatVirtual",
+        -- 对于dap-hoe-frames-float-virtual
+        "DapHOEFramesFloatVirtual",
+        -- 对于dap-hoe-watches-float-virtual
+        "DapHOEWatchesFloatVirtual",
+        -- 对于dap-hoe-repl-float-virtual
+        "DapHOEReplFloatVirtual",
+        -- 对于dap-hoe-console-float-virtual
+        "DapHOEConsoleFloatVirtual",
+        -- 对于dap-hoe-float-float-virtual
+        "DapHOEFloatFloatVirtual",
+        -- 对于dap-hoe-hover-float-virtual
+        "DapHOEHoverFloatVirtual",
+        -- 对于dap-hoe-signature-float-virtual
+        "DapHOESignatureFloatVirtual",
+        -- 对于dap-hoe-messages-float-virtual
+        "DapHOEMessagesFloatVirtual",
+        -- 对于dap-hoe-commands-float-virtual
+        "DapHOECommandsFloatVirtual",
+        -- 对于dap-hoe-scopes-float-virtual
+        "DapHOEScopesFloatVirtual",
+        -- 对于dap-hoe-threads-float-virtual
+        "DapHOEThreadsFloatVirtual",
+        -- 对于dap-hoe-breakpoints-virtual-virtual
+        "DapHOEBreakpointsVirtualVirtual",
+        -- 对于dap-hoe-stopped-virtual-virtual
+        "DapHOEStoppedVirtualVirtual",
+        -- 对于dap-hoe-log-virtual-virtual
+        "DapHOELogVirtualVirtual",
+        -- 对于dap-hoe-frames-virtual-virtual
+        "DapHOEFramesVirtualVirtual",
+        -- 对于dap-hoe-watches-virtual-virtual
+        "DapHOEWatchesVirtualVirtual",
+        -- 对于dap-hoe-repl-virtual-virtual
+        "DapHOEReplVirtualVirtual",
+        -- 对于dap-hoe-console-virtual-virtual
+        "DapHOEConsoleVirtualVirtual",
+        -- 对于dap-hoe-float-virtual-virtual
+        "DapHOEFloatVirtualVirtual",
+        -- 对于dap-hoe-hover-virtual-virtual
+        "DapHOEHoverVirtualVirtual",
+        -- 对于dap-hoe-signature-virtual-virtual
+        "DapHOESignatureVirtualVirtual",
+        -- 对于dap-hoe-messages-virtual-virtual
+        "DapHOEMessagesVirtualVirtual",
+        -- 对于dap-hoe-commands-virtual-virtual
+        "DapHOECommandsVirtualVirtual",
+        -- 对于dap-hoe-scopes-virtual-virtual
+        "DapHOEScopesVirtualVirtual",
+        -- 对于dap-hoe-threads-virtual-virtual
+        "DapHOEThreadsVirtualVirtual",
+        -- 对于dap-hoe-breakpoints-sign-virtual-virtual
+        "DapHOEBreakpointsSignVirtualVirtual",
+        -- 对于dap-hoe-stopped-sign-virtual-virtual
+        "DapHOEStoppedSignVirtualVirtual",
+        -- 对于dap-hoe-log-sign-virtual-virtual
+        "DapHOELogSignVirtualVirtual",
+        -- 对于dap-hoe-frames-sign-virtual-virtual
+        "DapHOEFramesSignVirtualVirtual",
+        -- 对于dap-hoe-watches-sign-virtual-virtual
+        "DapHOEWatchesSignVirtualVirtual",
+        -- 对于dap-hoe-repl-sign-virtual-virtual
+        "DapHOEReplSignVirtualVirtual",
+        -- 对于dap-hoe-console-sign-virtual-virtual
+        "DapHOEConsoleSignVirtualVirtual",
+        -- 对于dap-hoe-float-sign-virtual-virtual
+        "DapHOEFloatSignVirtualVirtual",
+        -- 对于dap-hoe-hover-sign-virtual-virtual
+        "DapHOEHoverSignVirtualVirtual",
+        -- 对于dap-hoe-signature-sign-virtual-virtual
+        "DapHOESignatureSignVirtualVirtual",
+        -- 对于dap-hoe-messages-sign-virtual-virtual
+        "DapHOEMessagesSignVirtualVirtual",
+        -- 对于dap-hoe-commands-sign-virtual-virtual
+        "DapHOECommandsSignVirtualVirtual",
+        -- 对于dap-hoe-scopes-sign-virtual-virtual
+        "DapHOEScopesSignVirtualVirtual",
+        -- 对于dap-hoe-threads-sign-virtual-virtual
+        "DapHOEThreadsSignVirtualVirtual",
+        -- 对于dap-hoe-breakpoints-line-virtual-virtual
+        "DapHOEBreakpointsLineVirtualVirtual",
+        -- 对于dap-hoe-stopped-line-virtual-virtual
+        "DapHOEStoppedLineVirtualVirtual",
+        -- 对于dap-hoe-log-line-virtual-virtual
+        "DapHOELogLineVirtualVirtual",
+        -- 对于dap-hoe-frames-line-virtual-virtual
+        "DapHOEFramesLineVirtualVirtual",
+        -- 对于dap-hoe-watches-line-virtual-virtual
+        "DapHOEWatchesLineVirtualVirtual",
+        -- 对于dap-hoe-repl-line-virtual-virtual
+        "DapHOEReplLineVirtualVirtual",
+        -- 对于dap-hoe-console-line-virtual-virtual
+        "DapHOEConsoleLineVirtualVirtual",
+        -- 对于dap-hoe-float-line-virtual-virtual
+        "DapHOEFloatLineVirtualVirtual",
+        -- 对于dap-hoe-hover-line-virtual-virtual
+        "DapHOEHoverLineVirtualVirtual",
+        -- 对于dap-hoe-signature-line-virtual-virtual
+        "DapHOESignatureLineVirtualVirtual",
+        -- 对于dap-hoe-messages-line-virtual-virtual
+        "DapHOEMessagesLineVirtualVirtual",
+        -- 对于dap-hoe-commands-line-virtual-virtual
+        "DapHOECommandsLineVirtualVirtual",
+        -- 对于dap-hoe-scopes-line-virtual-virtual
+        "DapHOEScopesLineVirtualVirtual",
+        -- 对于dap-hoe-threads-line-virtual-virtual
+        "DapHOEThreadsLineVirtualVirtual",
+        -- 对于dap-hoe-breakpoints-float-virtual-virtual
+        "DapHOEBreakpointsFloatVirtualVirtual",
+        -- 对于dap-hoe-stopped-float-virtual-virtual
+        "DapHOEStoppedFloatVirtualVirtual",
+        -- 对于dap-hoe-log-float-virtual-virtual
+        "DapHOELogFloatVirtualVirtual",
+        -- 对于dap-hoe-frames-float-virtual-virtual
+        "DapHOEFramesFloatVirtualVirtual",
+        -- 对于dap-hoe-watches-float-virtual-virtual
+        "DapHOEWatchesFloatVirtualVirtual",
+        -- 对于dap-hoe-repl-float-virtual-virtual
+        "DapHOEReplFloatVirtualVirtual",
+        -- 对于dap-hoe-console-float-virtual-virtual
+        "DapHOEConsoleFloatVirtualVirtual",
+        -- 对于dap-hoe-float-float-virtual-virtual
+        "DapHOEFloatFloatVirtualVirtual",
+        -- 对于dap-hoe-hover-float-virtual-virtual
+        "DapHOEHoverFloatVirtualVirtual",
+        -- 对于dap-hoe-signature-float-virtual-virtual
+        "DapHOESignatureFloatVirtualVirtual",
+        -- 对于dap-hoe-messages-float-virtual-virtual
+        "DapHOEMessagesFloatVirtualVirtual",
+        -- 对于dap-hoe-commands-float-virtual-virtual
+        "DapHOECommandsFloatVirtualVirtual",
+        -- 对于dap-hoe-scopes-float-virtual-virtual
+        "DapHOEScopesFloatVirtualVirtual",
+        -- 对于dap-hoe-threads-float-virtual-virtual
+        "DapHOEThreadsFloatVirtualVirtual",
+      },
+    })
