@@ -101,6 +101,9 @@ map("n", "<C-Down>", ":resize -5<CR>", opt)
 map("n", "<C-Up>", ":resize +5<CR>", opt)
 -- 相等比例
 map("n", "s=", "<C-w>=", opt)
+-- tab 隐藏
+map("n", "<CA-z>", ":let &showtabline = (&showtabline == 2 ? 0 : 2)<CR>", opt)
+map("n", "<SA-z>", ":let &laststatus = (&laststatus == 2 ? 0 : 2)<CR>", opt)
 
 -- Terminal相关
 map("n", "stb", ":sp | terminal pwsh -nologo<CR>", opt)

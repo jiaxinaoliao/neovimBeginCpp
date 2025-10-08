@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.api.nvim_buf_set_keymap(
 			0,
 			"n",
-			"<CA-c>",
+			"<CA-s>",
 			'<ESC>:w<CR>:TermExec direction=float cmd="$myCppClassName=Read-Host;if (Get-Item ../include) {New-Item .\\$myCppClassName.cpp;cd ../include/;New-Item .\\$myCppClassName.h;cd ../src} elseif(Get-Item ./include) {New-Item .\\$myCppClassName.cpp;cd ./include;New-Item .\\$myCppClassName.h;cd ..} else {New-Item .\\$myCppClassName.cpp,.\\$myCppClassName.h};exit"<CR>',
 			{ silent = true, noremap = true }
 		)
