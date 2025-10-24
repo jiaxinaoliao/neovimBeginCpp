@@ -16,6 +16,11 @@ if not status then
 	return
 end
 
+vim.diagnostic.config({
+	virtual_text = true,
+	update_in_insert = true,
+})
+
 require("mason").setup({
 	ui = {
 		icons = {
@@ -48,36 +53,5 @@ require("mason-lspconfig").setup({
 		"gopls",
 	},
 })
-
--- key 必须为下列网址列出的 server name，不可以随便写
--- https://github.com/williamboman/nvim-lsp-installer#available-lsps
-local servers = {
-	lua_ls = require("lsp.config.lua"),
-	clangd = require("lsp.config.clangd"),
-	csharp_ls = require("lsp.config.csharp"),
-	pyright = require("lsp.config.pyright"),
-	bashls = require("lsp.config.bash"),
-	html = require("lsp.config.html"),
-	cssls = require("lsp.config.css"),
-	emmet_ls = require("lsp.config.emmet"),
-	jsonls = require("lsp.config.json"),
-	ts_ls = require("lsp.config.ts"),
-	rust_analyzer = require("lsp.config.rust"),
-	yamlls = require("lsp.config.yamlls"),
-	marksman = require("lsp.config.markdown"),
-	jdtls = require("lsp.config.jdtls"),
-	cmake = require("lsp.config.cmake"),
-	gopls = require("lsp.config.gopls"),
-}
-
-for name, config in pairs(servers) do
-	if config ~= nil and type(config) == "table" then
-		-- 自定义初始化配置文件必须实现on_setup 方法
-		config.on_setup(lspconfig[name])
-	else
-		-- 使用默认参数
-		lspconfig[name].setup({})
-	end
-end
 
 require("lsp.ui")

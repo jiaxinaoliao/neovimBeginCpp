@@ -7,6 +7,7 @@ vim.o.sidescrolloff = 8
 -- 使用相对行号
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.numberwidth = 1
 -- 高亮所在行
 vim.wo.cursorline = true
 -- 显示左侧图标指示列
@@ -84,3 +85,4 @@ vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 -- 自动跳转文件目录
 vim.opt.autochdir = true
+vim.opt.nrformats = "bin,hex,alpha"

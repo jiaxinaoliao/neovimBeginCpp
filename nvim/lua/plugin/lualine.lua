@@ -5,6 +5,7 @@ if not status then
 end
 
 lualine.setup({
+    event = "VeryLazy",
 	options = {
 		-- 指定皮肤
 		-- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md

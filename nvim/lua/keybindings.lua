@@ -202,16 +202,14 @@ map("v", "<C-_>", "gcc", { noremap = false })
 map("n", "<C-s>", ":w<CR>:Format<CR>:w<CR>", opt)
 
 --- chatgpt  neoai.nvim
--- map("n", "<leader>a", ":NeoAI<CR>", opt)
--- map("n", "<leader>i", ":NeoAIInject ", opt)
 map("n", "<leader>a", ":CodeCompanionChat<CR>", opt)
 map("n", "<leader>i", ":CodeCompanion<CR>", opt)
 map("v", "<leader>i", ":CodeCompanion<CR>", opt)
 
 -- ctrl + g 纯净模式
 -- leader + gg 选中纯净模式
-map("n", "<leader>h", "<cmd>TZMinimalist<CR>", opt)
-map("v", "<leader>h", "<cmd>TZNarrow<CR>", opt)
+-- map("n", "<leader>h", "<cmd>TZMinimalist<CR>", opt)
+-- map("v", "<leader>h", "<cmd>TZNarrow<CR>", opt)
 
 -- 细胞cam 游戏cha
 map("n", "cam", ":CellularAutomaton make_it_rain<CR>", opt)
@@ -232,13 +230,6 @@ pluginKeys.mapLSP = function(mapbuf)
 	mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
 	mapbuf("n", "<F8>", "<cmd>Lspsaga outline<CR>", opt)
 end
-
--- typescript 快捷键
--- pluginKeys.mapTsLSP = function(mapbuf)
---   mapbuf('n', 'gs', ':TSLspOrganize<CR>', opt)
---   mapbuf('n', 'gR', ':TSLspRenameFile<CR>', opt)
---   mapbuf('n', 'gi', ':TSLspImportAll<CR>', opt)
--- end
 
 -- nvim-dap
 pluginKeys.mapDAP = function()
@@ -270,23 +261,6 @@ pluginKeys.mapDAP = function()
 	map("n", "<F10>", ":lua require'dap'.restart()<CR>", opt)
 	map("n", "<S-F10>", ":lua require'dap'.terminate()<CR>", opt)
 end
---
--- -- vimspector
--- pluginKeys.mapVimspector = function()
---   -- 开始
---   map('n', '<leader>dd', ':call vimspector#Launch()<CR>', opt)
---   -- 结束
---   map('n', '<Leader>de', ':call vimspector#Reset()<CR>', opt)
---   -- 继续
---   map('n', '<Leader>dc', ':call vimspector#Continue()<CR>', opt)
---   -- 设置断点
---   map('n', '<Leader>dt', ':call vimspector#ToggleBreakpoint()<CR>', opt)
---   map('n', '<Leader>dT', ':call vimspector#ClearBreakpoints()<CR>', opt)
---   --  stepOver, stepOut, stepInto
---   map('n', '<leader>dj', '<Plug>VimspectorStepOver', opt)
---   map('n', '<leader>dk', '<Plug>VimspectorStepOut', opt)
---   map('n', '<leader>dl', '<Plug>VimspectorStepInto', opt)
--- end
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)

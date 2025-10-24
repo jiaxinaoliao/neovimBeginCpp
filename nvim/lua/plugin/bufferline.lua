@@ -9,6 +9,7 @@ end
 bufferline.setup({
 	options = {
 		-- 关闭 Tab 的命令
+        event = "VeryLazy",
 		numbers = "ordinal",
 		close_command = "Bdelete! %d",
 		right_mouse_command = "Bdelete! %d",
