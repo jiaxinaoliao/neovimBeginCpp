@@ -7,7 +7,6 @@ end
 require("smear-cursor").setup({
     -- Smear cursor when switching buffers or windows.
     smear_between_buffers = true,
-
     -- Smear cursor when moving within line or to neighbor lines.
     -- Use `min_horizontal_distance_smear` and `min_vertical_distance_smear` for finer control
     smear_between_neighbor_lines = true,
@@ -22,6 +21,4 @@ require("smear-cursor").setup({
     stiffness = 1,
     trailing_stiffness = 1,
     distance_stop_animating = 1,
-
-
 })

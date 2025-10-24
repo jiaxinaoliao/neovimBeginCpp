@@ -11,8 +11,8 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 local opt = {
-	noremap = true,
-	silent = true,
+    noremap = true,
+    silent = true,
 }
 
 -- 本地变量
@@ -37,9 +37,9 @@ map("n", "<C-j>", "5j", opt)
 map("n", "<C-k>", "5k", opt)
 map("v", "<C-j>", "5j", opt)
 map("v", "<C-k>", "5k", opt)
--- ctrl u / ctrl + d  只移动9行，默认移动半屏
---map('n', '<C-u>', '10k', opt)
---map('n', '<C-d>', '10j', opt)
+-- ctrl u / ctrl + d  只移动10行，默认移动半屏
+map('n', '<C-u>', '10k', opt)
+map('n', '<C-d>', '10j', opt)
 
 -- magic search
 map("n", "?", "/\\v", { noremap = true, silent = false })
@@ -162,37 +162,37 @@ map("n", "<C-b>", ":Telescope buffers<CR>", opt)
 
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
-	i = {
-		-- 上下移动
-		["<C-j>"] = "move_selection_next",
-		["<C-k>"] = "move_selection_previous",
-		["<C-n>"] = "move_selection_next",
-		["<C-p>"] = "move_selection_previous",
-		-- 历史记录
-		["<Down>"] = "cycle_history_next",
-		["<Up>"] = "cycle_history_prev",
-		-- 关闭窗口
-		-- ["<esc>"] = actions.close,
-		["<C-c>"] = "close",
-		-- 预览窗口上下滚动
-		["<C-u>"] = "preview_scrolling_up",
-		["<C-d>"] = "preview_scrolling_down",
-	},
+    i = {
+        -- 上下移动
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
+        ["<C-n>"] = "move_selection_next",
+        ["<C-p>"] = "move_selection_previous",
+        -- 历史记录
+        ["<Down>"] = "cycle_history_next",
+        ["<Up>"] = "cycle_history_prev",
+        -- 关闭窗口
+        -- ["<esc>"] = actions.close,
+        ["<C-c>"] = "close",
+        -- 预览窗口上下滚动
+        ["<C-u>"] = "preview_scrolling_up",
+        ["<C-d>"] = "preview_scrolling_down",
+    },
 }
 
 -- 代码注释插件
 -- see ./lua/plugin-config/comment.lua
 pluginKeys.comment = {
-	-- Normal 模式快捷键
-	toggler = {
-		line = "gcc", -- 行注释
-		block = "gbc", -- 块注释
-	},
-	-- Visual 模式
-	opleader = {
-		line = "gc",
-		bock = "gb",
-	},
+    -- Normal 模式快捷键
+    toggler = {
+        line = "gcc", -- 行注释
+        block = "gbc", -- 块注释
+    },
+    -- Visual 模式
+    opleader = {
+        line = "gc",
+        bock = "gb",
+    },
 }
 -- ctrl + /
 map("n", "<C-_>", "gcc", { noremap = false })
@@ -217,7 +217,7 @@ map("n", "cag", ":CellularAutomaton game_of_life<CR>", opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
-	mapbuf("n", "<leader>s", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opt)
+	mapbuf("n", "<leader>s", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opt)
 	mapbuf("n", "<leader>cm", "<cmd>Lspsaga rename<CR>", opt)
 	mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
 	mapbuf("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opt)
@@ -233,89 +233,89 @@ end
 
 -- nvim-dap
 pluginKeys.mapDAP = function()
-	-- 结束
-	map(
-		"n",
-		"<S-F5>",
-		":lua require'dap'.terminate()<CR>"
-			-- ":lua require'dap'.disconnect()<CR>"
-			.. ":lua require'dap'.close()<CR>"
-			.. ":lua require'dap.repl'.close()<CR>"
-			.. ":lua require'dapui'.close()<CR>"
-			.. ":lua require('dap').clear_breakpoints()<CR>"
-			.. "<C-w>o<CR>",
-		opt
-	)
-	-- 开始/继续
-	map("n", "<C-F5>", ":lua require'dap'.continue()<CR>", opt)
-	-- 设置断点
-	map("n", "<F6>", ":lua require'dap'.toggle_breakpoint()<CR>", opt)
-	map("n", "<S-F6>", ":lua require'dap'.clear_breakpoints()<CR>", opt)
-	--  stepOver, stepOut, stepInto
-	map("n", "<F12>", ":lua require'dap'.step_over()<CR>", opt)
-	map("n", "<S-F7>", ":lua require'dap'.step_out()<CR>", opt)
-	map("n", "<F7>", ":lua require'dap'.step_into()<CR>", opt)
-	-- 弹窗
-	map("n", "<S-F12>", ":lua require'dapui'.eval()<CR>", opt)
-	-- 重启
-	map("n", "<F10>", ":lua require'dap'.restart()<CR>", opt)
-	map("n", "<S-F10>", ":lua require'dap'.terminate()<CR>", opt)
+    -- 结束
+    map(
+        "n",
+        "<S-F5>",
+        ":lua require'dap'.terminate()<CR>"
+        -- ":lua require'dap'.disconnect()<CR>"
+        .. ":lua require'dap'.close()<CR>"
+        .. ":lua require'dap.repl'.close()<CR>"
+        .. ":lua require'dapui'.close()<CR>"
+        .. ":lua require('dap').clear_breakpoints()<CR>"
+        .. "<C-w>o<CR>",
+        opt
+    )
+    -- 开始/继续
+    map("n", "<C-F5>", ":lua require'dap'.continue()<CR>", opt)
+    -- 设置断点
+    map("n", "<F6>", ":lua require'dap'.toggle_breakpoint()<CR>", opt)
+    map("n", "<S-F6>", ":lua require'dap'.clear_breakpoints()<CR>", opt)
+    --  stepOver, stepOut, stepInto
+    map("n", "<F12>", ":lua require'dap'.step_over()<CR>", opt)
+    map("n", "<S-F7>", ":lua require'dap'.step_out()<CR>", opt)
+    map("n", "<F7>", ":lua require'dap'.step_into()<CR>", opt)
+    -- 弹窗
+    map("n", "<S-F12>", ":lua require'dapui'.eval()<CR>", opt)
+    -- 重启
+    map("n", "<F10>", ":lua require'dap'.restart()<CR>", opt)
+    map("n", "<S-F10>", ":lua require'dap'.terminate()<CR>", opt)
 end
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
-	local feedkey = function(key, mode)
-		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-	end
-	local has_words_before = function()
-		local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-		return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-	end
+    local feedkey = function(key, mode)
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+    end
+    local has_words_before = function()
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    end
 
-	return {
-		-- 上一个
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		-- 下一个
-		["<C-j>"] = cmp.mapping.select_next_item(),
-		-- 出现补全
-		["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-		-- 取消
-		["<A-,>"] = cmp.mapping({
-			i = cmp.mapping.abort(),
-			c = cmp.mapping.close(),
-		}),
-		-- 确认
-		-- Accept currently selected item. If none selected, `select` first item.
-		-- Set `select` to `false` to only confirm explicitly selected items.
-		["<CR>"] = cmp.mapping.confirm({
-			select = true,
-			behavior = cmp.ConfirmBehavior.Replace,
-		}),
-		-- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-		-- 如果窗口内容太多，可以滚动
-		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-		-- Super Tab
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif vim.fn["vsnip#available"](1) == 1 then
-				feedkey("<Plug>(vsnip-expand-or-jump)", "")
-			elseif has_words_before() then
-				cmp.complete()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
+    return {
+        -- 上一个
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
+        -- 下一个
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        -- 出现补全
+        ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+        -- 取消
+        ["<A-,>"] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        -- 确认
+        -- Accept currently selected item. If none selected, `select` first item.
+        -- Set `select` to `false` to only confirm explicitly selected items.
+        ["<CR>"] = cmp.mapping.confirm({
+            select = true,
+            behavior = cmp.ConfirmBehavior.Replace,
+        }),
+        -- ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        -- 如果窗口内容太多，可以滚动
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+        -- Super Tab
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif vim.fn["vsnip#available"](1) == 1 then
+                feedkey("<Plug>(vsnip-expand-or-jump)", "")
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
 
-		["<S-Tab>"] = cmp.mapping(function()
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-				feedkey("<Plug>(vsnip-jump-prev)", "")
-			end
-		end, { "i", "s" }),
-	}
+        ["<S-Tab>"] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+                feedkey("<Plug>(vsnip-jump-prev)", "")
+            end
+        end, { "i", "s" }),
+    }
 end
 
 ------一键运行
@@ -330,62 +330,62 @@ end
 -- 特殊lazygit 窗口，需要安装lazygit
 -- <leader>tg lazygit
 pluginKeys.mapToggleTerm = function(toggleterm)
-	vim.keymap.set({ "n", "t" }, "tt", toggleterm.toggleA)
-	vim.keymap.set({ "n", "t" }, "tb", toggleterm.toggleB)
-	vim.keymap.set({ "n", "t" }, "tc", toggleterm.toggleC)
-	vim.keymap.set({ "n", "t" }, "tg", toggleterm.toggleG)
-	-- vim.keymap.set({ 'n', 't' }, '<F5>', toggleterm.toggleE)
+    vim.keymap.set({ "n", "t" }, "tt", toggleterm.toggleA)
+    vim.keymap.set({ "n", "t" }, "tb", toggleterm.toggleB)
+    vim.keymap.set({ "n", "t" }, "tc", toggleterm.toggleC)
+    vim.keymap.set({ "n", "t" }, "tg", toggleterm.toggleG)
+    -- vim.keymap.set({ 'n', 't' }, '<F5>', toggleterm.toggleE)
 end
 
 -- gitsigns查看更改记录
 pluginKeys.gitsigns_on_attach = function(bufnr)
-	local gs = package.loaded.gitsigns
+    local gs = package.loaded.gitsigns
 
-	local function map(mode, l, r, opts)
-		opts = opts or {}
-		opts.buffer = bufnr
-		vim.keymap.set(mode, l, r, opts)
-	end
+    local function map(mode, l, r, opts)
+        opts = opts or {}
+        opts.buffer = bufnr
+        vim.keymap.set(mode, l, r, opts)
+    end
 
-	-- Navigation
-	map("n", "<leader>gj", function()
-		if vim.wo.diff then
-			return "]c"
-		end
-		vim.schedule(function()
-			gs.next_hunk()
-		end)
-		return "<Ignore>"
-	end, { expr = true })
+    -- Navigation
+    map("n", "<leader>gj", function()
+        if vim.wo.diff then
+            return "]c"
+        end
+        vim.schedule(function()
+            gs.next_hunk()
+        end)
+        return "<Ignore>"
+    end, { expr = true })
 
-	map("n", "<leader>gk", function()
-		if vim.wo.diff then
-			return "[c"
-		end
-		vim.schedule(function()
-			gs.prev_hunk()
-		end)
-		return "<Ignore>"
-	end, { expr = true })
+    map("n", "<leader>gk", function()
+        if vim.wo.diff then
+            return "[c"
+        end
+        vim.schedule(function()
+            gs.prev_hunk()
+        end)
+        return "<Ignore>"
+    end, { expr = true })
 
-	map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>")
-	map("n", "<leader>gS", gs.stage_buffer)
-	map("n", "<leader>gu", gs.undo_stage_hunk)
-	map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>")
-	map("n", "<leader>gR", gs.reset_buffer)
-	map("n", "<leader>gp", gs.preview_hunk)
-	map("n", "<leader>gb", function()
-		gs.blame_line({ full = true })
-	end)
-	map("n", "<leader>gd", gs.diffthis)
-	map("n", "<leader>gD", function()
-		gs.diffthis("~")
-	end)
-	-- toggle
-	map("n", "<leader>gtd", gs.toggle_deleted)
-	map("n", "<leader>gtb", gs.toggle_current_line_blame)
-	-- Text object
-	map({ "o", "x" }, "ig", ":<C-U>Gitsigns select_hunk<CR>")
+    map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>")
+    map("n", "<leader>gS", gs.stage_buffer)
+    map("n", "<leader>gu", gs.undo_stage_hunk)
+    map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>")
+    map("n", "<leader>gR", gs.reset_buffer)
+    map("n", "<leader>gp", gs.preview_hunk)
+    map("n", "<leader>gb", function()
+        gs.blame_line({ full = true })
+    end)
+    map("n", "<leader>gd", gs.diffthis)
+    map("n", "<leader>gD", function()
+        gs.diffthis("~")
+    end)
+    -- toggle
+    map("n", "<leader>gtd", gs.toggle_deleted)
+    map("n", "<leader>gtb", gs.toggle_current_line_blame)
+    -- Text object
+    map({ "o", "x" }, "ig", ":<C-U>Gitsigns select_hunk<CR>")
 end
 
 return pluginKeys

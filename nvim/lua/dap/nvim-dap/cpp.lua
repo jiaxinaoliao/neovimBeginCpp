@@ -24,7 +24,7 @@ dap.configurations.cpp = {
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
     externalConsole = false,
-    MIMode = "lldb",
+    MIMode = "gdb",
     -- miDebuggerPath = "D:\\CppApp\\llvm-mingw\\bin\\lldb.exe",
   },
   -- {

@@ -6,7 +6,7 @@ end
 
 require("codecompanion").setup({
     event = "VeryLazy",
-    adapters = {
+    opts = {
         aliyun = function()
             return require("codecompanion.adapters").extend("openai_compatible", {
                 env = {

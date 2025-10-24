@@ -91,17 +91,16 @@ lazy.setup({
         event = "InsertEnter",
     },
     -- cmake
-    -- "Shatur/neovim-cmake",
-    "Civitasv/cmake-tools.nvim",
+    -- "Civitasv/cmake-tools.nvim",
     -- 补全引擎
     "hrsh7th/nvim-cmp",
     -- 补全源
     "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-vsnip",
-    "hrsh7th/cmp-nvim-lsp",             -- { name = nvim_lsp }
-    "hrsh7th/cmp-buffer",               -- { name = 'buffer' },
-    "hrsh7th/cmp-path",                 -- { name = 'path' }
-    "hrsh7th/cmp-cmdline",              -- { name = 'cmdline' }
+    "hrsh7th/cmp-nvim-lsp",                -- { name = nvim_lsp }
+    "hrsh7th/cmp-buffer",                  -- { name = 'buffer' },
+    "hrsh7th/cmp-path",                    -- { name = 'path' }
+    "hrsh7th/cmp-cmdline",                 -- { name = 'cmdline' }
     "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
     -- 常见编程语言代码段
     "rafamadriz/friendly-snippets",
