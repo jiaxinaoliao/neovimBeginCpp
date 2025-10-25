@@ -5,6 +5,7 @@ if not status then
 end
 
 require("smear-cursor").setup({
+    event = "VeryLazy",
     -- Smear cursor when switching buffers or windows.
     smear_between_buffers = true,
     -- Smear cursor when moving within line or to neighbor lines.

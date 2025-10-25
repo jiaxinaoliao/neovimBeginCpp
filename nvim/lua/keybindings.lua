@@ -142,8 +142,8 @@ map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
 -- "moll/vim-bbye" 关闭当前 buffer
-map("n", "xx", ":Bdelete!<CR>", opt)
-map("n", "xc", "<cmd>Bdelete!<CR><cmd>close<CR>", opt)
+map("n", "xx", ":bdelete!<CR>", opt)
+map("n", "xc", "<cmd>bdelete!<CR><cmd>close<CR>", opt)
 -- 关闭左/右侧标签页
 map("n", "<leader>xh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>xl", ":BufferLineCloseRight<CR>", opt)
@@ -221,7 +221,7 @@ pluginKeys.mapLSP = function(mapbuf)
 	mapbuf("n", "<leader>cm", "<cmd>Lspsaga rename<CR>", opt)
 	mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
 	mapbuf("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opt)
-	mapbuf("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opt)
+	-- mapbuf("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opt)
 	mapbuf("n", "gt", "<cmd>Lspsaga peek_definition<CR>", opt)
 	mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
 	mapbuf("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
@@ -238,7 +238,7 @@ pluginKeys.mapDAP = function()
         "n",
         "<S-F5>",
         ":lua require'dap'.terminate()<CR>"
-        -- ":lua require'dap'.disconnect()<CR>"
+        .. ":lua require'dap'.disconnect()<CR>"
         .. ":lua require'dap'.close()<CR>"
         .. ":lua require'dap.repl'.close()<CR>"
         .. ":lua require'dapui'.close()<CR>"

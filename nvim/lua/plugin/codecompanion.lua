@@ -5,8 +5,8 @@ if not status then
 end
 
 require("codecompanion").setup({
-    event = "VeryLazy",
     opts = {
+        event = "VeryLazy",
         aliyun = function()
             return require("codecompanion.adapters").extend("openai_compatible", {
                 env = {

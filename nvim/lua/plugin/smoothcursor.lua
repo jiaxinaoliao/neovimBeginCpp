@@ -1,17 +1,18 @@
 local status, smoothcursor = pcall(require, 'smoothcursor')
 if not status then
-  vim.notify('没有找到 smoothcursor')
-  return
+    vim.notify('没有找到 smoothcursor')
+    return
 end
 
 require('smoothcursor').setup({
+    event = "VeryLazy",
     autostart = true,
-    cursor = "",              -- cursor shape (need nerd font)
-    texthl = "SmoothCursor",   -- highlight group, default is { bg = nil, fg = "#FFD400" }
-    linehl = nil,              -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
-    type = "default",          -- define cursor movement calculate function, "default" or "exp" (exponential).
+    cursor = "", -- cursor shape (need nerd font)
+    texthl = "SmoothCursor", -- highlight group, default is { bg = nil, fg = "#FFD400" }
+    linehl = nil, -- highlight sub-cursor line like 'cursorline', "CursorLine" recommended
+    type = "default", -- define cursor movement calculate function, "default" or "exp" (exponential).
     fancy = {
-        enable = true,        -- enable fancy mode
+        enable = true, -- enable fancy mode
         head = { cursor = "", texthl = "SmoothCursor", linehl = nil },
         body = {
             { cursor = "󰥲", texthl = "SmoothCursorRed" },

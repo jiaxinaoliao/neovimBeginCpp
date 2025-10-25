@@ -5,6 +5,7 @@ if not status then
 end
 
 require('neoscroll').setup({
+    event = "VeryLazy",
     mappings = { -- Keys to be mapped to their corresponding default scrolling animation
         '<C-u>', '<C-d>',
         -- '<C-b>', '<C-f>',

@@ -45,7 +45,7 @@ lazy.setup({
     { "echasnovski/mini.nvim",  version = false },
     -- bufferline
     "akinsho/bufferline.nvim",
-    "moll/vim-bbye",
+    -- "moll/vim-bbye",
     -- lualine
     "nvim-lualine/lualine.nvim",
     "arkav/lualine-lsp-progress",

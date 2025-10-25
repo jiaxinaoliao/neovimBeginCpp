@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 require("which-key").add({
+
     { "<Space>C",  "<cmd>%bd|e#<CR>",                                                                                                   desc = "Close Other Buffers",   nowait = true, remap = false },
     { "<Space>F",  "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args(require('telescope.themes').get_ivy())<cr>", desc = "Find Text",             nowait = true, remap = false },
     { "<Space>P",  "<cmd>SessionManager load_session<cr>",                                                                              desc = "Projects",              nowait = true, remap = false },
@@ -84,4 +85,6 @@ require("which-key").add({
     { "<Space>v",  "<cmd>lua require('telescope').extensions.neoclip.default(require('telescope.themes').get_ivy())<cr>",               desc = "Clipboard Manager",     nowait = true, remap = false },
 })
 
-which_key.setup(setup)
+which_key.setup({
+    event = "VeryLazy",
+})
