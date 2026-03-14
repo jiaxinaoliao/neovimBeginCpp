@@ -47,4 +47,3 @@ require("lsp.formatter")
 require("dap.nvim-dap")
 -- 复制到windows剪贴板
 require("config.fix-yank")
-

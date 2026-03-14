@@ -10,11 +10,16 @@ if not status then
     return
 end
 
+-- 对于 nvim-lspconfig 0.11+，使用新的 API
 local status, lspconfig = pcall(require, "lspconfig")
 if not status then
     vim.notify("没有找到 lspconfig")
     return
 end
+
+-- 检查是否使用新 API
+-- 暂时使用旧 API，因为新 API 有问题
+local use_new_api = false
 
 vim.diagnostic.config({
     virtual_text = true,
@@ -36,6 +41,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     -- 确保安装，根据需要填写, 手动安装
     ensure_installed = {
+        -- "jdtls",
         -- "lua_ls",
         -- "clangd",
         -- "csharp_ls",
@@ -77,15 +83,26 @@ local servers = {
 
 for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
-        -- 自定义初始化配置文件必须实现on_setup 方法
-        -- config.on_setup(lspconfig[name])
-        vim.lsp.config[name] = config
+        if use_new_api then
+            -- 使用新 API (nvim 0.11+)
+            -- 根据 nvim-lspconfig 0.11+ 文档，应该这样设置
+            vim.lsp.config[name] = config
+        else
+            -- 使用旧 API
+            lspconfig[name].setup(config)
+        end
     else
-        -- 使用默认参数
-        -- lspconfig[name].setup({})
-        vim.lsp.config[name] = {}
+        if use_new_api then
+            vim.lsp.config[name] = {}
+        else
+            lspconfig[name].setup({})
+        end
     end
 end
 
-vim.lsp.enable(vim.tbl_keys(servers))
+-- 对于新 API，需要调用 vim.lsp.enable 来启用配置的服务器
+if use_new_api then
+    vim.lsp.enable(vim.tbl_keys(servers))
+end
+
 require("lsp.ui")
