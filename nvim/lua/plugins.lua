@@ -66,7 +66,15 @@ lazy.setup({
         ft = { "markdown", "codecompanion" },
     },
     -- 跳转插件
-    "ggandor/leap.nvim",
+    {
+        "ggandor/leap.nvim",
+        -- config...
+    },
+    {
+        url = "https://codeberg.org/andyg/leap.nvim",
+        -- config...
+    },
+
     "ggandor/flit.nvim",
     -- 单词跳转
     "phaazon/hop.nvim",

@@ -5,37 +5,39 @@ if not status then
 end
 
 require("codecompanion").setup({
-    opts = {
-        event = "VeryLazy",
-        aliyun = function()
-            return require("codecompanion.adapters").extend("openai_compatible", {
-                env = {
-                    url = "https://dashscope.aliyuncs.com",
-                    api_key = "you-key",
-                    chat_url = "/compatible-mode/v1/chat/completions",
+    event = "VeryLazy",
+    aliyun = function()
+        return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+                url = "https://dashscope.aliyuncs.com",
+                api_key = os.getenv("ALIYUN_API_KEY"),
+                chat_url = "/compatible-mode/v1/chat/completions",
+            },
+            schema = {
+                model = {
+                    default = "qwen-plus",
                 },
-                schema = {
-                    model = {
-                        default = "qwen-plus",
+            },
+        })
+    end,
+    deepseek = function()
+        return require("codecompanion.adapters").extend("openai_compatible", {
+            name = "deepseek",
+            env = {
+                url = "https://api.deepseek.com",
+                api_key = os.getenv("DEEPSEEK_API_KEY"),
+            },
+            schema = {
+                model = {
+                    default = "deepseek-reasoner",
+                    choices = {
+                        ["deepseek-reasoner"] = { opts = { can_reason = true } },
+                        "deepseek-chat",
                     },
                 },
-            })
-        end,
-        deepseek = function()
-            return require("codecompanion.adapters").extend("deepseek", {
-                name = "deepseek",
-                env = {
-                    api_key = "you-key",
-                },
-                schema = {
-                    model = {
-                        default = "deepseek-coder",
-                        choices = { ["deepseek-coder"] = { opts = { can_reason = true } } },
-                    },
-                },
-            })
-        end,
-    },
+            },
+        })
+    end,
     strategies = {
         chat = {
             adapter = "deepseek",
@@ -43,6 +45,10 @@ require("codecompanion").setup({
         inline = {
             adapter = "deepseek", -- copilot
         },
+        cmd = {
+            adapter = "deepseek",
+        }
     },
     opts = { language = "Chinese" },
 })
+

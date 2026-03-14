@@ -1,22 +1,22 @@
 -- vim.o.background = "dark"
 
-require("vscode").setup({
-	transparent = true,
-	italic_comments = true,
-	underline_links = false,
-	disable_nvimtree_bg = true,
-	terminal_colors = false,
-	color_overrides = {
-		vscLineNumber = "#C0C0C0",
-		vscTabCurrent = "NONE",
-		vscTabOther = "#606060",
-		vscTabOutside = "NONE",
-		vscPopupFront = "#FFFFFF",
-		vscPopupBack = "NONE",
-		vscPopupHighlightBlue = "#606060",
-		vscPopupHighlightGray = "#606060",
-	},
-})
+-- require("vscode").setup({
+-- 	transparent = true,
+-- 	italic_comments = true,
+-- 	underline_links = false,
+-- 	disable_nvimtree_bg = true,
+-- 	terminal_colors = false,
+-- 	color_overrides = {
+-- 		vscLineNumber = "#C0C0C0",
+-- 		vscTabCurrent = "NONE",
+-- 		vscTabOther = "#606060",
+-- 		vscTabOutside = "NONE",
+-- 		vscPopupFront = "#FFFFFF",
+-- 		vscPopupBack = "NONE",
+-- 		vscPopupHighlightBlue = "#606060",
+-- 		vscPopupHighlightGray = "#606060",
+-- 	},
+-- })
 
 require("catppuccin").setup({
 	flavour = "mocha", -- latte, frappe, macchiato, mocha

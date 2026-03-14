@@ -148,7 +148,7 @@ map("n", "xc", "<cmd>bdelete!<CR><cmd>close<CR>", opt)
 map("n", "<leader>xh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>xl", ":BufferLineCloseRight<CR>", opt)
 -- 关闭其他标签页
-map("n", "<leader>xo", ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>xo", ":BufferLineCloseOthers<CR>", opt)
 -- 关闭选中标签页
 map("n", "<leader>xp", ":BufferLinePickClose<CR>", opt)
 
