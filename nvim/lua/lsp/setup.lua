@@ -87,4 +87,5 @@ for name, config in pairs(servers) do
     end
 end
 
+vim.lsp.enable(vim.tbl_keys(servers))
 require("lsp.ui")

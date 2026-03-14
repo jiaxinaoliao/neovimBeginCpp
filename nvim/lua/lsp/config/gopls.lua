@@ -1,12 +1,25 @@
 local common = require("lsp.common-config")
-local opts = {
+
+return {
+  -- 继承通用能力
   capabilities = common.capabilities,
-  flags = common.flags,
-  on_attach = function(_, bufnr)
-    common.keyAttach(bufnr)
+  
+  -- 继承通用标志，或根据需要覆盖
+  flags = common.flags,  -- 假设 common.flags 已包含 debounce_text_changes = 150
+
+  -- 合并 on_attach
+  on_attach = function(client, bufnr)
+    -- 如果需要禁用格式化，可调用 common.disableFormat(client)
     -- common.disableFormat(client)
+
+    -- 绑定通用快捷键
+    common.keyAttach(bufnr)
+
+    -- 如果有 gopls 特有的额外按键，可以加在这里
+    -- 例如：vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { buffer = bufnr })
   end,
-  -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim
+
+  -- gopls 特有的设置
   settings = {
     gopls = {
       analyses = {
@@ -15,22 +28,4 @@ local opts = {
       staticcheck = true,
     },
   },
-}
-return {
-  on_setup = function(server)
-   server.setup({
-      flags = {
-        debounce_text_changes = 150,
-      },
-      on_attach = function(client, bufnr)
-        -- 禁用格式化功能，交给专门插件插件处理
-        client.server_capabilities.document_formatting = false
-        client.server_capabilities.document_range_formatting = false
-        local function buf_set_keymap(...)
-          vim.api.nvim_buf_set_keymap(bufnr, ...)
-        end
-        require("keybindings").mapLSP(buf_set_keymap)
-      end,
-    })
-  end,
 }

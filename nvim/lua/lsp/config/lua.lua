@@ -1,58 +1,34 @@
-
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
+-- lsp/config/lua.lua
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local common = require("lsp.common-config")
-
-local opts = {
-  capabilities = common.capabilities,
-  flags = common.flags,
-  on_attach = function(client, bufnr)
-    common.disableFormat(client)
-    common.keyAttach(bufnr)
-  end,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT",
-        -- Setup your lua path
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { "vim" },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-
+-- 直接定义 capabilities 和 flags（不依赖 common）
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local flags = {
+    debounce_text_changes = 150,
 }
 
 return {
-  on_setup = function(server)
-   --require("neodev").setup()
-   server.setup({
-      flags = {
-        debounce_text_changes = 150,
-      },
-      on_attach = function(client, bufnr)
-        -- 禁用格式化功能，交给专门插件插件处理
-        client.server_capabilities.document_formatting = false
-        client.server_capabilities.document_range_formatting = false
-        local function buf_set_keymap(...)
-          vim.api.nvim_buf_set_keymap(bufnr, ...)
+    capabilities = capabilities,
+    flags = flags,
+    on_attach = function(client, bufnr)
+        -- 自定义快捷键（可以复用 keybindings 模块）
+        local function buf_set_keymap(mode, lhs, rhs)
+            vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer = bufnr })
         end
         require("keybindings").mapLSP(buf_set_keymap)
-      end,
-    })
-  end,
+
+        -- 注意：这里没有禁用格式化的代码，所以 lua_ls 的格式化能力会被保留
+    end,
+    settings = {
+        Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = { globals = { "vim" } },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = { enable = false },
+        },
+    },
 }
