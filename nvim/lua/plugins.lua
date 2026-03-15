@@ -1,6 +1,5 @@
 -- 自动安装 Lazy.nvim
 -- 插件安装目录
--- ~/user/.Appdate/local/nvim-data/lazy/
 local fn = vim.fn
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -105,10 +104,10 @@ lazy.setup({
     -- 补全源
     "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-vsnip",
-    "hrsh7th/cmp-nvim-lsp",             -- { name = nvim_lsp }
-    "hrsh7th/cmp-buffer",               -- { name = 'buffer' },
-    "hrsh7th/cmp-path",                 -- { name = 'path' }
-    "hrsh7th/cmp-cmdline",              -- { name = 'cmdline' }
+    "hrsh7th/cmp-nvim-lsp",                -- { name = nvim_lsp }
+    "hrsh7th/cmp-buffer",                  -- { name = 'buffer' },
+    "hrsh7th/cmp-path",                    -- { name = 'path' }
+    "hrsh7th/cmp-cmdline",                 -- { name = 'cmdline' }
     "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
     -- 常见编程语言代码段
     "rafamadriz/friendly-snippets",

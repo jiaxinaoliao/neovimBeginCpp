@@ -6,7 +6,7 @@ end
 
 require('notify').setup({
     background_colour = '#000000',
-    render = "compact",--minimal default
+    render = "compact", --minimal default
     stages = "slide",
     timeout = 1000,
     minimum_width = 50,
@@ -21,11 +21,11 @@ require('noice').setup({
         },
     },
     presets = {
-        bottom_search = true, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
+        bottom_search = true,         -- use a classic bottom cmdline for search
+        command_palette = true,       -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
+        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false,       -- add a border to hover docs and signature help
     },
     cmdline = {
         enabled = true,
@@ -40,19 +40,19 @@ require('noice').setup({
         },
     },
     messages = {
-        enabled = true, -- enables the Noice messages UI
-        view = "notify", -- default view for messages
-        view_error = "notify", -- view for errors
-        view_warn = "notify", -- view for warnings
-        view_history = "messages", -- view for :messages
+        enabled = true,              -- enables the Noice messages UI
+        view = "notify",             -- default view for messages
+        view_error = "notify",       -- view for errors
+        view_warn = "notify",        -- view for warnings
+        view_history = "messages",   -- view for :messages
         view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
     },
     popupmenu = {
-        enabled = true, -- enables the Noice popupmenu UI
-    ---@type 'nui'|'cmp'
+        enabled = true,  -- enables the Noice popupmenu UI
+        ---@type 'nui'|'cmp'
         backend = "nui", -- backend to use to show regular cmdline completions
-    ---@type NoicePopupmenuItemKind|false
-    -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
+        ---@type NoicePopupmenuItemKind|false
+        -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
         kind_icons = {}, -- set to `false` to disable icons
     },
 })

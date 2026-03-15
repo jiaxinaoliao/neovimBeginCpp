@@ -19,35 +19,35 @@
 -- })
 
 require("catppuccin").setup({
-	flavour = "mocha", -- latte, frappe, macchiato, mocha
-	background = { -- :h background
-		light = "latte",
-		dark = "mocha",
-	},
-	transparent_background = true, -- disables setting the background color.
-	show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-	term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
-	float = {
-		transparent_background = true,
-		solid = false,
-	},
-	integrations = {
-		cmp = true,
-		gitsigns = true,
-		nvimtree = true,
-		treesitter = true,
-		telescope = { enabled = true },
-		notify = true,
-		mini = true,
-		which_key = true,
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = {     -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = true, -- disables setting the background color.
+    show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
+    term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
+    float = {
+        transparent_background = true,
+        solid = false,
+    },
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        treesitter = true,
+        telescope = { enabled = true },
+        notify = true,
+        mini = true,
+        which_key = true,
         Trans = true,
-	},
+    },
 })
 
 local colorscheme = "catppuccin"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
-	vim.notify("colorscheme: " .. colorscheme .. " 没有找到！")
-	return
+    vim.notify("colorscheme: " .. colorscheme .. " 没有找到！")
+    return
 end

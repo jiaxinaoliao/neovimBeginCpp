@@ -185,7 +185,7 @@ pluginKeys.telescopeList = {
 pluginKeys.comment = {
     -- Normal 模式快捷键
     toggler = {
-        line = "gcc", -- 行注释
+        line = "gcc",  -- 行注释
         block = "gbc", -- 块注释
     },
     -- Visual 模式
@@ -217,18 +217,18 @@ map("n", "cag", ":CellularAutomaton game_of_life<CR>", opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
-	mapbuf("n", "<leader>s", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opt)
-	mapbuf("n", "<leader>cm", "<cmd>Lspsaga rename<CR>", opt)
-	mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
-	mapbuf("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opt)
-	-- mapbuf("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opt)
-	mapbuf("n", "gt", "<cmd>Lspsaga peek_definition<CR>", opt)
-	mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
-	mapbuf("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
-	mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
-	mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opt)
-	mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
-	mapbuf("n", "<F8>", "<cmd>Lspsaga outline<CR>", opt)
+    mapbuf("n", "<leader>s", "<cmd>lua vim.lsp.buf.format {async = true}<CR>", opt)
+    mapbuf("n", "<leader>cm", "<cmd>Lspsaga rename<CR>", opt)
+    mapbuf("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+    mapbuf("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opt)
+    -- mapbuf("n", "gD", "<cmd>Lspsaga peek_definition<CR>", opt)
+    mapbuf("n", "gt", "<cmd>Lspsaga peek_definition<CR>", opt)
+    mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
+    mapbuf("n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+    mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+    mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<CR>", opt)
+    mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
+    mapbuf("n", "<F8>", "<cmd>Lspsaga outline<CR>", opt)
 end
 
 -- nvim-dap

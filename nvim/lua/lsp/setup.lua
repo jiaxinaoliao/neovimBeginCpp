@@ -17,9 +17,8 @@ if not status then
     return
 end
 
--- 检查是否使用新 API
--- 暂时使用旧 API，因为新 API 有问题
-local use_new_api = false
+-- 使用新 API (Neovim 0.11+)
+local use_new_api = true
 
 vim.diagnostic.config({
     virtual_text = true,
@@ -36,8 +35,6 @@ require("mason").setup({
     },
 })
 
--- -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
--- -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 require("mason-lspconfig").setup({
     -- 确保安装，根据需要填写, 手动安装
     ensure_installed = {
@@ -85,15 +82,14 @@ for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then
         if use_new_api then
             -- 使用新 API (nvim 0.11+)
-            -- 根据 nvim-lspconfig 0.11+ 文档，应该这样设置
-            vim.lsp.config[name] = config
+            vim.lsp.config._configs[name] = config
         else
             -- 使用旧 API
             lspconfig[name].setup(config)
         end
     else
         if use_new_api then
-            vim.lsp.config[name] = {}
+            vim.lsp.config._configs[name] = {}
         else
             lspconfig[name].setup({})
         end
