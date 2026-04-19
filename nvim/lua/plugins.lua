@@ -168,7 +168,7 @@ lazy.setup({
     "nvim-neotest/nvim-nio",
     "mfussenegger/nvim-dap-python",
     -----翻译插件
-    "yianwillis/vimcdoc",
+    -- "yianwillis/vimcdoc",
     {
         "JuanZoran/Trans.nvim",
         build = function()
@@ -191,6 +191,7 @@ lazy.setup({
     -- "xeluxee/competitest.nvim",
     -- leetcode
     -- "kawre/leetcode.nvim",
+    -- "jiaxinaoliao/luogu.nvim",
 
     config = {
         compile_on_sync = true,

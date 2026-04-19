@@ -16,20 +16,16 @@ vim.wo.signcolumn = "yes"
 --vim.wo.colorcolumn = "80"
 vim.opt.history = 200
 -- 缩进2个空格等于一个Tab
-vim.opt.tabstop = 4
-vim.bo.tabstop = 4
+vim.o.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftround = true
 -- >> << 时移动长度
-vim.opt.shiftwidth = 4
-vim.bo.shiftwidth = 4
+vim.o.shiftwidth = 4
 -- 空格替代tab
-vim.opt.expandtab = true
-vim.bo.expandtab = true
+vim.o.expandtab = true
 -- 新行对齐当前行
-vim.opt.autoindent = true
-vim.bo.autoindent = true
-vim.opt.smartindent = true
+vim.o.autoindent = true
+vim.o.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
