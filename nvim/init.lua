@@ -37,7 +37,7 @@ require("plugin.neoscroll")
 -- require("plugin.leetcode")
 -- require("plugin.leap")
 -- require("plugin.project")
--- require("plugin.minuet-ai")
+require("plugin.minuet-ai")
 -- require("plugin.copilot")
 -- require("plugin.neocodeium")
 -- 内置LSP

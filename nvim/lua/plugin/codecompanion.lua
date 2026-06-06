@@ -15,10 +15,10 @@ require("codecompanion").setup({
                 },
                 schema = {
                     model = {
-                        default = "deepseek-chat", -- 先用普通模型测试
+                        default = "deepseek-v4-flash", -- 先用普通模型测试
                         choices = {
                             ["deepseek-reasoner"] = { opts = { can_reason = true } },
-                            "deepseek-chat",
+                            "deepseek-v4-flash",
                         },
                     },
                 },

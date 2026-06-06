@@ -9,7 +9,7 @@ minuet.setup({
         auto_trigger_ft = { "lua", "cpp", "toml" },
         keymap = {
             -- accept whole completion
-            accept = "<A-A>",
+            accept = "<A-l>",
             -- accept one line
             accept_line = "<A-a>",
             -- accept n lines (prompts for number)
@@ -22,20 +22,20 @@ minuet.setup({
             dismiss = "<A-e>",
         },
     },
-    lsp = {
-        enabled_ft = { "toml", "lua", "cpp" },
-        completion = {
-            -- Enables automatic completion triggering using `vim.lsp.completion.enable`
-            enabled_auto_trigger_ft = { "cpp", "lua" },
-        },
-    },
+    -- lsp = {
+    --     enabled_ft = { "toml", "lua", "cpp" },
+    --     completion = {
+    --         -- Enables automatic completion triggering using `vim.lsp.completion.enable`
+    --         enabled_auto_trigger_ft = { "cpp", "lua" },
+    --     },
+    -- },
     provider = "openai_fim_compatible",
     provider_options = {
         openai_fim_compatible = {
-            api_key = os.getenv("DEEPSEEK_API_KEY"),
+            api_key = "DEEPSEEK_API_KEY",
             name = "deepseek",
             endpoint = "https://api.deepseek.com/beta/completions", -- DeepSeek 的补全端点
-            model = "deepseek-v4-pro",
+            model = "deepseek-v4-flash",
             optional = {
                 max_tokens = 256,
                 top_p = 0.9,
