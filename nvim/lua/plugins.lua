@@ -59,7 +59,7 @@ lazy.setup({
     "nvim-telescope/telescope-rg.nvim",
     "nvim-telescope/telescope-dap.nvim",
     -- markdown preview
-    "iamcco/markdown-preview.nvim",
+    -- "iamcco/markdown-preview.nvim",
     {
         "MeanderingProgrammer/render-markdown.nvim",
         ft = { "markdown", "codecompanion" },
@@ -73,10 +73,9 @@ lazy.setup({
         url = "https://codeberg.org/andyg/leap.nvim",
         -- config...
     },
-
-    "ggandor/flit.nvim",
+    -- "ggandor/flit.nvim",
     -- 单词跳转
-    "phaazon/hop.nvim",
+    "huawenyu/hop.nvim",
     -- dashboard-nvim
     "glepnir/dashboard-nvim",
     -- project
@@ -99,6 +98,8 @@ lazy.setup({
     },
     -- cmake
     -- "Civitasv/cmake-tools.nvim",
+    -- ai补全
+    "milanglacier/minuet-ai.nvim",
     -- 补全引擎
     "hrsh7th/nvim-cmp",
     -- 补全源
@@ -111,14 +112,35 @@ lazy.setup({
     "hrsh7th/cmp-nvim-lsp-signature-help", -- { name = 'nvim_lsp_signature_help' }
     -- 常见编程语言代码段
     "rafamadriz/friendly-snippets",
+    -- -- 使用 blink.cmp 代替
+    -- {
+    --     "saghen/blink.cmp",
+    --     version = "*",
+    --     dependencies = {
+    --         "rafamadriz/friendly-snippets",
+    --     },
+    -- },
+    -- 使用copilot
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        dependencies = {
+            "copilotlsp-nvim/copilot-lsp", -- (optional) for NES functionality
+        },
+    },
+    {
+        "monkoose/neocodeium",
+        event = "InsertEnter",
+    },
     -- UI 增强
     "onsails/lspkind-nvim",
     "glepnir/lspsaga.nvim",
-    { "RaafatTurki/hex.nvim" },
+    "RaafatTurki/hex.nvim",
     -- 代码格式化
     "mhartington/formatter.nvim",
     -- TypeScript 增强
-    "jose-elias-alvarez/nvim-lsp-ts-utils",
+    "alex-popov-tech/nvim-lsp-ts-utils",
     -- Lua 增强
     "folke/neodev.nvim",
     -- JSON 增强
